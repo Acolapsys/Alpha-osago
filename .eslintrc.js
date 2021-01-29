@@ -9,10 +9,13 @@ module.exports = {
   },
   extends: [
     '@nuxtjs',
-    'plugin:nuxt/recommended'
+    'plugin:nuxt/recommended',
+    'plugin:vue/recommended'
   ],
-  plugins: [
-  ],
+  plugins: ['vue'],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'no-console': 'off',
+    'vue/no-v-html': 'off'
+  }
 }
