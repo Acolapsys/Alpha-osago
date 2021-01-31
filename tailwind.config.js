@@ -56,7 +56,7 @@ module.exports = {
       20: '20px',
       22: '22px',
       26: '26px',
-      36: '36px',
+      36: '36px'
     },
     spacing: {
       'negative-10': '-10px',
@@ -99,9 +99,13 @@ module.exports = {
       45: '45px',
       50: '50px',
       55: '55px',
+      57: '57px',
       60: '60px',
       65: '65px',
       67: '67px',
+      70: '70px',
+      72: '72px',
+      74: '72px',
       80: '80px',
       100: '100px',
       125: '125px',
@@ -140,6 +144,7 @@ module.exports = {
     maxHeight: {
       0: '0',
       47: '47px',
+      72: '72px',
       82: '82px',
       full: '100%'
     },
@@ -200,6 +205,10 @@ module.exports = {
     borderColor: theme => ({
       ...theme('colors')
     }),
+    borderWidth: {
+      DEFAULT: '1px',
+        '3': '3px',
+    },
     zIndex: {
       negative: -1,
       bubble: 2,
@@ -213,6 +222,7 @@ module.exports = {
     },
     extend: {
       opacity: {
+        10: '0.1',
         95: '0.95'
       },
       width: {
@@ -235,6 +245,7 @@ module.exports = {
         80: '80px',
         130: '130px',
         145: '145px',
+        154: '154px',
         200: '200px',
         235: '235px',
         265: '265px',

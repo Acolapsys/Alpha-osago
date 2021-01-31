@@ -5,65 +5,66 @@
 
 
 h1 {
-    @apply font-bold text-36
+    @apply font-bold text-36;
     line-height: 110%;
 }
 h2 {
-    @apply font-bold text-26
+    @apply font-bold text-26;
     line-height: 110%;
 }
 h3 {
-    @apply font-bold text-22
+    @apply font-bold text-22;
 line-height: 120%;
 letter-spacing: -0.02em;
 }
 .subtitle {
-    @apply font-bold text-20
+    @apply font-bold text-20;
 line-height: 30px;
 letter-spacing: -0.02em;
 }
 .body-big-1 {
-    @apply font-normal text-20
+    @apply font-normal text-20;
 line-height: 30px;
 letter-spacing: -0.02em;
 }
 .body-big-2 {
-    @apply font-bold text-18
+    @apply font-bold text-18;
 line-height: 30px;
 letter-spacing: -0.02em;
 }
 .body-bold {
-    @apply font-bold text-base
+    @apply font-bold text-base;
 line-height: 23px;
 letter-spacing: -0.01em;
 }
 .body-regular {
-    @apply font-normal text-base
+    @apply font-normal text-base;
 line-height: 23px;
 letter-spacing: -0.01em;
 }
 .body-small-regular {
-    @apply font-bold text-14
+    @apply font-bold text-14;
     line-height: 20px;
     letter-spacing: -0.01em;
 }
 .subtitle-small {
-    @apply font-bold text-14
+    @apply font-bold text-14;
 font-family: Open Sans;
 line-height: 22px;
 letter-spacing: -0.01em;
 }
 .caption-small {
-    @apply font-bold text-12
+    @apply font-bold text-12;
 line-height: 16px;
 letter-spacing: -0.01em;
 }
 .caption {
-    @apply font-normal text-14
+    @apply font-normal text-14;
     line-height: 16px;
     letter-spacing: 0.02em;
+}
 .overline {
-    @apply font-bold text-10
+    @apply font-bold text-10;
     line-height: 16px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -81,13 +82,13 @@ border-radius: 5px;
 
 @screen tablet-max {
     h2 {
-        @apply text-22
+        @apply text-22;
     }
     .subtitle {
-        @apply text-18
+        @apply text-18;
     }
     .body-big-1 {
-        @apply text-18
+        @apply text-18;
     }
 }
 @screen mobile-max {

@@ -36,36 +36,16 @@ export default {
   .base-button {
     @apply cursor-pointer;
   }
-  .default {
-    @apply bg-aliceblue text-royalblue;
-  }
-  .default:hover {
-    @apply bg-lavender-blue;
-  }
-  .default:active {
-    @apply bg-lavender-violet;
-  }
-  .default:disabled {
-    @apply bg-lavender-gray text-darkgray cursor-default
-  }
 
-  .outline {
-    @apply border text-royalblue;
+  .account {
+    color: white;
+    background-color: rgba(255,255,255,0.2);
+    width: 154px;
   }
-  .outline:hover {
-    @apply text-royalblue-darker;
-  }
-  .outline:active {
-    @apply text-royalblue-focus;
-  }
-  .outline:disabled {
-    @apply text-darkgray
-  }
-
   .upload {
     @apply bg-grey max-w-236 h-55;
     @extend .body-bold;
     color: #088DED;
-    
+
   }
 </style>

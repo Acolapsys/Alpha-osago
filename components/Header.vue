@@ -1,37 +1,58 @@
 <template>
-  <div class="header bg-brand1">
-    <div class="navbar container lg:px-100 md:px-55">
-      <burger-menu class="hidden lg-max:block" />
-      <span class="max-w-167 xss-max:mx-auto">
-        <img src="@/assets/images/logo.png" alt="Домохозяин - отличный сервис">
+  <div class="header bg-brand1 py-20">
+    <div class="wrapper">
+      <span class="logo max-w-124 mr-72 mobile-max:mx-auto ">
+        <img src="@/assets/images/logo.png" alt="Логотип ОСАГО">
       </span>
-      <ul class="mobile-max:hidden flex">
-          <li v-for="(item, index) in links" :key="index" class="lg:mr-20 xlg:mr-40">
-            <nuxt-link :to="item.link">
-              {{ item.title }}
-            </nuxt-link>
-          </li>
+      <ul class="navbar mobile-max:hidden flex">
+        <li class="lg:mr-50">
+          <nuxt-link to="/osago">
+            Оформление ОСАГО
+          </nuxt-link>
+        </li>
+        <li class="lg:mr-50">
+          <nuxt-link to="/check">
+            Проверка КБМ
+          </nuxt-link>
+        </li>
+        <li class="lg:mr-50">
+          <nuxt-link to="/faq">
+            Полезная информация
+          </nuxt-link>
+        </li>
       </ul>
+      <BaseButton class="account">
+        Личный кабинет
+      </BaseButton>
     </div>
   </div>
 </template>
 
 <script>
+import BaseButton from '~/components/base/BaseButton'
 export default {
-    name: 'Header',
-    props: {
-        links: {
-            type: Array,
-            required: true
-        }
+  name: 'Header',
+  components: {
+    BaseButton
+  },
+  data () {
+    return {
+
     }
+  }
 }
 </script>
 <style lang="scss" scoped>
+.header {
+  @apply max-h-72
+}
 .navbar {
-    @apply py-20 flex items-center justify-between;
-    @screen xss-max {
+    @apply flex items-center justify-between text-white;
+    @screen mobile-max {
       @apply pr-55;
     }
   }
+.nuxt-link-active {
+    @apply text-brand2
+}
 </style>

@@ -1,0 +1,14 @@
+@import './fonts';
+
+body {
+  font-family: Casper;
+}
+.wrapper {
+  @apply px-70;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

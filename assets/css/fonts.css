@@ -1,0 +1,26 @@
+
+
+
+
+
+@font-face {
+	font-family: 'Casper';
+	src: url('../fonts/casper/Casper-Bold.eot');
+	src: local('Casper Bold'), local('Casper-Bold'),
+		url('../fonts/casper/Casper-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/casper/Casper-Bold.woff') format('woff'),
+		url('../fonts/casper/Casper-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Casper';
+	src: url('../fonts/casper/Casper.eot');
+	src: local('Casper'),
+		url('../fonts/casper/Casper.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/casper/Casper.woff') format('woff'),
+		url('../fonts/casper/Casper.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
