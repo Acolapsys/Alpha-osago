@@ -8,18 +8,34 @@
       <p class="subtitle mb-35 text-left">
         Получите расчёт по всем страховым компаниям, оформите полис онлайн и получите <span class="border-dashed border-b-3 border-white">кэшбек 5%</span>
       </p>
-      <InfoBlock />
+      <InfoBlock class="small info-orange">
+        <div class="body-bold text-brand2">
+      А если все отказывают?
+    </div>
+    <div>
+      Если вы относитесь к категории рискованных страхователей (мотоциклы, спецтехника, южные регионы, работа в такси), поможем оформить полис в ручном режиме.
+      <span class="text-brand2 underline cursor-pointer" @click="detailed">Подробнее</span>
+    </div>
+      </InfoBlock>
+    </div>
+    <div class="hero_img">
+      <img src="~/assets/images/undraw_fast_car.png" alt="fast car">
     </div>
   </div>
   </div>
 </template>
 
 <script>
-import InfoBlock from '~/components/HomePage/InfoBlock'
+import InfoBlock from '~/components/base/InfoBlock'
 export default {
     components: {
         InfoBlock
+    },
+    methods: {
+    detailed () {
+      this.$router.push('/')
     }
+  }
 
 }
 </script>
@@ -29,7 +45,8 @@ export default {
     width: 100%;
 }
 .content {
-    width: 557px;
+    max-width: 557px;
+    margin-right: 126px;
 }
 .title {
 font-size: 64px;
@@ -40,5 +57,9 @@ letter-spacing: -0.03em;
 font-size: 30px;
 line-height: 40px;
 letter-spacing: -0.02em;
+}
+.hero_image {
+  max-width: 476px;
+  max-height: 360px;
 }
 </style>

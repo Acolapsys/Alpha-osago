@@ -4,10 +4,13 @@
 
 <script>
 import HomePage from '~/components/HomePage/HomePage'
-export default {}
+export default {
+  components: {
+    HomePage
+  }
+}
 </script>
 
 <style>
-
 
 </style>
