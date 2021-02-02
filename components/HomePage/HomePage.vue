@@ -1,12 +1,11 @@
 <template>
   <div class="homepage w-full">
-      <Hero />
-      <QuickCalculation />
-      <WorkWith />
-      <Help />
-      <Information />
-      <Examples />
-   
+    <Hero />
+    <QuickCalculation />
+    <WorkWith />
+    <Help />
+    <Information />
+    <Examples />
   </div>
 </template>
 <script>

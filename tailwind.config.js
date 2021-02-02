@@ -244,12 +244,14 @@ module.exports = {
         48: '48px',
         52: '52px',
         80: '80px',
+        120: '120px',
         130: '130px',
         145: '145px',
         154: '154px',
         200: '200px',
         235: '235px',
         265: '265px',
+        266: '266px',
         271: '271px',
         280: '280px',
         295: '295px',
@@ -291,7 +293,7 @@ module.exports = {
         '2-400': 'repeat(2, minmax(275px, 400px))',
         '2-250': 'repeat(2, minmax(140px, 250px))',
         '1-400': 'repeat(1, minmax(275px, 400px))',
-        '2-266': 'repeat(2, minmax(266px, 1fr), offset)'
+        '2-266': 'repeat(2, 266px)'
       },
       gridTemplateRows: {
         200: '200px'

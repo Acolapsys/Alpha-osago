@@ -1,13 +1,12 @@
 <template>
   <div class="info-block text-left" :class="classes">
-      <slot />
-
+    <slot />
   </div>
 </template>
 <script>
 export default {
   props: {
-      classes: {
+    classes: {
       type: Array,
       default: () => ['rounded-5']
     }
