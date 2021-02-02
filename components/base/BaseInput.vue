@@ -15,7 +15,7 @@
         @keyup.enter.prevent="enter"
         @blur="$emit('blur'), setFocus(false)"
         @input="$emit('input', $event.target.value)"
-      />
+      >
       <div v-if="hasErrors" class="text-red px-12">
         {{ errorText }}
       </div>
@@ -25,11 +25,11 @@
 
 <script>
 export default {
-  name: "BaseInput",
+  name: 'BaseInput',
   props: {
     placeholder: {
       type: String,
-      required: true
+      required: false
     },
     required: {
       type: Boolean,
@@ -38,17 +38,17 @@ export default {
     },
     value: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     type: {
       type: String,
       required: false,
-      default: "text"
+      default: 'text'
     },
     autocomplete: {
       type: String,
       required: false,
-      default: "new-password"
+      default: 'new-password'
     },
     focus: {
       type: Boolean,
@@ -70,46 +70,46 @@ export default {
       required: false
     }
   },
-  data() {
+  data () {
     return {
-      passwordCondition: "password",
+      passwordCondition: 'password',
       isVisible: false,
       focused: this.focus
-    };
-  },
-  computed: {
-    isEmpty() {
-      return this.value === "";
-    },
-    currentTip() {
-      return this.isEmpty && this.focused ? "" : this.placeholder;
-    },
-    hasWarnings() {
-      return this.validations.filter(v => v.condition);
-    },
-    errorText() {
-      return "error";
     }
   },
-  mounted() {
+  computed: {
+    isEmpty () {
+      return this.value === ''
+    },
+    currentTip () {
+      return this.isEmpty && this.focused ? '' : this.placeholder
+    },
+    hasErrors () {
+      return this.validations.filter(v => v.condition)
+    },
+    errorText () {
+      return 'error'
+    }
+  },
+  mounted () {
     if (this.focus) {
-      this.makeActive();
+      this.makeActive()
     }
   },
   methods: {
-    changeVisiblePassword() {
+    changeVisiblePassword () {
       this.passwordCondition =
-        this.passwordCondition === "password" ? "text" : "password";
-      this.$refs.placeholder.focus();
+        this.passwordCondition === 'password' ? 'text' : 'password'
+      this.$refs.placeholder.focus()
     },
-    setFocus(bool) {
-      this.focused = bool;
+    setFocus (bool) {
+      this.focused = bool
     },
-    makeActive() {
-      this.$refs.placeholder.focus();
+    makeActive () {
+      this.$refs.placeholder.focus()
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -128,7 +128,7 @@ input {
   color: #333333;
   outline: none;
   height: 48px;
-  
+
 font-weight: normal;
 font-size: 16px;
 line-height: 23px;

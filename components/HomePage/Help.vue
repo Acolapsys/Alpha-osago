@@ -1,13 +1,13 @@
 <template>
   <div class="help">
-    <div class="wrapper">
+    <div class="wrapper px-70 py-120 flex flex-col items-center bg-background2 text-grey6">
       <h1 class="title">
         Вас никто не страхует?
       </h1>
-      <p class="subtitle">
+      <p class="subtitle max-w-660 mt-10 text-center">
         Поможем оформить ОСАГО в ситуациях, которые на языке страховых агентов называется “Несегмент”
       </p>
-      <div class="list">
+      <div class="list my-70 px-100">
         <div class="row">
           <div class="name">
             Транспортное средство
@@ -48,7 +48,7 @@
           <li>
             <span class="num">1</span>
             <div class="body-bold">
-              Рассчитайте цену полиса по короткой форме
+              Рассчитайте цену полиса по короткой форме
             </div>
             <div class="body-regular">
               Если хотя бы одна страховая покажет цену - покупайте, наша услуга Вам не нужна.
@@ -80,7 +80,7 @@
           <div class="condition_col">
             <img src="~/assets/images/icons/padlock.png" alt="padlock icon">
             <div class="text">
-              Деньги “замораживаются” в банке и списываются со счёта только после оформления
+              Деньги “замораживаются” в банке и списываются со счёта только после оформления
             </div>
           </div>
           <div class="condition_col">
@@ -101,3 +101,12 @@
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+.row {
+  display: flex;
+}
+.name {
+  width: 245px;
+  margin-right: 46px;
+}
+</style>

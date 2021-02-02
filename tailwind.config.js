@@ -25,6 +25,7 @@ module.exports = {
     colors: {
       white: '#FFFFFF',
       black: '#000000',
+      'ui-black': '#333333',
       transparent: 'transparent',
       grey: '#F6F6F6',
       wires: '#088DED',
@@ -44,7 +45,8 @@ module.exports = {
       warning: '#DB9F04',
       negative: '#D34444',
       neutral: '#9B9595',
-      primary: '#088DED'
+      primary: '#088DED',
+      grey6: '#F2F2F2'
     },
     fontSize: {
       10: '10px',
@@ -96,6 +98,7 @@ module.exports = {
       34: '34px',
       35: '35px',
       37: '37px',
+      38: '38px',
       40: '40px',
       45: '45px',
       50: '50px',
@@ -109,6 +112,7 @@ module.exports = {
       74: '72px',
       80: '80px',
       100: '100px',
+      120: '120px',
       125: '125px',
       140: '140px',
       150: '150px'
@@ -208,7 +212,7 @@ module.exports = {
     }),
     borderWidth: {
       DEFAULT: '1px',
-        '3': '3px',
+      3: '3px'
     },
     zIndex: {
       negative: -1,

@@ -1,7 +1,7 @@
 <template>
-  <div class="quick-calculation bg-grey w-full">
+  <div class="quick-calculation bg-grey w-full pb-38">
     <div class="wrapper">
-      <div class="calculator flex flex-col px-50 py-65 bg-white">
+      <div class="calculator flex flex-col px-50 pt-65 pb-71 bg-white">
         <h2 class="title text-center mb-40">
           Быстрый расчет ОСАГО
         </h2>
@@ -37,18 +37,21 @@
               <select id="expiration-time" name="expiration-time" />
             </div>
           </div>
-          <div class="insurance">
-            <input id="insurance" type="radio" name="insurance">
+          <div class="insurance flex">
+            <BaseSwitch @onSwitch="onSelectInsurance" />
             <label for="insurance">Неограниченная страховка</label>
           </div>
           <Driver />
-          <div class="add_driver">
+          <div class="add_driver body-bold text-primary mt-20" @click="addDriver">
+            <span class="mr-10">+</span>
             <span>Добавить водителя</span>
           </div>
-          <button type="submit">
+          <div class="flex flex-col w-full items-center mt-27 ">
+            <button type="submit" class="count text-center w-265 h-50 text-white bg-brand2 rounded-5 mb-12">
             Рассчитать ОСАГО
           </button>
-          <span class="underline">Посмотреть пример расчета</span>
+          <span class="underline text-ui-black text-base">Посмотреть пример расчета</span>
+          </div>
         </form>
       </div>
     </div>
@@ -56,14 +59,27 @@
 </template>
 <script>
 import BaseInput from '~/components/base/BaseInput'
+import BaseSwitch from '~/components/base/BaseSwitch'
 import Driver from '~/components/HomePage/QuickCalculation/Driver'
 export default {
   components: {
     Driver,
-    BaseInput
+    BaseInput,
+    BaseSwitch
+  },
+  data () {
+    return {
+      insurance: true
+    }
   },
   methods: {
     openAddition () {
+      this.$router.push('/')
+    },
+    onSelectInsurance (value) {
+      this.insurance = value
+    },
+    addDriver () {
       this.$router.push('/')
     }
   }
@@ -88,5 +104,8 @@ input {
 }
 .col {
     @apply  bg-grey
+}
+.count {
+  box-shadow: 0px 0px 4px rgba(255, 208, 55, 0.3), 0px 3px 15px rgba(255, 208, 55, 0.2);
 }
 </style>

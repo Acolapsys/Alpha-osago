@@ -1,40 +1,62 @@
 <template>
-  <div class="diver">
-    <div class="header">
-      <div class="title">
+  <div class="diver bg-grey px-20 py-32 mt-33">
+    <div class="header flex justify-between">
+      <div class="title body-big-2">
         Водитель 1
       </div>
       <span>Удалить водителя</span>
     </div>
-    <div class="kbm">
-      <input id="know_kbm" type="radio" name="know_kbm">
-      <label for="know_kbm">Знаю КБМ</label>
+    <div class="kbm mt-2 py-14">
+      <base-switch name="know_kbm" class="mr-16" @onSwitch="onSelectKbm" />
+      <label for="know_kbm" class="body-regular">Знаю КБМ</label>
     </div>
-    <div class="grid grid-cols-3 grid-rows-2">
+    <div class="grid grid-cols-3 grid-rows-2 gap-25">
       <div class="col">
         <label for="second-name">Фамилия</label>
-        <input name="second-name" type="text" placeholder="Васильев">
+        <BaseInput name="second-name" value="Васильев" />
       </div>
       <div class="col">
         <label for="first-name">Имя</label>
-        <input name="first-name" type="text" placeholder="Иван">
+        <BaseInput name="first-name" type="text" value="Иван" />
       </div>
       <div class="col">
         <label for="third-name">Отчество</label>
-        <input name="third-name" type="text" placeholder="Николаевич">
+        <BaseInput name="third-name" type="text" value="Николаевич" />
       </div>
       <div class="col">
         <label for="birthday">Дата рождения</label>
-        <input name="second-name" type="date" placeholder="10.10.1990">
+        <BaseInput name="birthday" type="date" value="10.10.1990" />
       </div>
       <div class="col">
         <label for="license">Серия и номер прав</label>
-        <input name="license" type="text" placeholder="Васильев">
+        <BaseInput name="license" type="text" value="55 00 509652" />
       </div>
       <div class="col">
         <label for="experience-date">Дата начала стажа</label>
-        <input name="second-name" type="text" placeholder="10.10.2010">
+        <BaseInput name="experience-date" type="text" value="10.10.2010" />
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import BaseSwitch from '~/components/base/BaseSwitch'
+import BaseInput from '~/components/base/BaseInput'
+export default {
+  name: 'Driver',
+  components: {
+    BaseSwitch,
+    BaseInput
+  },
+  data () {
+    return {
+      kbm: false
+    }
+  },
+  methods: {
+    onSelectKbm (value) {
+      this.kbm = value
+    }
+  }
+}
+</script>
