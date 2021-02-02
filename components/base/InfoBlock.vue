@@ -15,7 +15,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.info-orange {
+.b-orange {
      @apply border-l-3 border-brand2;
 
 }
@@ -31,7 +31,7 @@ export default {
     letter-spacing: -0.01em;
 
 }
-.big {
+.default {
     background: #F6F6F6;
     border-radius: 6px;
     max-width: 848px;

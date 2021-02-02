@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-      <div class="wrapper">
+      <div class="wrapper flex">
     <div class="content text-white font-bold">
       <h2 class="title mb-23 mt-57">
         ОСАГО без отказов
@@ -8,7 +8,7 @@
       <p class="subtitle mb-35 text-left">
         Получите расчёт по всем страховым компаниям, оформите полис онлайн и получите <span class="border-dashed border-b-3 border-white">кэшбек 5%</span>
       </p>
-      <InfoBlock class="small info-orange">
+      <InfoBlock class="small b-orange">
         <div class="body-bold text-brand2">
       А если все отказывают?
     </div>
@@ -43,6 +43,7 @@ export default {
 .hero {
     background: linear-gradient(180deg, #038661 0%, rgba(3, 134, 97, 0.84) 100%);
     width: 100%;
+    padding-bottom: 110px;
 }
 .content {
     max-width: 557px;

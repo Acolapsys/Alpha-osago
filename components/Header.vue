@@ -1,6 +1,6 @@
 <template>
   <div class="header bg-brand1 py-20">
-    <div class="wrapper">
+    <div class="wrapper flex justify-between items-center">
       <span class="logo max-w-124 mr-72 mobile-max:mx-auto ">
         <img src="@/assets/images/logo.png" alt="Логотип ОСАГО">
       </span>
