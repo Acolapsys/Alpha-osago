@@ -1,11 +1,11 @@
 <template>
-  <div class="calculate-osago">
+  <div class="calculate-osago flex justify-between pt-42 pb-50 w-full">
     <div class="info">
-      <h3 class="title">
-        Высокая стоимость
+      <h3 class="title mb-10">
+        {{example.title}}
       </h3>
-      <p class="body-regular">
-        20-летний водитель спортивного авто, часто попадающий в аварии, живет в Мурманске (где наивысший региональный коэффициент), приобретает полис без ограничения числа водителей на весь год.
+      <p class="body-regular mb-33">
+       {{example.desc}}
       </p>
       <div class="calculator flex">
         <div class="col">
@@ -34,7 +34,9 @@
         </div>
       </div>
     </div>
-    <div class="image" />
+    <div class="image" >
+      <img :src="example.image" alt="статья">
+    </div>
   </div>
 </template>
 <script>
@@ -47,3 +49,15 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.calculate-osago {
+  border-bottom: 1px dashed #E0E0E0;
+  
+}
+.info {
+  max-width: 654px;
+}
+.image {
+  max-width: 300px;
+}
+</style>

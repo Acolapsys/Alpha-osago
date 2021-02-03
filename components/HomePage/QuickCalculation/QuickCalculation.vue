@@ -1,7 +1,7 @@
 <template>
   <div class="quick-calculation bg-grey w-full pb-38">
     <div class="wrapper">
-      <div class="calculator flex flex-col px-50 pt-65 pb-71 bg-white">
+      <div class="calculator flex flex-col px-50 pt-65 pb-71 bg-white transform -translate-y-64">
         <h2 class="title text-center mb-40">
           Быстрый расчет ОСАГО
         </h2>
@@ -48,9 +48,9 @@
           </div>
           <div class="flex flex-col w-full items-center mt-27 ">
             <button type="submit" class="count text-center w-265 h-50 text-white bg-brand2 rounded-5 mb-12">
-            Рассчитать ОСАГО
-          </button>
-          <span class="underline text-ui-black text-base">Посмотреть пример расчета</span>
+              Рассчитать ОСАГО
+            </button>
+            <span class="underline text-ui-black text-base">Посмотреть пример расчета</span>
           </div>
         </form>
       </div>
