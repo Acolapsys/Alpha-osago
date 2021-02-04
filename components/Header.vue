@@ -1,10 +1,10 @@
 <template>
-  <div class="header bg-brand1 py-20">
-    <div class="wrapper flex justify-between items-center">
+  <div class="header bg-brand1">
+    <div class="px-70 py-20 mx-auto flex justify-between items-center lg-max:px-16 lg-max:py-16">
       <span class="logo max-w-124 mr-72 mobile-max:mx-auto ">
         <img src="@/assets/images/logo.png" alt="Логотип ОСАГО">
       </span>
-      <ul class="navbar mobile-max:hidden flex">
+      <ul class="navbar ">
         <li class="lg:mr-50">
           <nuxt-link to="/osago">
             Оформление ОСАГО
@@ -21,9 +21,12 @@
           </nuxt-link>
         </li>
       </ul>
-      <BaseButton class="account">
+      <BaseButton class="account lg-max:hidden">
         Личный кабинет
       </BaseButton>
+      <div class="burger lg:hidden">
+        <img src="~/assets/images/icons/burger.png" alt="">
+      </div>
     </div>
   </div>
 </template>
@@ -48,9 +51,10 @@ export default {
 }
 .navbar {
     @apply flex items-center justify-between text-white;
-    @screen mobile-max {
-      @apply pr-55;
+    @screen lg-max {
+      @apply hidden;
     }
+    
   }
 .nuxt-link-active {
     @apply text-brand2

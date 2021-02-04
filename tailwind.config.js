@@ -46,6 +46,7 @@ module.exports = {
       negative: '#D34444',
       neutral: '#9B9595',
       primary: '#088DED',
+      grey5: '#E0E0E0',
       grey6: '#F2F2F2'
     },
     fontSize: {
@@ -58,6 +59,7 @@ module.exports = {
       20: '20px',
       22: '22px',
       26: '26px',
+      30: '30px',
       36: '36px'
     },
     spacing: {
@@ -115,12 +117,14 @@ module.exports = {
       72: '72px',
       74: '72px',
       80: '80px',
+      90: '90px',
       100: '100px',
       115: '115px',
       120: '120px',
       125: '125px',
       140: '140px',
-      150: '150px'
+      150: '150px',
+      164: '164px',
     },
     maxWidth: {
       none: 'none',
@@ -130,16 +134,22 @@ module.exports = {
       '8/12': '64.666667%',
       '9/12': '75%',
       '10/12': '83.333333%',
+      15: '15px',
       34: '34px',
       47: '47px',
+      120: '120px',
       148: '148px',
+      154: '154px',
+      164: '164px',
       167: '167px',
       183: '183px',
       200: '200px',
+      222: '222px',
       247: '247px',
       236: '236px',
       254: '254px',
       282: '282px',
+      291: '291px',
       305: '305px',
       315: '315px',
       340: '340px',
@@ -151,10 +161,12 @@ module.exports = {
       650: '650px',
       660: '660px',
       700: '700px',
+      750: '750px',
       900: '900px'
     },
     maxHeight: {
       0: '0',
+      15: '15px',
       47: '47px',
       72: '72px',
       82: '82px',
@@ -285,6 +297,7 @@ module.exports = {
         maxContent: 'max-content'
       },
       minWidth: {
+        15: '15px',
         30: '30px',
         34: '34px',
         47: '47px',
@@ -296,6 +309,8 @@ module.exports = {
       },
       minHeight: {
         14: '14px',
+        
+        15: '15px',
         42: '42px',
         47: '47px',
         60: '60px',
@@ -306,14 +321,16 @@ module.exports = {
         10: '10px',
         20: '20px',
         26: '26px',
-        36: '36px'
+        36: '36px',
+        120: '120%'
       },
       gridTemplateColumns: {
         '2-fr': 'repeat(2, minmax(275px, 1fr))',
         '2-400': 'repeat(2, minmax(275px, 400px))',
         '2-250': 'repeat(2, minmax(140px, 250px))',
         '1-400': 'repeat(1, minmax(275px, 400px))',
-        '2-266': 'repeat(2, 266px)'
+        '2-266': 'repeat(2, 266px)',
+        '4-fr': 'repeat(4, minmax(228px, 1fr))'
       },
       gridTemplateRows: {
         200: '200px'

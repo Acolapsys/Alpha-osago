@@ -20,10 +20,12 @@ export default {
 }
 .info-block {
     @apply py-22 px-30;
+    @screen tablet-max {
+      @apply py-20 px-0;
+    }
 }
 .small {
     @apply text-white bg-white rounded-5 bg-opacity-10;
-    max-width: 557px;
     font-weight: normal;
     font-size: 16px;
     line-height: 23px;

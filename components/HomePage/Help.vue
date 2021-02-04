@@ -1,10 +1,10 @@
 <template>
-  <div class="help">
-    <div class="wrapper px-70 py-120 flex flex-col items-center bg-background2 text-grey6">
+  <div class="help bg-background2">
+    <div class="wrapper px-70 py-120 flex flex-col items-center  text-grey6 w-full">
       <h1 class="title">
         Вас никто не страхует?
       </h1>
-      <p class="subtitle max-w-660 mt-10 text-center">
+      <p class="subtitle mt-10 text-center">
         Поможем оформить ОСАГО в ситуациях, которые на языке страховых агентов называется “Несегмент”
       </p>
       <div class="list my-70 body-bold text-grey6">
@@ -70,7 +70,7 @@
       <div class="conditions flex flex-col items-center">
         <div class="line min-w-34" />
         <h2>Условия</h2>
-        <div class="flex justify-between mt-60 mb-80 mx-70 w-full">
+        <div class="grid grid-cols-4-fr gap-40 mt-60 mb-80 w-full lg-max:grid-cols-2-fr lg-max:grid-rows-2">
           <div class="condition_col">
             <div class="img_block">
               <img src="~/assets/images/icons/money.png" alt="money icon">
@@ -117,7 +117,7 @@
 </template>
 <style lang="scss" scoped>
 .row {
-  @apply py-29 border-grey6 border-t-DEFAULT border-opacity-20 flex items-center ;
+  @apply py-29 border-grey6 border-t-DEFAULT border-opacity-20 flex justify-between w-full items-center ;
   &:last-child {
     @apply border-b-DEFAULT
   }
@@ -126,11 +126,21 @@
 .name {
   min-width: 245px;
   margin-right: 46px;
+  @screen lg-max {
+    max-width: 245px;
+    min-width: 0;
+    margin-right: 30px;
+  }
 
 }
 .desc {
   min-width: 568px;
   margin-right: 96px;
+  @screen lg-max {
+    max-width: 434px;
+    min-width: 0;
+    margin-right: 0;
+  }
 
 }
 .line {
@@ -141,11 +151,21 @@
   background: rgba(75, 236, 190, 0.2);
 }
 .list  {
-  padding: 0 167px;
+  padding: 0 97px;
   li {
   @apply flex items-center;
+  }
+  @screen lg-max {
+    @apply p-0
+  }
 
 }
+.subtitle {
+  max-width: 660px;
+  @screen lg-max {
+    max-width: 526px;
+  }
+
 }
 .col1 {
   width: 256px;

@@ -49,6 +49,7 @@ border-radius: 5px;
     color: white;
     background-color: rgba(255,255,255,0.2);
     width: 154px;
+    height: 32px;
   }
   .upload {
     @apply bg-grey max-w-236 h-55;

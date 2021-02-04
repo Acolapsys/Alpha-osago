@@ -7,4 +7,8 @@ body {
   @apply px-70;
   max-width: 1280px;
   margin: 0 auto;
+  @screen lg-max {
+    @apply px-30;
+    max-width: 1024px;
+  }
 }
