@@ -54,7 +54,7 @@ export default {
     @screen lg-max {
       @apply hidden;
     }
-    
+
   }
 .nuxt-link-active {
     @apply text-brand2

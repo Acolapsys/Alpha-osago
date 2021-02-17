@@ -2,10 +2,10 @@
   <div class="calculate-osago flex justify-between pt-42 pb-50 w-full">
     <div class="info">
       <h3 class="title mb-10">
-        {{example.title}}
+        {{ example.title }}
       </h3>
       <p class="body-regular mb-33">
-       {{example.desc}}
+        {{ example.desc }}
       </p>
       <div class="calculator flex">
         <div class="col">
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-    <div class="image" >
+    <div class="image">
       <img :src="example.image" alt="статья">
     </div>
   </div>
@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .calculate-osago {
   border-bottom: 1px dashed #E0E0E0;
-  
+
 }
 .info {
   max-width: 654px;

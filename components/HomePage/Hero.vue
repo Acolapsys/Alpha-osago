@@ -64,20 +64,20 @@
             <img src="~/assets/images/undraw_fast_car.png" alt="fast car">
           </div>
         </div>
-          <InfoBlock class="tablet-max:small tablet:b-orange max-w-full text-white">
-            <div class="body-bold text-brand2">
-              А если все отказывают?
-            </div>
-            <div>
-              Если вы относитесь к категории рискованных страхователей
-              (мотоциклы, спецтехника, южные регионы, работа в такси), поможем
-              оформить полис в ручном режиме.
-              <span
-                class="text-brand2 underline cursor-pointer"
-                @click="detailed"
-              >Подробнее</span>
-            </div>
-          </InfoBlock>
+        <InfoBlock class="tablet-max:small tablet:b-orange max-w-full text-white">
+          <div class="body-bold text-brand2">
+            А если все отказывают?
+          </div>
+          <div>
+            Если вы относитесь к категории рискованных страхователей
+            (мотоциклы, спецтехника, южные регионы, работа в такси), поможем
+            оформить полис в ручном режиме.
+            <span
+              class="text-brand2 underline cursor-pointer"
+              @click="detailed"
+            >Подробнее</span>
+          </div>
+        </InfoBlock>
       </div>
     </div>
   </div>

@@ -4,9 +4,7 @@
       <img :src="article.image" alt="image">
     </div>
     <div class="body-big-1 flex justify-center items-center min-h-65">
-    
-        {{ article.text }}
-     
+      {{ article.text }}
     </div>
   </div>
 </template>

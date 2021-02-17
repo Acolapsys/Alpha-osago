@@ -15,30 +15,30 @@
       </div>
       <div class="flex lg-max:flex-col">
         <div class="contacts max-w-120 lg:mr-80 lg-max:mb-30">
-        <p class="body-bold mb-5 text-white">
-          Контакты
-        </p>
-        <ul>
-          <li>
-            <a href="tel:+88002253535" class="body-regular text-grey5">8-800-225-35-35</a>
-          </li>
-          <li>
-            <a href="mailto:onfo@optimus.ru" class="body-regular text-grey5">onfo@optimus.ru</a>
-          </li>
-        </ul>
-      </div>
-      <div class="address max-w-154">
-        <p class="body-bold mb-5 text-white">
-          Юридический адрес
-        </p>
-        <ul>
-          <li>
-            <p class="body-regular text-grey5">
-              443000, Москва, ул. Тверская, д 1
-            </p>
-          </li>
-        </ul>
-      </div>
+          <p class="body-bold mb-5 text-white">
+            Контакты
+          </p>
+          <ul>
+            <li>
+              <a href="tel:+88002253535" class="body-regular text-grey5">8-800-225-35-35</a>
+            </li>
+            <li>
+              <a href="mailto:onfo@optimus.ru" class="body-regular text-grey5">onfo@optimus.ru</a>
+            </li>
+          </ul>
+        </div>
+        <div class="address max-w-154">
+          <p class="body-bold mb-5 text-white">
+            Юридический адрес
+          </p>
+          <ul>
+            <li>
+              <p class="body-regular text-grey5">
+                443000, Москва, ул. Тверская, д 1
+              </p>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="information max-w-222">
         <p class="body-bold mb-5 text-white">

@@ -65,7 +65,7 @@
 <script>
 import BaseInput from '~/components/base/BaseInput'
 import BaseSwitch from '~/components/base/BaseSwitch'
-import BaseButton  from '~/components/base/BaseButton'
+import BaseButton from '~/components/base/BaseButton'
 import Driver from '~/components/HomePage/QuickCalculation/Driver'
 export default {
   components: {

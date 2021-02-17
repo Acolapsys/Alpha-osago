@@ -7,7 +7,6 @@
     <Information />
     <Examples />
     <FAQ />
-    <Footer />
   </div>
 </template>
 <script>
@@ -18,7 +17,6 @@ import Help from '~/components/HomePage/Help'
 import Information from '~/components/HomePage/Information/Information'
 import Examples from '~/components/HomePage/Examples/Examples'
 import FAQ from '~/components/HomePage/FAQ'
-import Footer from '~/components/Footer'
 
 export default {
   components: {
@@ -28,8 +26,7 @@ export default {
     Help,
     Information,
     Examples,
-    FAQ,
-    Footer
+    FAQ
   }
 }
 </script>

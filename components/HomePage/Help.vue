@@ -46,18 +46,22 @@
         <h2>Как это работает</h2>
         <ul class="list">
           <li class="mt-22">
-            <h2 class="num">1</h2>
+            <h2 class="num">
+              1
+            </h2>
             <div class="py-23 border-grey6 border-b-DEFAULT border-opacity-20 flex">
               <div class="col1 body-bold mr-33">
-              Рассчитайте цену полиса по короткой форме
-            </div>
-            <div class="col2 body-regular">
-              Если хотя бы одна страховая покажет цену - покупайте, наша услуга Вам не нужна.
-            </div>
+                Рассчитайте цену полиса по короткой форме
+              </div>
+              <div class="col2 body-regular">
+                Если хотя бы одна страховая покажет цену - покупайте, наша услуга Вам не нужна.
+              </div>
             </div>
           </li>
           <li class="pt-23">
-            <h2 class="num">2</h2>
+            <h2 class="num">
+              2
+            </h2>
             <div class="col1 body-bold mr-33">
               Если все стаховые отказывают, нажмите “Помощь в оформлении”
             </div>
@@ -83,7 +87,7 @@
           </div>
           <div class="condition_col">
             <div class="img_block">
-            <img src="~/assets/images/icons/padlock.png" alt="padlock icon">
+              <img src="~/assets/images/icons/padlock.png" alt="padlock icon">
             </div>
             <div class="text">
               Деньги “замораживаются” в банке и списываются со счёта только после оформления
@@ -91,7 +95,7 @@
           </div>
           <div class="condition_col">
             <div class="img_block">
-            <img src="~/assets/images/icons/clock.png" alt="clock icon">
+              <img src="~/assets/images/icons/clock.png" alt="clock icon">
             </div>
             <div class="text">
               Деньги вернутся на Ваш счёт, если полис не будет оформлен за 48 часов
@@ -99,7 +103,7 @@
           </div>
           <div class="condition_col">
             <div class="img_block">
-            <img src="~/assets/images/icons/cashback.png" alt="cashback icon">
+              <img src="~/assets/images/icons/cashback.png" alt="cashback icon">
             </div>
             <div class="text">
               Если полис получится оформить по стоимости ниже, чем вы заплатили, вернём разницу на карту
@@ -108,10 +112,10 @@
         </div>
       </div>
       <div class="flex flex-col w-full items-center ">
-            <button type="submit" class="count_button text-center w-265 h-50 text-white bg-brand1 rounded-5 mb-12">
-              Рассчитать ОСАГО
-            </button>
-          </div>
+        <button type="submit" class="count_button text-center w-265 h-50 text-white bg-brand1 rounded-5 mb-12">
+          Рассчитать ОСАГО
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -121,7 +125,7 @@
   &:last-child {
     @apply border-b-DEFAULT
   }
-  
+
 }
 .name {
   min-width: 245px;

@@ -7,7 +7,9 @@
       <div class="slider flex justify-between w-full mb-50">
         <Article v-for="(article, index) in articles" :key="index" :article="article" />
       </div>
-      <BaseButton class="text-brand1 border-DEFAULT border-brand1 bg-white outline">Показать все статьи</BaseButton>
+      <BaseButton class="text-brand1 border-DEFAULT border-brand1 bg-white outline">
+        Показать все статьи
+      </BaseButton>
     </div>
   </div>
 </template>
@@ -23,9 +25,9 @@ export default {
     return {
       articles: [
         {
-          image: require('/assets/images/article1.png'),
+          image: require('~/assets/images/article1.png'),
           text: 'Что такое КБМ?'
-        },
+        }
         // {
         //   image: require('/assets/images/article2.png'),
         //   text: 'Электронное ОСАГО'
