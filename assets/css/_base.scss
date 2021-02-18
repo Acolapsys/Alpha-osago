@@ -78,7 +78,36 @@ border-radius: 5px;
 
 }
 
-
+.breadCrumbs {
+    &__item {
+        text-decoration: underline;
+        letter-spacing: -0.03em;
+        color: #088DED;
+        &::before {
+            content: '/';
+            color: inherit;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        &:first-child::before {
+            content: '';
+        }
+        &_current {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+}
+@media (max-width: 1023px) {
+    .breadCrumbs {
+        font-size: 14px;
+    }
+}
+@media (max-width: 767px) {
+    .breadCrumbs {
+        display: none;
+    }
+}
 
 @screen tablet-max {
     h1 {

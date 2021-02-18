@@ -12,3 +12,9 @@ body {
     max-width: 1024px;
   }
 }
+@media (max-width: 767px) {
+  .wrapper {
+    max-width: 100%;
+    @apply px-16;
+  }
+}

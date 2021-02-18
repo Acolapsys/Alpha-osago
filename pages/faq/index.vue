@@ -6,9 +6,9 @@
     <p class="faqPage__subtitle subtitle text-center">
       Здесь можно узнать о том, что такое КБМ, от чего зависит цена полиса, зачем нужно ТО и какие изменения в законодательстве ждут автомобилистов
     </p>
-    <div class="faqPage__articles">
+    <section class="faqPage__articles">
       <ArticlePost v-for="article in articles" :key="article.id" class="faqPage__article" :data="article" />
-    </div>
+    </section>
     <BaseButton class="faqPage__loadButton mx-auto">
       Показать ещё статьи
     </BaseButton>
@@ -111,6 +111,13 @@ export default {
   .faqPage {
     padding-top: 40px;
     padding-bottom: 53px;
+    &__title {
+      font-size: 26px;
+    }
+    &__subtitle {
+      text-align: left;
+      font-size: 16px;
+    }
     &__articles {
       flex-direction: column;
       padding-top: 29px;

@@ -15,10 +15,10 @@
       </div>
       <div class="flex lg-max:flex-col">
         <div class="contacts max-w-120 lg:mr-80 lg-max:mb-30">
-          <p class="body-bold mb-5 text-white">
+          <p class="body-bold mb-5 text-white contacts__title">
             Контакты
           </p>
-          <ul>
+          <ul class="contacts__list">
             <li>
               <a href="tel:+88002253535" class="body-regular text-grey5">8-800-225-35-35</a>
             </li>
@@ -96,3 +96,33 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+@media (max-width: 767px) {
+  .footer {
+    @apply py-50;
+    .wrapper {
+      flex-direction: column;
+    }
+    .sections {
+      display: none;
+    }
+    .contacts {
+      max-width: 100%;
+      margin-bottom: 0;
+      &__title {
+        display: none;
+      }
+      &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+    }
+    .information {
+      margin-top: 20px;
+    }
+  }
+}
+</style>
