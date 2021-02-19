@@ -16,9 +16,6 @@
         @blur="$emit('blur'), setFocus(false)"
         @input="$emit('input', $event.target.value)"
       >
-      <div v-if="hasErrors" class="text-red px-12">
-        {{ errorText }}
-      </div>
     </div>
   </div>
 </template>
@@ -38,7 +35,8 @@ export default {
     },
     value: {
       type: [String, Number],
-      default: ''
+      required: false,
+      default: null
     },
     type: {
       type: String,

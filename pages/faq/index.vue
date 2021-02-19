@@ -101,9 +101,9 @@ export default {
     padding-top: 50px;
     padding-bottom: 69px;
     &__articles {
+      margin-bottom: 20px;
       padding-top: 40px;
       padding-bottom: 40px;
-      margin-bottom: 20px;
     }
   }
 }

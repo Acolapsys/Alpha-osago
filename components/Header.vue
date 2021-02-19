@@ -11,7 +11,7 @@
           </nuxt-link>
         </li>
         <li class="lg:mr-50">
-          <nuxt-link to="/check">
+          <nuxt-link to="/checkout">
             Проверка КБМ
           </nuxt-link>
         </li>

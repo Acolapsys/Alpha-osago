@@ -19,15 +19,15 @@
       </p>
     </main>
     <router-link to="./" class="faqArticle__back">
-      <img class="faqArticle__back-arrow" src="~/assets/images/icons/arrow-left-blue.svg" alt="arrow">
+      <img class="faqArticle__backArrow" src="~/assets/images/icons/arrow-left-blue.svg" alt="arrow">
       Все статьи
     </router-link>
     <section class="faqArticle__also">
-      <h3 class="faqArticle__also-title">
+      <h3 class="faqArticle__alsoTitle">
         Посмотрите ещё
       </h3>
-      <div class="faqArticle__also-wrapper">
-        <ArticlePost v-for="article in articles" :key="article.id" class="faqArticle__also-article" :data="article" />
+      <div class="faqArticle__alsoWrapper">
+        <ArticlePost v-for="article in articles" :key="article.id" class="faqArticle__alsoArticle" :data="article" />
       </div>
     </section>
   </div>
@@ -92,25 +92,25 @@ export default {
     font-weight: bold;
     letter-spacing: -0.01em;
     color: #088DED;
-    &-arrow {
-      display: inline-block;
-      margin-right: 7px;
-    }
+  }
+  &__backArrow {
+    display: inline-block;
+    margin-right: 7px;
   }
   &__also {
     margin-top: 48px;
-    &-title {
-      margin-bottom: 26px;
-    }
-    &-wrapper {
-      display: flex;
-    }
-    &-article {
-      width: 267px;
-      margin-right: 24px;
-      &:last-child {
-        margin-right: 0;
-      }
+  }
+  &__alsoTitle {
+    margin-bottom: 26px;
+  }
+  &__alsoWrapper {
+    display: flex;
+  }
+  &__alsoArticle {
+    width: 267px;
+    margin-right: 24px;
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
@@ -126,11 +126,9 @@ export default {
     &__date {
       margin-bottom: 19px;
     }
-    &__also {
-      &-article {
-        &:last-child {
-          display: none;
-        }
+    &__alsoArticle {
+      &:last-child {
+        display: none;
       }
     }
   }
@@ -143,9 +141,7 @@ export default {
       padding: 0;
       box-shadow: none;
     }
-    &__title {
-      text-align: left;
-    }
+    &__title,
     &__date {
       text-align: left;
     }
@@ -154,16 +150,16 @@ export default {
     }
     &__also {
       margin-top: 36px;
-      &-wrapper {
-        flex-direction: column;
-      }
-      &-article {
-        width: 100%;
-        margin-bottom: 12px;
-        margin-right: 0;
-        &:last-child {
-          display: block;
-        }
+    }
+    &__alsoWrapper {
+      flex-direction: column;
+    }
+    &__alsoArticle {
+      width: 100%;
+      margin-bottom: 12px;
+      margin-right: 0;
+      &:last-child {
+        display: block;
       }
     }
   }
