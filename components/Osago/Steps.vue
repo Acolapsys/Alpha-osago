@@ -154,6 +154,7 @@ export default {
       padding: 14px 16px;
       background: #FFFFFF;
       box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
     }
     &__currentText {
       font-weight: bold;
