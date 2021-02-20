@@ -1,8 +1,8 @@
 <template>
-  <div class="steps">
+  <div class="steps" :class="{ 'steps_active': listFlag }">
     <div class="steps__wrapper">
       <div class="steps__current" @click="listFlag = !listFlag">
-        <span class="steps__currentText" ref="currentText">
+        <span ref="currentText" class="steps__currentText">
           {{ steps[0].number }} / {{ steps.length - 1 }} {{ steps[0].name }}
         </span>
         <img
@@ -10,10 +10,10 @@
           class="steps__currentArrow"
           :class="{ 'steps__currentArrow_active': listFlag }"
           alt="arrow"
-        />
+        >
       </div>
       <div class="steps__list wrapper" :class="{ 'steps__list_active': listFlag }">
-        <div v-for="(item, idx) in steps" :key="item.id" @click="currentStep(idx)" class="steps__item">
+        <div v-for="(item, idx) in steps" :key="item.id" class="steps__item" @click="currentStep(idx)">
           <div class="steps__number">
             {{ item.number }}
           </div>
@@ -28,52 +28,52 @@
 
 <script>
 export default {
-    name: 'Steps',
-    data() {
-        return {
-            listFlag: false,
-            steps: [
-                {
-                    number: 1,
-                    name: 'Транспортное средство'
-                },
-                {
-                    number: 2,
-                    name: 'Владелец'
-                },
-                {
-                    number: 3,
-                    name: 'Страхователь'
-                },
-                {
-                    number: 4,
-                    name: 'Водители'
-                },
-                {
-                    number: 5,
-                    name: 'Полис'
-                },
-                {
-                    number: '+',
-                    name: 'Помощь'
-                }
-            ]
+  name: 'Steps',
+  data () {
+    return {
+      listFlag: false,
+      steps: [
+        {
+          number: 1,
+          name: 'Транспортное средство'
+        },
+        {
+          number: 2,
+          name: 'Владелец'
+        },
+        {
+          number: 3,
+          name: 'Страхователь'
+        },
+        {
+          number: 4,
+          name: 'Водители'
+        },
+        {
+          number: 5,
+          name: 'Полис'
+        },
+        {
+          number: '+',
+          name: 'Помощь'
         }
-    },
-    methods: {
-      currentStep(id) {
-        const stepsItems = document.querySelectorAll('.steps__item')
-        const substr = (id != this.steps.length - 1) ? ` / ${ this.steps.length - 1 }` : ''
-
-        for (let item of stepsItems) {
-          item.classList.remove('steps__item_active')
-        }
-
-        stepsItems[id].classList.add('steps__item_active')
-        this.$refs.currentText.innerHTML = `${this.steps[id].number}${substr} ${ this.steps[id].name }`
-        this.listFlag = false
-      }
+      ]
     }
+  },
+  methods: {
+    currentStep (id) {
+      const stepsItems = document.querySelectorAll('.steps__item')
+      const substr = (id !== this.steps.length - 1) ? ` / ${this.steps.length - 1}` : ''
+
+      for (const item of stepsItems) {
+        item.classList.remove('steps__item_active')
+      }
+
+      stepsItems[id].classList.add('steps__item_active')
+      this.$refs.currentText.innerHTML = `${this.steps[id].number}${substr} ${this.steps[id].name}`
+      this.listFlag = false
+    }
+  }
 }
 </script>
 
@@ -142,7 +142,15 @@ export default {
 }
 @media (max-width: 767px) {
   .steps {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
     padding: 0;
+    &_active {
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
     &__wrapper {
       position: relative;
     }

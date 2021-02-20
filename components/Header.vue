@@ -62,6 +62,11 @@ export default {
     @apply text-brand2
 }
 @media (max-width: 767px) {
+  .header {
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
   .logo {
     margin-left: 0;
   }
