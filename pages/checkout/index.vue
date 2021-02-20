@@ -59,6 +59,7 @@
 <script>
 import BaseInput from '~/components/base/BaseInput'
 import BaseButton from '~/components/base/BaseButton'
+
 export default {
   components: {
     BaseInput,

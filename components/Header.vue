@@ -47,7 +47,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .header {
-  @apply max-h-72
+  @apply max-h-72;
+  position: relative;
+  z-index: 10;
 }
 .navbar {
     @apply flex items-center justify-between text-white;
