@@ -1,12 +1,15 @@
 <template>
   <div class="w-full flex flex-col">
     <div class="base_input w-full relative">
-      <label class="text-sm text-darkgray w-maxContent" @click="makeActive">
+      <!-- <label class="text-sm text-darkgray w-maxContent" @click="makeActive">
         {{ currentTip }}
-      </label>
+      </label> -->
       <input
+        :readonly="readonly"
+        :id="id"
         ref="placeholder"
-        class="rounded-6 border px-12 py-16 w-full"
+        class="rounded-6 border px-12 py-12 w-full"
+        :placeholder="placeholder"
         :class="{ empty: isEmpty, 'border-red': hasErrors }"
         :autocomplete="autocomplete"
         :value="value"
@@ -26,7 +29,7 @@ export default {
   props: {
     placeholder: {
       type: String,
-      required: false
+      default: ''
     },
     required: {
       type: Boolean,
@@ -66,6 +69,14 @@ export default {
       type: Boolean,
       default: false,
       required: false
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    id: {
+      type: String,
+      default: null
     }
   },
   data () {
@@ -79,9 +90,9 @@ export default {
     isEmpty () {
       return this.value === ''
     },
-    currentTip () {
-      return this.isEmpty && this.focused ? '' : this.placeholder
-    },
+    // currentTip () {
+    //   return this.isEmpty && this.focused ? '' : this.placeholder
+    // },
     hasErrors () {
       return this.validations.filter(v => v.condition)
     },
@@ -125,7 +136,7 @@ input {
   border-radius: 6px;
   color: #333333;
   outline: none;
-  height: 48px;
+  height: 42px;
 
 font-weight: normal;
 font-size: 16px;

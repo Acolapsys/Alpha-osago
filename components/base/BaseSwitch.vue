@@ -1,12 +1,18 @@
 <template>
   <label class="switch">
-    <input type="checkbox" @click="onSwitch">
+    <input type="checkbox" :id="id" @click="onSwitch">
     <span class="slider" />
   </label>
 </template>
 <script>
 export default {
   name: 'BaseSwitch',
+  props: {
+    id: {
+      type: String,
+      default: null
+    }
+  },
   data: () => ({
     value: false
   }),
@@ -60,11 +66,11 @@ export default {
 }
 
 input:checked + .slider {
-  background-color: #0066ff;
+  background-color: #038661;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px#0066ff;
+  box-shadow: 0 0 1px#038661;
 }
 
 input:checked + .slider:before {

@@ -74,10 +74,127 @@ letter-spacing: -0.01em;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05), 0px 0px 1px rgba(0, 0, 0, 0.2);
 border-radius: 5px;
 }
-.btn-upload {
 
+@screen tablet-max {
+    h1 {
+        @apply text-ui-black text-30;
+        line-height: 110%;
+letter-spacing: -0.03em;
+
+    }
+    h2 {
+        @apply text-22;
+    }
+    .subtitle {
+        @apply text-18;
+    }
+    .body-big-1 {
+        @apply text-18;
+    }
+}
+@screen mobile-max {
+    .subtitle {
+line-height: 130%;
+    }
+    .body-bold {
+line-height: 130%;
+    }
+    .body-regular {
+line-height: 130%;
+    }
 }
 
+.hidden {
+    display: none !important;
+}
+.baseField {
+    &__label {
+        font-size: 14px;
+        color: rgba(51, 51, 51, 0.7);
+        cursor: text;
+    }
+}
+.osagoForm {
+    padding: 48px 37px 62px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05), 0px 0px 1px rgba(0, 0, 0, 0.2);
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__wrapper {
+        display: flex;
+    }
+    &__left,
+    &__right {
+        width: 50%;
+    }
+    &__left {
+        padding-right: 31px;
+        border-right: 1px solid #E0E0E0;
+    }
+    &__right {
+        padding-left: 31px;
+        border-left: 1px solid #E0E0E0;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+    }
+    &__sectionTitle {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    &__billet {
+        position: relative;
+        margin-bottom: 16px;
+        padding: 16px 23px;
+        font-weight: bold;
+        letter-spacing: -0.01em;
+        background-color: rgba(3, 134, 97, 0.05);
+    }
+    &__billetFill {
+        color: #088DED;
+        cursor: pointer;
+    }
+    &__billetClose {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+}
+@media (max-width: 1279px) {
+    .osagoForm {
+        padding: 36px 24px 50px;
+        &__left {
+            padding-right: 21px;
+        }
+        &__right {
+            padding-left: 21px;
+        }
+    }
+}
+@media (max-width: 1023px) {
+    .osagoForm {
+        padding: 48px 37px 36px;
+        &__wrapper {
+            flex-direction: column;
+        }
+        &__left,
+        &__right {
+            width: 100%;
+            padding: 0;
+            border: 0;
+        }
+        &__left {
+            margin-bottom: 16px;
+        }
+    }
+}
 .breadCrumbs {
     &__item {
         text-decoration: underline;
@@ -106,34 +223,5 @@ border-radius: 5px;
 @media (max-width: 767px) {
     .breadCrumbs {
         display: none;
-    }
-}
-
-@screen tablet-max {
-    h1 {
-        @apply text-ui-black text-30;
-        line-height: 110%;
-letter-spacing: -0.03em;
-
-    }
-    h2 {
-        @apply text-22;
-    }
-    .subtitle {
-        @apply text-18;
-    }
-    .body-big-1 {
-        @apply text-18;
-    }
-}
-@screen mobile-max {
-    .subtitle {
-line-height: 130%;
-    }
-    .body-bold {
-line-height: 130%;
-    }
-    .body-regular {
-line-height: 130%;
     }
 }

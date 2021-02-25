@@ -81,6 +81,7 @@ export default {
 .steps {
     $root: &;
     padding: 18px 0;
+    background-color: #fff;
     border-bottom: 1px solid #E6E6E6;
     &__current {
       display: none;
@@ -146,6 +147,7 @@ export default {
     top: 65px;
     left: 0;
     right: 0;
+    z-index: 9;
     padding: 0;
     &_active {
       bottom: 0;

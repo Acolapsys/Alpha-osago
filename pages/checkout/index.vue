@@ -11,26 +11,26 @@
     </p>
     <div class="checkoutPage__form">
       <div class="checkoutPage__inner">
-        <div class="checkoutPage__field">
-          <label for="checkoutPage-surname" class="checkoutPage__label">Фамилия</label>
-          <BaseInput id="checkoutPage-surname" class="checkoutPage__input" />
+        <div class="baseField">
+          <label for="checkoutPage-surname" class="baseField__label">Фамилия</label>
+          <BaseInput id="checkoutPage-surname" class="baseField__input" />
         </div>
-        <div class="checkoutPage__field">
-          <label for="checkoutPage-name" class="checkoutPage__label">Имя</label>
-          <BaseInput id="checkoutPage-name" class="checkoutPage__input" />
+        <div class="baseField">
+          <label for="checkoutPage-name" class="baseField__label">Имя</label>
+          <BaseInput id="checkoutPage-name" class="baseField__input" />
         </div>
-        <div class="checkoutPage__field">
-          <label for="checkoutPage-patronymic" class="checkoutPage__label">Отчество</label>
-          <BaseInput id="checkoutPage-patronymic" class="checkoutPage__input" />
+        <div class="baseField">
+          <label for="checkoutPage-patronymic" class="baseField__label">Отчество</label>
+          <BaseInput id="checkoutPage-patronymic" class="baseField__input" />
         </div>
       </div>
-      <div class="checkoutPage__field checkoutPage__field_short">
-        <label for="checkoutPage-birth" class="checkoutPage__label">Дата рождения</label>
-        <BaseInput id="checkoutPage-birth" class="checkoutPage__input" />
+      <div class="baseField baseField_short">
+        <label for="checkoutPage-birth" class="baseField__label">Дата рождения</label>
+        <BaseInput id="checkoutPage-birth" class="baseField__input" />
       </div>
-      <div class="checkoutPage__field">
-        <label for="checkoutPage-number" class="checkoutPage__label">Серия и номер прав</label>
-        <BaseInput id="checkoutPage-number" class="checkoutPage__input" />
+      <div class="baseField">
+        <label for="checkoutPage-number" class="baseField__label">Серия и номер прав</label>
+        <BaseInput id="checkoutPage-number" class="baseField__input" />
       </div>
       <div class="checkoutPage__inner">
         <BaseButton type="submit" class="checkoutPage__button">
@@ -76,6 +76,14 @@ export default {
 .checkoutPage {
   padding-top: 75px;
   padding-bottom: 205px;
+  .baseField {
+    width: 180px;
+    margin-bottom: 20px;
+    margin-right: 24px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
   &__form {
     margin-top: 41px;
     margin-bottom: 72px;
@@ -89,17 +97,6 @@ export default {
     &:last-child {
       margin-top: 34px;
     }
-  }
-  &__field {
-    width: 180px;
-    margin-bottom: 20px;
-    margin-right: 24px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  &__label {
-    color: rgba(51, 51, 51, 0.7);
   }
   &__button {
     width: 180px;
@@ -159,7 +156,7 @@ export default {
     &__inner {
       flex-direction: column;
     }
-    &__field:not(&__field_short),
+    .baseField:not(.baseField_short),
     &__button {
       width: 100%;
       margin-right: 0;
