@@ -1,7 +1,7 @@
 <template>
   <div class="steps" :class="{ 'steps_active': listFlag }">
     <div class="steps__wrapper">
-      <div class="steps__current" @click="listFlag = !listFlag">
+      <div class="steps__current" @click="modalToggle(!listFlag)">
         <span ref="currentText" class="steps__currentText">
           {{ steps[0].number }} / {{ steps.length - 1 }} {{ steps[0].name }}
         </span>
@@ -61,7 +61,7 @@ export default {
     }
   },
   methods: {
-    currentStep (id) {
+    currentStep(id) {
       const stepsItems = document.querySelectorAll('.steps__item')
       const substr = (id !== this.steps.length - 1) ? ` / ${this.steps.length - 1}` : ''
 
@@ -71,7 +71,17 @@ export default {
 
       stepsItems[id].classList.add('steps__item_active')
       this.$refs.currentText.innerHTML = `${this.steps[id].number}${substr} ${this.steps[id].name}`
-      this.listFlag = false
+      this.modalToggle(false)
+    },
+    modalToggle(flag) {
+      if (flag) {
+        document.body.style.paddingRight = window.innerWidth - document.body.clientWidth + "px"
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.removeAttribute('style')
+      }
+      
+      this.listFlag = flag
     }
   }
 }
@@ -184,9 +194,9 @@ export default {
       flex-direction: column;
       padding: 0 16px 14px;
       background: #fff;
-      transition: 0.3s;
       transform: translateY(-100%);
       &_active {
+        transition: 0.3s;
         transform: translateY(0);
       }
     }

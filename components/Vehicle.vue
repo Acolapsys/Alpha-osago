@@ -1,7 +1,7 @@
 <template>
-  <section class="osagoForm wrapper vehicle">
+  <section class="osagoForm wrapper">
     <h2 class="osagoForm__title">
-      Транспортное средство
+      <span>1. </span>Транспортное средство
     </h2>
     <div class="osagoForm__wrapper">
       <div class="osagoForm__left">
@@ -148,6 +148,7 @@
 </template>
 
 <script>
+import BaseInput from '~/components/base/BaseInput'
 import BaseCheckbox from '~/components/base/BaseCheckbox'
 import BaseRadio from '~/components/base/BaseRadio'
 import BaseSwitch from '~/components/base/BaseSwitch'
@@ -155,6 +156,7 @@ import BaseSelect from '~/components/base/BaseSelect'
 import BaseFile from '~/components/base/BaseFile'
 export default {
   components: {
+    BaseInput,
     BaseCheckbox,
     BaseRadio,
     BaseSwitch,
@@ -255,9 +257,6 @@ export default {
       .switch {
         margin-right: 16px;
       }
-      label {
-        cursor: text;
-      }
     }
     &_passportNumber {
       .baseField {
@@ -294,7 +293,7 @@ export default {
     &__row {
       &_params {
         .baseField {
-          width: 140px;
+          width: 136px;
         }
       }
       &_passportNumber {
@@ -326,18 +325,63 @@ export default {
       }
       &_passportNumber {
         .baseField {
-          width: 48%;
+          width: 46%;
         }
       }
       &_photos {
         .baseField {
-          width: 48%;
+          width: 46%;
         }
       }
       &_inspectionNumber,
       &_inspectionDate {
         .baseField {
-          width: 48%;
+          width: 46%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .osagoForm {
+    &__row {
+      &_stateNumber {
+        flex-direction: column;
+        align-items: flex-start;
+        .baseField {
+          width: 100%;
+        }
+        .baseCheckbox {
+          margin: 16px 0 0;
+        }
+      }
+      &_params {
+        .baseField {
+          &:nth-child(1) {
+            width: 100%;
+          }
+          &:nth-child(2),
+          &:nth-child(3) {
+            width: 46%;
+          }
+          &:nth-child(4) {
+            width: 46%;
+            margin-right: 100px;
+          }
+          &:nth-child(5),
+          &:nth-child(6) {
+            width: 46%;
+          }
+        }
+      }
+      &_idNumber {
+        .baseField {
+          width: 100%;
+        }
+      }
+      &_inspectionNumber {
+        .baseField {
+          width: 100%;
         }
       }
     }

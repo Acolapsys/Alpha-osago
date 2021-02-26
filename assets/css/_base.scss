@@ -121,6 +121,10 @@ line-height: 130%;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05), 0px 0px 1px rgba(0, 0, 0, 0.2);
     &__title {
         margin-bottom: 20px;
+        span {
+            display: none;
+            color: #038661;
+        }
     }
     &__wrapper {
         display: flex;
@@ -169,6 +173,7 @@ line-height: 130%;
 }
 @media (max-width: 1279px) {
     .osagoForm {
+        width: calc(100% - 32px);
         padding: 36px 24px 50px;
         &__left {
             padding-right: 21px;
@@ -192,6 +197,23 @@ line-height: 130%;
         }
         &__left {
             margin-bottom: 16px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .osagoForm {
+        width: 100%;
+        padding: 33px 16px;
+        &__title {
+            span {
+                display: inline;
+            }
+        }
+        &__left {
+            border-bottom: 1px solid #E0E0E0;
+        }
+        &__sectionTitle {
+            display: none;
         }
     }
 }

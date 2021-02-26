@@ -87,8 +87,15 @@ export default {
     &__controlIcon {
         margin-right: 9px;
     }
-    &__resultIcon {
-        margin-left: 9px;
+    &__resultName {
+      width: calc(100% - 32px);
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
+}
+@media (max-width: 767px) {
+  .baseFile {
+    padding: 8px;
+  }
 }
 </style>
