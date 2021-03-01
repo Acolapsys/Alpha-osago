@@ -8,7 +8,6 @@
         class="baseCheckbox__hidden"
         :id="id"
         :checked="checked"
-        @input="$emit('input', checked)"
       >
       <div class="baseCheckbox__visible" />
       <slot />
@@ -19,8 +18,8 @@
 export default {
   props: {
     checked: {
-        type: Boolean,
-        defoult: false
+      type: Boolean,
+      defoult: false
     },
     tabindex: {
       type: Number,
@@ -30,9 +29,6 @@ export default {
       type: String,
       default: null
     }
-  },
-  mounted () {
-    this.$emit('input', this.checked)
   }
 }
 </script>

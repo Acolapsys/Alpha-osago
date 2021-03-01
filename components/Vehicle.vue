@@ -8,9 +8,12 @@
         <div class="osagoForm__row osagoForm__row_stateNumber">
           <div class="baseField">
             <label for="vehicle-state-number" class="baseField__label">Государственный номер</label>
-            <BaseInput :id="'vehicle-state-number'" class="baseField__input" />
+            <BaseInput
+              id="vehicle-state-number"
+              class="baseField__input"
+            />
           </div>
-          <BaseCheckbox :id="'vehicle-no-number'">Номера нет</BaseCheckbox>
+          <BaseCheckbox id="vehicle-no-number">Номера нет</BaseCheckbox>
         </div>
         <div v-if="billet" class="osagoForm__billet">
           <img
@@ -24,34 +27,47 @@
         <div class="osagoForm__row osagoForm__row_params">
           <div class="baseField">
             <span class="baseField__label">Тип ТС</span>
-            <BaseSelect :id="'vehicle-type'" :options="paramsType" class="baseField__input" />
+            <BaseSelect
+              id="vehicle-type"
+              :options="paramsType"
+              class="baseField__input"
+            />
           </div>
           <div class="baseField">
             <label for="vehicle-brand" class="baseField__label">Марка</label>
-            <BaseInput :id="'vehicle-brand'" class="baseField__input" />
+            <BaseInput
+              id="vehicle-brand"
+              class="baseField__input"
+            />
           </div>
           <div class="baseField">
             <label for="vehicle-model" class="baseField__label">Модель</label>
-            <BaseInput :id="'vehicle-model'" class="baseField__input" />
+            <BaseInput
+              id="vehicle-model"
+              class="baseField__input"
+            />
           </div>
           <div class="baseField">
             <label for="vehicle-year" class="baseField__label">Год выпуска</label>
-            <BaseInput :id="'vehicle-year'" class="baseField__input" />
+            <BaseInput
+              id="vehicle-year"
+              class="baseField__input"
+            />
           </div>
           <div class="baseField">
             <label for="vehicle-power" class="baseField__label">Мощность</label>
             <BaseInput
-              :id="'vehicle-power'"
-              :placeholder="'100 л.с.'"
-              :type="'number'"
+              id="vehicle-power"
+              placeholder="100 л.с."
+              type="number"
               class="baseField__input"
             />
           </div>
           <div class="baseField baseField_eq">
             <BaseInput
-              :id="'vehicle-output'"
-              :placeholder="'73.6 кВт'"
-              :readonly="true"
+              id="vehicle-output"
+              placeholder="73.6 кВт"
+              readonly="readonly"
               class="baseField__input"
             />
           </div>
@@ -60,18 +76,23 @@
           <h3 class="osagoForm__sectionTitle">Идентификатор ТС</h3>
           <div class="osagoForm__row">
             <BaseRadio
-              :name="'idType'"
+              name="idType"
               :options="idType"
+              id="vehicle-id-type"
             />
           </div>
           <div class="osagoForm__row osagoForm__row_idNumber">
             <div class="baseField">
               <label for="vehicle-id-number" class="baseField__label">Номер идентификатора</label>
-              <BaseInput :id="'vehicle-id-number'" class="baseField__input" />
+              <BaseInput
+                id="vehicle-id-number"
+                placeholder="17 символов"
+                class="baseField__input"
+              />
             </div>
           </div>
           <div class="osagoForm__row osagoForm__row_trailer">
-            <BaseSwitch :id="'vehicle-trailer'" />
+            <BaseSwitch id="vehicle-trailer" />
             <label for="vehicle-trailer">Есть прицеп</label>
           </div>
         </section>
@@ -81,37 +102,54 @@
           <h3 class="osagoForm__sectionTitle">Документы на автомобиль</h3>
           <div class="osagoForm__row">
             <BaseRadio
-              :name="'docType'"
+              name="docType"
               :options="docType"
+              id="vehicle-doc-type"
             />
           </div>
           <div class="osagoForm__row osagoForm__row_passportNumber">
             <div class="baseField">
               <label for="vehicle-passport-number" class="baseField__label">Серия и номер</label>
-              <BaseInput :id="'vehicle-passport-number'" class="baseField__input" />
+              <BaseInput
+                id="vehicle-passport-number"
+                class="baseField__input"
+              />
             </div>
             <div class="baseField">
               <label for="vehicle-passport-date" class="baseField__label">Дата выдачи</label>
-              <BaseInput :id="'vehicle-passport-date'" :type="'date'" class="baseField__input" />
+              <BaseInput
+                id="vehicle-passport-date"
+                type="date"
+                class="baseField__input"
+              />
             </div>
           </div>
           <div class="osagoForm__row osagoForm__row_passportIssue">
             <div class="baseField">
               <label for="vehicle-passport-issue" class="baseField__label">Кем выдано</label>
-              <BaseInput :id="'vehicle-passport-issue'" class="baseField__input" />
+              <BaseInput
+                id="vehicle-passport-issue"
+                class="baseField__input"
+              />
             </div>
           </div>
         </section>
         <section class="osagoForm__section">
-          <h3 class="osagoForm__sectionTitle">Фотографии документа</h3>
+          <h3 class="osagoForm__sectionTitle osagoForm__sectionTitle_photos">Фотографии документа</h3>
           <div class="osagoForm__row osagoForm__row_photos">
             <div class="baseField">
               <label for="vehicle-photos-front" class="baseField__label">Лицевая сторона</label>
-              <BaseFile :id="'vehicle-photos-front'" class="baseField__input" />
+              <BaseFile
+                id="vehicle-photos-front"
+                class="baseField__input"
+              />
             </div>
             <div class="baseField">
               <label for="vehicle-photos-back" class="baseField__label">Оборотная сторона</label>
-              <BaseFile :id="'vehicle-photos-back'" class="baseField__input" />
+              <BaseFile
+                id="vehicle-photos-back"
+                class="baseField__input"
+              />
             </div>
           </div>
         </section>
@@ -120,23 +158,27 @@
           <div class="osagoForm__row osagoForm__row_inspectionNumber">
             <div class="baseField">
               <label for="vehicle-inspection-number" class="baseField__label">Номер диагностической карты</label>
-              <BaseInput :id="'vehicle-inspection-number'" class="baseField__input" />
+              <BaseInput
+                id="vehicle-inspection-number"
+                placeholder="22 цифры"
+                class="baseField__input"
+              />
             </div>
           </div>
           <div class="osagoForm__row osagoForm__row_inspectionDate">
             <div class="baseField">
               <label for="vehicle-inspection-from" class="baseField__label">Дата выдачи</label>
               <BaseInput
-                :id="'vehicle-inspection-from'"
-                :type="'date'"
+                id="vehicle-inspection-from"
+                type="date"
                 class="baseField__input"
               />
             </div>
             <div class="baseField">
               <label for="vehicle-inspection-to" class="baseField__label">Действительна до</label>
               <BaseInput
-                :id="'vehicle-inspection-to'"
-                :type="'date'"
+                id="vehicle-inspection-to"
+                type="date"
                 class="baseField__input"
               />
             </div>

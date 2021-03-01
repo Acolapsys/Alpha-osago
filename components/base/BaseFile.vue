@@ -8,10 +8,7 @@
       type="file"
       class="baseFile__hidden"
       :id="id"
-      @input="
-        $emit('input', $event.target.files[0]);
-        uploadFn($event.target.files[0].name)
-      "
+      @input="uploadFn($event.target.files[0].name)"
     >
     <div ref="control" class="baseFile__control">
       <img
@@ -89,6 +86,7 @@ export default {
     }
     &__resultName {
       width: calc(100% - 32px);
+      white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
     }
@@ -96,6 +94,10 @@ export default {
 @media (max-width: 767px) {
   .baseFile {
     padding: 8px;
+    font-size: 12px;
+    &__resultIcon {
+      width: 14px;
+    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <button class="base-button flex justify-center items-center body-bold" :class="classes" :disabled="disabled" @click="$emit('click')">
+  <button class="base-button flex justify-center items-center body-bold" :class="classes" :disabled="disabled" :id="id">
     <button-spinner v-show="loading" />
     <slot />
   </button>
@@ -27,6 +27,10 @@ export default {
     classes: {
       type: Array,
       default: () => ['rounded-5']
+    },
+    id: {
+      type: String,
+      default: null
     }
   }
 }

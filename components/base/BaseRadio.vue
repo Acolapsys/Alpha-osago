@@ -1,5 +1,5 @@
 <template>
-  <div ref="wrapper" class="baseRadio">
+  <div class="baseRadio">
     <label
       v-for="option in options"
       :key="option.id"
@@ -12,7 +12,7 @@
         :name="name"
         :value="option.value"
         :checked="option.checked"
-        @input="checkFn"
+        :id="id"
       >
       <div class="baseRadio__visible" />
       <div class="baseRadio__text">{{ option.text }}</div>
@@ -34,16 +34,10 @@ export default {
     tabindex: {
       type: Number,
       default: 0
-    }
-  },
-  mounted () {
-    this.checkFn()
-  },
-  methods: {
-    checkFn () {
-      for (const item of this.$refs.wrapper.querySelectorAll(`[name=${this.name}]`)) {
-        item.checked && this.$emit('input', item.value)
-      }
+    },
+    id: {
+      type: String,
+      default: null
     }
   }
 }

@@ -108,10 +108,24 @@ line-height: 130%;
     display: none !important;
 }
 .baseField {
+    position: relative;
     &__label {
         font-size: 14px;
         color: rgba(51, 51, 51, 0.7);
         cursor: text;
+    }
+    &__hint {
+        position: absolute;
+        padding-left: 12px;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+}
+@media (max-width: 767px) {
+    .baseField {
+        &__label {
+            font-size: 12px;
+        }
     }
 }
 .osagoForm {
@@ -125,6 +139,38 @@ line-height: 130%;
             display: none;
             color: #038661;
         }
+    }
+    &__block {
+        border: 1px solid #E0E0E0;
+        border-radius: 10px;
+    }
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+        border-bottom: 1px solid #E0E0E0;
+    }
+    &__headTitle {
+        font-size: 18px;
+        margin-right: 66px;
+    }
+    &__headCopy {
+        font-weight: bold;
+        color: #088DED;
+        cursor: pointer;
+    }
+    &__headRemove {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color: #D34444;
+        cursor: pointer;
+        img {
+            margin-right: 9px;
+        }
+    }
+    &__body {
+        padding: 40px 28px 50px;
     }
     &__wrapper {
         display: flex;
@@ -170,6 +216,11 @@ line-height: 130%;
         right: 10px;
         cursor: pointer;
     }
+    &__button {
+        color: #088DED;
+        border: 1px solid #E0E0E0;
+        border-radius: 10px;
+    }
 }
 @media (max-width: 1279px) {
     .osagoForm {
@@ -209,11 +260,30 @@ line-height: 130%;
                 display: inline;
             }
         }
+        &__block {
+            background-color: #F6F6F6;
+            border: 0;
+        }
+        &__head {
+            padding-bottom: 0;
+            border: 0;
+        }
+        &__headCopy,
+        &__headRemove {
+            display: none;
+        }
+        &__body {
+            padding: 16px;
+        }
         &__left {
             border-bottom: 1px solid #E0E0E0;
         }
-        &__sectionTitle {
+        &__sectionTitle:not(&__sectionTitle_photos) {
             display: none;
+        }
+        &__button {
+            background-color: #F6F6F6;
+            border: 0;
         }
     }
 }

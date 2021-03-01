@@ -19,7 +19,6 @@ export default {
   methods: {
     onSwitch () {
       this.value = !this.value
-      this.$emit('onSwitch', this.value)
     }
   }
 }

@@ -7,6 +7,8 @@
     <div
       class="baseSelect__selected"
       :class="{ 'baseSelect__selected_open': open }"
+      :id="id"
+      :data-selected="selected"
       @click="open = !open"
     >
       {{ selected }}
@@ -27,7 +29,6 @@
         @click="
           selected = option;
           open = false;
-          $emit('input', option);
         "
       >
         {{ option }}
@@ -50,6 +51,10 @@ export default {
     tabindex: {
       type: Number,
       default: 0
+    },
+    id: {
+      type: String,
+      default: null
     }
   },
   data () {
@@ -61,9 +66,6 @@ export default {
           : null,
       open: false
     }
-  },
-  mounted () {
-    this.$emit('input', this.selected)
   }
 }
 </script>

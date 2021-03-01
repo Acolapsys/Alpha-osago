@@ -3,28 +3,41 @@
     <h2 class="osagoForm__title">
       <span>3. </span>Страхователь
     </h2>
+    <div class="osagoForm__row osagoForm__row_same">
+      <BaseSwitch id="insurer-same" />
+      <label for="insurer-same">Тот же, кто и владелец</label>
+    </div>
     <div class="osagoForm__wrapper">
       <div class="osagoForm__left">
-        <div class="osagoForm__row osagoForm__row_same">
-          <BaseSwitch :id="'insurer-same'" />
-          <label for="insurer-same">Тот же, кто и владелец</label>
-        </div>
         <div class="osagoForm__row osagoForm__row_data">
           <div class="baseField">
             <label for="insurer-data-surname" class="baseField__label">Фамилия</label>
-            <BaseInput :id="'insurer-data-surname'" class="baseField__input" />
+            <BaseInput
+              id="insurer-data-surname"
+              class="baseField__input"
+            />
           </div>
           <div class="baseField">
             <label for="insurer-data-name" class="baseField__label">Имя</label>
-            <BaseInput :id="'insurer-data-name'" class="baseField__input" />
+            <BaseInput
+              id="insurer-data-name"
+              class="baseField__input"
+            />
           </div>
           <div class="baseField">
             <label for="insurer-data-patronymic" class="baseField__label">Отчество</label>
-            <BaseInput :id="'insurer-data-patronymic'" class="baseField__input" />
+            <BaseInput
+              id="insurer-data-patronymic"
+              class="baseField__input"
+            />
           </div>
           <div class="baseField">
             <label for="insurer-data-birth" class="baseField__label">Дата рождения</label>
-            <BaseInput :id="'insurer-data-birth'" :type="'date'" class="baseField__input" />
+            <BaseInput
+              id="insurer-data-birth"
+              type="date"
+              class="baseField__input"
+            />
           </div>
         </div>
         <section class="osagoForm__section">
@@ -33,8 +46,9 @@
           </h3>
           <div class="osagoForm__row">
             <BaseRadio
-              :name="'insurerGender'"
+              name="insurerGender"
               :options="genderType"
+              id="insurer-gender"
             />
           </div>
         </section>
@@ -47,36 +61,57 @@
           <div class="osagoForm__row osagoForm__row_passportData">
             <div class="baseField">
               <label for="insurer-passport-number" class="baseField__label">Серия и номер</label>
-              <BaseInput :id="'insurer-passport-number'" class="baseField__input" />
+              <BaseInput
+                id="insurer-passport-number"
+                placeholder="10 цифр"
+                class="baseField__input"
+              />
             </div>
             <div class="baseField">
               <label for="insurer-passport-date" class="baseField__label">Дата выдачи</label>
-              <BaseInput :id="'insurer-passport-date'" :type="'date'" class="baseField__input" />
+              <BaseInput
+                id="insurer-passport-date"
+                type="date"
+                class="baseField__input"
+              />
             </div>
             <div class="baseField">
               <label for="insurer-passport-code" class="baseField__label">Код подразделения</label>
-              <BaseInput :id="'insurer-passport-code'" class="baseField__input" />
+              <BaseInput
+                id="insurer-passport-code"
+                placeholder="6 цифр"
+                class="baseField__input"
+              />
             </div>
           </div>
           <div class="osagoForm__row osagoForm__row_passportAddress">
             <div class="baseField">
               <label for="insurer-passport-address" class="baseField__label">Адрес регистрации (как в паспорте)</label>
-              <BaseInput :id="'insurer-passport-address'" class="baseField__input" />
+              <BaseInput
+                id="insurer-passport-address"
+                class="baseField__input"
+              />
             </div>
           </div>
         </section>
         <section class="osagoForm__section">
-          <h3 class="osagoForm__sectionTitle">
+          <h3 class="osagoForm__sectionTitle osagoForm__sectionTitle_photos">
             Фотографии документа
           </h3>
           <div class="osagoForm__row osagoForm__row_photos">
             <div class="baseField">
               <label for="insurer-photos-front" class="baseField__label">Лицевая сторона</label>
-              <BaseFile :id="'insurer-photos-front'" class="baseField__input" />
+              <BaseFile
+                id="insurer-photos-front"
+                class="baseField__input"
+              />
             </div>
             <div class="baseField">
               <label for="insurer-photos-back" class="baseField__label">Оборотная сторона</label>
-              <BaseFile :id="'insurer-photos-back'" class="baseField__input" />
+              <BaseFile
+                id="insurer-photos-back"
+                class="baseField__input"
+              />
             </div>
           </div>
         </section>

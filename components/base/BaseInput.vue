@@ -5,10 +5,10 @@
         {{ currentTip }}
       </label> -->
       <input
-        :readonly="readonly"
-        :id="id"
         ref="placeholder"
         class="rounded-6 border px-12 py-12 w-full"
+        :readonly="readonly"
+        :id="id"
         :placeholder="placeholder"
         :class="{ empty: isEmpty, 'border-red': hasErrors }"
         :autocomplete="autocomplete"
@@ -16,8 +16,7 @@
         :type="type === 'password' ? passwordCondition : type"
         @focus="setFocus(true)"
         @keyup.enter.prevent="enter"
-        @blur="$emit('blur'), setFocus(false)"
-        @input="$emit('input', $event.target.value)"
+        @blur="setFocus(false)"
       >
     </div>
   </div>

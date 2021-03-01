@@ -4,6 +4,7 @@
     <Vehicle class="vehicle" />
     <Owner class="owner" />
     <Insurer class="insurer" />
+    <Driver class="driver" />
   </div>
 </template>
 
@@ -12,12 +13,14 @@ import Steps from '~/components/Osago/Steps'
 import Vehicle from '~/components/Vehicle'
 import Owner from '~/components/Owner'
 import Insurer from '~/components/Insurer'
+import Driver from '~/components/Osago/Driver'
 export default {
   components: {
     Steps,
     Vehicle,
     Owner,
-    Insurer
+    Insurer,
+    Driver
   }
 }
 </script>
@@ -31,7 +34,8 @@ export default {
   margin-top: 74px;
   margin-bottom: 31px;
 }
-.owner {
+.owner,
+.insurer {
   margin-bottom: 31px;
 }
 @media (max-width: 1023px) {
@@ -47,7 +51,8 @@ export default {
     margin-top: 0;
     margin-bottom: 0;
   }
-  .owner {
+  .owner,
+  .insurer {
     margin-bottom: 0;
   }
 }

@@ -8,19 +8,32 @@
         <div class="osagoForm__row osagoForm__row_data">
           <div class="baseField">
             <label for="owner-data-surname" class="baseField__label">Фамилия</label>
-            <BaseInput :id="'owner-data-surname'" class="baseField__input" />
+            <BaseInput
+                id="owner-data-surname"
+                class="baseField__input"
+            />
           </div>
           <div class="baseField">
             <label for="owner-data-name" class="baseField__label">Имя</label>
-            <BaseInput :id="'owner-data-name'" class="baseField__input" />
+            <BaseInput
+                id="owner-data-name"
+                class="baseField__input"
+            />
           </div>
           <div class="baseField">
             <label for="owner-data-patronymic" class="baseField__label">Отчество</label>
-            <BaseInput :id="'owner-data-patronymic'" class="baseField__input" />
+            <BaseInput
+                id="owner-data-patronymic"
+                class="baseField__input"
+            />
           </div>
           <div class="baseField">
             <label for="owner-data-birth" class="baseField__label">Дата рождения</label>
-            <BaseInput :id="'owner-data-birth'" :type="'date'" class="baseField__input" />
+            <BaseInput
+                id="owner-data-birth"
+                type="date"
+                class="baseField__input"
+            />
           </div>
         </div>
         <section class="osagoForm__section">
@@ -29,8 +42,9 @@
           </h3>
           <div class="osagoForm__row">
             <BaseRadio
-              :name="'ownerGender'"
+              name="ownerGender"
               :options="genderType"
+              id="owner-gender"
             />
           </div>
         </section>
@@ -43,36 +57,57 @@
             <div class="osagoForm__row osagoForm__row_passportData">
                 <div class="baseField">
                     <label for="owner-passport-number" class="baseField__label">Серия и номер</label>
-                    <BaseInput :id="'owner-passport-number'" class="baseField__input" />
+                    <BaseInput
+                        id="owner-passport-number"
+                        placeholder="10 цифр"
+                        class="baseField__input"
+                    />
                 </div>
                 <div class="baseField">
                     <label for="owner-passport-date" class="baseField__label">Дата выдачи</label>
-                    <BaseInput :id="'owner-passport-date'" :type="'date'" class="baseField__input" />
+                    <BaseInput
+                        id="owner-passport-date"
+                        type="date"
+                        class="baseField__input"
+                    />
                 </div>
                 <div class="baseField">
                     <label for="owner-passport-code" class="baseField__label">Код подразделения</label>
-                    <BaseInput :id="'owner-passport-code'" class="baseField__input" />
+                    <BaseInput
+                        id="owner-passport-code"
+                        placeholder="6 цифр"
+                        class="baseField__input"
+                    />
                 </div>
             </div>
             <div class="osagoForm__row osagoForm__row_passportAddress">
                 <div class="baseField">
                     <label for="owner-passport-address" class="baseField__label">Адрес регистрации (как в паспорте)</label>
-                    <BaseInput :id="'owner-passport-address'" class="baseField__input" />
+                    <BaseInput
+                        id="owner-passport-address"
+                        class="baseField__input"
+                    />
                 </div>
             </div>
         </section>
         <section class="osagoForm__section">
-            <h3 class="osagoForm__sectionTitle">
+            <h3 class="osagoForm__sectionTitle osagoForm__sectionTitle_photos">
                 Фотографии документа
             </h3>
             <div class="osagoForm__row osagoForm__row_photos">
                 <div class="baseField">
                     <label for="owner-photos-front" class="baseField__label">Лицевая сторона</label>
-                    <BaseFile :id="'owner-photos-front'" class="baseField__input" />
+                    <BaseFile
+                        id="owner-photos-front"
+                        class="baseField__input"
+                    />
                 </div>
                 <div class="baseField">
                     <label for="owner-photos-back" class="baseField__label">Оборотная сторона</label>
-                    <BaseFile :id="'owner-photos-back'" class="baseField__input" />
+                    <BaseFile
+                        id="owner-photos-back"
+                        class="baseField__input"
+                    />
                 </div>
             </div>
         </section>
