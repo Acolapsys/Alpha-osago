@@ -3,6 +3,9 @@
     <h2 class="osagoForm__title">
       <span>1. </span>Транспортное средство
     </h2>
+    <div class="osagoForm__row">
+      <ForLogged :list="loggedVehicles" />
+    </div>
     <div class="osagoForm__wrapper">
       <div class="osagoForm__left">
         <div class="osagoForm__row osagoForm__row_stateNumber">
@@ -196,6 +199,7 @@ import BaseRadio from '~/components/base/BaseRadio'
 import BaseSwitch from '~/components/base/BaseSwitch'
 import BaseSelect from '~/components/base/BaseSelect'
 import BaseFile from '~/components/base/BaseFile'
+import ForLogged from '~/components/ForLogged'
 export default {
   components: {
     BaseInput,
@@ -203,10 +207,28 @@ export default {
     BaseRadio,
     BaseSwitch,
     BaseSelect,
-    BaseFile
+    BaseFile,
+    ForLogged
   },
   data() {
     return {
+      loggedVehicles: [
+        {
+          title: 'Новое'
+        },
+        {
+          title: 'Toyota Land Cruiser',
+          subtitle: 'A 121 AA 163'
+        },
+        {
+          title: 'Yamaha R3',
+          subtitle: '5558 АВ 63'
+        },
+        {
+          title: 'Honda CBR 600',
+          subtitle: 'A 121 AA 163'
+        }
+      ],
       billet: true,
       paramsType: [
         'Седан',

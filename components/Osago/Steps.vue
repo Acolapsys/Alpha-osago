@@ -111,7 +111,8 @@ export default {
       border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
-      &_active {
+      &_active,
+      &:hover {
         background: #EBF7F3;
         #{$root}__number,
         #{$root}__name {

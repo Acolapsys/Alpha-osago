@@ -3,6 +3,9 @@
     <h2 class="osagoForm__title">
       <span>2. </span>Владелец
     </h2>
+    <div class="osagoForm__row">
+        <ForLogged :list="loggedOwners" />
+    </div>
     <div class="osagoForm__wrapper">
       <div class="osagoForm__left">
         <div class="osagoForm__row osagoForm__row_data">
@@ -120,14 +123,27 @@
 import BaseInput from '~/components/base/BaseInput'
 import BaseRadio from '~/components/base/BaseRadio'
 import BaseFile from '~/components/base/BaseFile'
+import ForLogged from '~/components/ForLogged'
 export default {
   components: {
     BaseInput,
     BaseRadio,
-    BaseFile
+    BaseFile,
+    ForLogged
   },
   data () {
     return {
+        loggedOwners: [
+            {
+                title: 'Новый человек'
+            },
+            {
+                title: 'Селиверстов Иван Петрович'
+            },
+            {
+                title: 'Селиверстова Елена Константиновна'
+            }
+        ],
         genderType: [
             {
                 value: 1,

@@ -19,7 +19,7 @@ export default {
   props: {
     checked: {
       type: Boolean,
-      defoult: false
+      default: false
     },
     tabindex: {
       type: Number,

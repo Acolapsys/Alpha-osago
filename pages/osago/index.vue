@@ -5,6 +5,11 @@
     <Owner class="owner" />
     <Insurer class="insurer" />
     <Driver class="driver" />
+    <Police class="police" />
+    <BaseButton class="osago__submit" id="calculationSubmit">Рассчитать ОСАГО</BaseButton>
+    <div class="wrapper">
+      <CalculationResult v-for="item in 5" :key="item.id" :calculationOptions="calculation1" />
+    </div>
   </div>
 </template>
 
@@ -12,31 +17,80 @@
 import Steps from '~/components/Osago/Steps'
 import Vehicle from '~/components/Vehicle'
 import Owner from '~/components/Owner'
-import Insurer from '~/components/Insurer'
+import Insurer from '~/components/Osago/Insurer'
 import Driver from '~/components/Osago/Driver'
+import Police from '~/components/Osago/Police'
+import BaseButton from '~/components/base/BaseButton'
+import CalculationResult from '~/components/CalculationResult'
 export default {
   components: {
     Steps,
     Vehicle,
     Owner,
     Insurer,
-    Driver
+    Driver,
+    Police,
+    BaseButton,
+    CalculationResult
+  },
+  data() {
+    return {
+      calculation1: {
+        price: '3 750',
+        items: [
+          {
+            name: 'КТ',
+            coefficient: '1.0'
+          },
+          {
+            name: 'КБМ',
+            coefficient: '1.0'
+          },
+          {
+            name: 'КВС',
+            coefficient: '1.0'
+          },
+          {
+            name: 'КО',
+            coefficient: '1.0'
+          },
+          {
+            name: 'КМ',
+            coefficient: '1.0'
+          },
+          {
+            name: 'КС',
+            coefficient: '1.0'
+          }
+        ]
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.osago {
-  padding-bottom: 31px;
-  background-color: #F6F6F6;
-}
 .vehicle {
   margin-top: 74px;
   margin-bottom: 31px;
 }
 .owner,
-.insurer {
+.insurer,
+.driver {
   margin-bottom: 31px;
+}
+.calculationResult {
+  margin-bottom: 20px;
+}
+.osago {
+  padding-bottom: 31px;
+  background-color: #F6F6F6;
+  &__submit {
+    width: 335px;
+    margin: 70px auto;
+    color: #fff;
+    background: #FDB215;
+  }
 }
 @media (max-width: 1023px) {
   .vehicle {
@@ -44,16 +98,26 @@ export default {
   }
 }
 @media (max-width: 767px) {
-  .osago {
-    padding-top: 110px;
-  }
   .vehicle {
     margin-top: 0;
     margin-bottom: 0;
   }
   .owner,
-  .insurer {
+  .insurer,
+  .driver {
     margin-bottom: 0;
+  }
+  .police {
+    border-top: 1px solid #E0E0E0;
+    box-shadow: none;
+  }
+  .osago {
+    padding-top: 110px;
+    background-color: #FFF;
+    &__submit {
+      width: 90%;
+      margin: 20px auto 50px;
+    }
   }
 }
 </style>

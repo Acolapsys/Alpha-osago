@@ -3,6 +3,9 @@
     <h2 class="osagoForm__title">
       <span>3. </span>Страхователь
     </h2>
+    <div class="osagoForm__row">
+        <ForLogged :list="loggedInsurers" />
+    </div>
     <div class="osagoForm__row osagoForm__row_same">
       <BaseSwitch id="insurer-same" />
       <label for="insurer-same">Тот же, кто и владелец</label>
@@ -46,9 +49,9 @@
           </h3>
           <div class="osagoForm__row">
             <BaseRadio
+              id="insurer-gender"
               name="insurerGender"
               :options="genderType"
-              id="insurer-gender"
             />
           </div>
         </section>
@@ -125,15 +128,28 @@ import BaseSwitch from '~/components/base/BaseSwitch'
 import BaseInput from '~/components/base/BaseInput'
 import BaseRadio from '~/components/base/BaseRadio'
 import BaseFile from '~/components/base/BaseFile'
+import ForLogged from '~/components/ForLogged'
 export default {
   components: {
     BaseSwitch,
     BaseInput,
     BaseRadio,
-    BaseFile
+    BaseFile,
+    ForLogged
   },
   data () {
     return {
+      loggedInsurers: [
+        {
+            title: 'Новый человек'
+        },
+        {
+            title: 'Селиверстов Иван Петрович'
+        },
+        {
+            title: 'Селиверстова Елена Константиновна'
+        }
+      ],
       genderType: [
         {
           value: 1,
