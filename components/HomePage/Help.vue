@@ -81,8 +81,9 @@
             </div>
             <div class="text">
               Стоимость услуги: <span>750 ₽</span>
-              <br>
-              Итоговая стоимость: стоимость полиса + 750 ₽
+              <p>
+                Итоговая стоимость:<br> стоимость полиса + 750 ₽
+              </p>
             </div>
           </div>
           <div class="condition_col">
@@ -90,7 +91,7 @@
               <img src="~/assets/images/icons/padlock.png" alt="padlock icon">
             </div>
             <div class="text">
-              Деньги “замораживаются” в банке и списываются со счёта только после оформления
+              Деньги “замораживаются”<br>в банке и списываются<br>со счёта только после оформления
             </div>
           </div>
           <div class="condition_col">
@@ -98,7 +99,7 @@
               <img src="~/assets/images/icons/clock.png" alt="clock icon">
             </div>
             <div class="text">
-              Деньги вернутся на Ваш счёт, если полис не будет оформлен за 48 часов
+              Деньги вернутся на Ваш счёт, если полис не будет<br>оформлен за 48 часов
             </div>
           </div>
           <div class="condition_col">
@@ -106,7 +107,7 @@
               <img src="~/assets/images/icons/cashback.png" alt="cashback icon">
             </div>
             <div class="text">
-              Если полис получится оформить по стоимости ниже, чем вы заплатили, вернём разницу на карту
+              Если полис получится оформить по стоимости<br>ниже, чем вы заплатили,<br>вернём разницу на карту
             </div>
           </div>
         </div>
@@ -190,5 +191,13 @@
 }
 .count_button {
 box-shadow: 0px 3px 15px rgba(4, 166, 120, 0.3);
+}
+.text{
+  span{
+    color: #038661;
+  }
+  p{
+    margin-top: 7px;
+  }
 }
 </style>
