@@ -27,12 +27,14 @@
         </div>
       </div>
     </div>
-    <BaseButton class="calculationResult__button calculationResult__button_desktop">
-      Оформить ОСАГО
-    </BaseButton>
-    <BaseButton class="calculationResult__button calculationResult__button_mobile">
-      Оформить
-      <img src="~/assets/images/icons/arrow-green.svg" alt="arrow">
+    <BaseButton class="calculationResult__button">
+      <div class="calculationResult__buttonDesktop">
+        Оформить ОСАГО
+      </div>
+      <div class="calculationResult__buttonMobile">
+        Оформить
+        <img src="~/assets/images/icons/arrow-green.svg" alt="arrow">
+      </div>
     </BaseButton>
   </div>
 </template>
@@ -111,14 +113,21 @@ export default {
         font-size: 14px;
     }
     &__button {
-        &_desktop {
-            width: 210px;
-            color: #fff;
-            background: #FDB215;
-        }
-        &_mobile {
-            display: none;
-        }
+      width: max-content;
+      height: max-content;
+    }
+    &__buttonDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 210px;
+      height: 50px;
+      color: #fff;
+      background: #FDB215;
+      border-radius: 5px;
+    }
+    &__buttonMobile {
+      display: none;
     }
 }
 @media (max-width: 1023px) {
@@ -128,12 +137,10 @@ export default {
         &__inner {
             justify-content: center;
             width: 100%;
+            margin-bottom: 20px;
         }
-        &__button {
-            height: 40px;
-            &_desktop {
-                margin-top: 20px;
-            }
+        &__buttonDesktop {
+          height: 40px;
         }
     }
 }
@@ -166,22 +173,20 @@ export default {
             }
         }
         &__button {
-            &_desktop {
-                display: none;
-            }
-            &_mobile {
-                display: flex;
-                align-items: center;
-                width: auto;
-                height: auto;
-                letter-spacing: -0.01em;
-                color: #038661;
-                outline: 0;
-                img {
-                    margin-top: 2px;
-                    margin-left: 6px;
-                }
-            }
+          outline: 0;
+        }
+        &__buttonDesktop {
+          display: none;
+        }
+        &__buttonMobile {
+          display: flex;
+          align-items: center;
+          letter-spacing: -0.01em;
+          color: #038661;
+          img {
+            margin-top: 2px;
+            margin-left: 6px;
+          }
         }
     }
 }
