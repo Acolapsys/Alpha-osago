@@ -160,7 +160,7 @@ export default {
 }
 @media (max-width: 767px) {
   .checkoutPage {
-    padding-top: 40px;
+    padding-top: 100px;
     padding-bottom: 94px;
     &__title {
       font-size: 26px;

@@ -33,7 +33,7 @@
       </div>
       <div class="calculationResult__buttonMobile">
         Оформить
-        <img src="~/assets/images/icons/arrow-green.svg" alt="arrow">
+        <img src="~/assets/images/icons/arrow-right-green.svg" alt="arrow">
       </div>
     </BaseButton>
   </div>
@@ -42,6 +42,7 @@
 <script>
 import BaseButton from '~/components/base/BaseButton'
 export default {
+  name: 'CalculationResult',
   components: {
     BaseButton
   },

@@ -1,11 +1,11 @@
 <template>
   <div class="osago">
-    <Steps />
-    <Vehicle class="vehicle" />
-    <Owner class="owner" />
-    <Insurer class="insurer" />
-    <Driver class="driver" />
-    <Police class="police" />
+    <Steps :steps="steps" />
+    <Vehicle id="vehicle" />
+    <Owner id="owner" />
+    <Insurer id="insurer" />
+    <Driver id="driver" />
+    <Police id="police" />
     <BaseButton class="osago__submit" id="calculationSubmit">Рассчитать ОСАГО</BaseButton>
     <div class="wrapper">
       <CalculationResult v-for="item in 5" :key="item.id" :calculationOptions="calculation1" />
@@ -35,6 +35,38 @@ export default {
   },
   data() {
     return {
+      steps: [
+        {
+          number: 1,
+          name: 'Транспортное средство',
+          link: '/osago#vehicle'
+        },
+        {
+          number: 2,
+          name: 'Владелец',
+          link: '/osago#owner'
+        },
+        {
+          number: 3,
+          name: 'Страхователь',
+          link: '/osago#insurer'
+        },
+        {
+          number: 4,
+          name: 'Водители',
+          link: '/osago#driver'
+        },
+        {
+          number: 5,
+          name: 'Полис',
+          link: '/osago#police'
+        },
+        {
+          number: '+',
+          name: 'Помощь',
+          link: '/osago/help'
+        }
+      ],
       calculation1: {
         price: '3 750',
         items: [
@@ -70,13 +102,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.vehicle {
+#vehicle {
   margin-top: 74px;
   margin-bottom: 31px;
 }
-.owner,
-.insurer,
-.driver {
+#owner,
+#insurer,
+#driver {
   margin-bottom: 31px;
 }
 .calculationResult {
@@ -93,21 +125,21 @@ export default {
   }
 }
 @media (max-width: 1023px) {
-  .vehicle {
+  #vehicle {
     margin-top: 30px;
   }
 }
 @media (max-width: 767px) {
-  .vehicle {
+  #vehicle {
     margin-top: 0;
     margin-bottom: 0;
   }
-  .owner,
-  .insurer,
-  .driver {
+  #owner,
+  #insurer,
+  #driver {
     margin-bottom: 0;
   }
-  .police {
+  #police {
     border-top: 1px solid #E0E0E0;
     box-shadow: none;
   }

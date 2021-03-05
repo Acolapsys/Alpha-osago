@@ -13,14 +13,14 @@
         >
       </div>
       <div class="steps__list wrapper" :class="{ 'steps__list_active': listFlag }">
-        <div v-for="(item, idx) in steps" :key="item.id" class="steps__item" @click="currentStep(idx)">
+        <nuxt-link v-for="(item, idx) in steps" :key="item.id" :to="item.link" class="steps__item" @click="currentStep(idx)">
           <div class="steps__number">
             {{ item.number }}
           </div>
           <div class="steps__name">
             {{ item.name }}
           </div>
-        </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -29,35 +29,15 @@
 <script>
 export default {
   name: 'Steps',
+  props: {
+    steps: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
-      listFlag: false,
-      steps: [
-        {
-          number: 1,
-          name: 'Транспортное средство'
-        },
-        {
-          number: 2,
-          name: 'Владелец'
-        },
-        {
-          number: 3,
-          name: 'Страхователь'
-        },
-        {
-          number: 4,
-          name: 'Водители'
-        },
-        {
-          number: 5,
-          name: 'Полис'
-        },
-        {
-          number: '+',
-          name: 'Помощь'
-        }
-      ]
+      listFlag: false
     }
   },
   methods: {

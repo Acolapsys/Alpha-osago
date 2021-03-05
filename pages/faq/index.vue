@@ -109,7 +109,7 @@ export default {
 }
 @media (max-width: 767px) {
   .faqPage {
-    padding-top: 40px;
+    padding-top: 100px;
     padding-bottom: 53px;
     &__title {
       font-size: 26px;
