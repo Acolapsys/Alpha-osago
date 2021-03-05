@@ -1,5 +1,5 @@
 <template>
-  <button class="base-button flex justify-center items-center body-bold" :class="classes" :disabled="disabled" :id="id">
+  <button :id="id" class="base-button flex justify-center items-center body-bold" :class="classes" :disabled="disabled">
     <button-spinner v-show="loading" />
     <slot />
   </button>

@@ -6,9 +6,11 @@
     <Insurer class="insurer" />
     <Driver class="driver" />
     <Police class="police" />
-    <BaseButton class="osago__submit" id="calculationSubmit">Рассчитать ОСАГО</BaseButton>
+    <BaseButton id="calculationSubmit" class="osago__submit">
+      Рассчитать ОСАГО
+    </BaseButton>
     <div class="wrapper">
-      <CalculationResult v-for="item in 5" :key="item.id" :calculationOptions="calculation1" />
+      <CalculationResult v-for="item in 5" :key="item.id" :calculation-options="calculation1" />
     </div>
   </div>
 </template>
@@ -33,7 +35,7 @@ export default {
     BaseButton,
     CalculationResult
   },
-  data() {
+  data () {
     return {
       calculation1: {
         price: '3 750',

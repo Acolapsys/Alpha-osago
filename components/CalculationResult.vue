@@ -4,13 +4,13 @@
       <img src="~/assets/images/eagle-rosgosstrakh.png" alt="image" class="calculationResult__img">
       <div class="calculationResult__item calculationResult__item_price">
         <div class="calculationResult__name">
-            База
+          База
         </div>
         <div class="calculationResult__coefficient">
-            <span>{{ calculationOptions.price }}</span> ₽
+          <span>{{ calculationOptions.price }}</span> ₽
         </div>
       </div>
-      <div class="calculationResult__item" v-for="item in calculationOptions.items" :key="item.id">
+      <div v-for="item in calculationOptions.items" :key="item.id" class="calculationResult__item">
         <div class="calculationResult__name">
           {{ item.name }}
         </div>
@@ -20,34 +20,36 @@
       </div>
       <div class="calculationResult__item calculationResult__item_result">
         <div class="calculationResult__name">
-            Стоимость
+          Стоимость
         </div>
         <div class="calculationResult__coefficient">
-            <span>{{ result }}</span> ₽
+          <span>{{ result }}</span> ₽
         </div>
       </div>
     </div>
-    <BaseButton class="calculationResult__button">Оформить ОСАГО</BaseButton>
+    <BaseButton class="calculationResult__button">
+      Оформить ОСАГО
+    </BaseButton>
   </div>
 </template>
 
 <script>
 import BaseButton from '~/components/base/BaseButton'
 export default {
-    components: {
-        BaseButton
-    },
-    props: {
-        calculationOptions: {
-            type: Object,
-            required: true
-        }
-    },
-    computed: {
-        result() {
-            return this.calculationOptions.price
-        }
+  components: {
+    BaseButton
+  },
+  props: {
+    calculationOptions: {
+      type: Object,
+      required: true
     }
+  },
+  computed: {
+    result () {
+      return this.calculationOptions.price
+    }
+  }
 }
 </script>
 

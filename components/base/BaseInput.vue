@@ -5,10 +5,10 @@
         {{ currentTip }}
       </label> -->
       <input
+        :id="id"
         ref="placeholder"
         class="rounded-6 border px-12 py-12 w-full"
         :readonly="readonly"
-        :id="id"
         :placeholder="placeholder"
         :class="{ empty: isEmpty, 'border-red': hasErrors }"
         :autocomplete="autocomplete"

@@ -24,7 +24,7 @@ export default {
     BaseButton,
     DriverItem
   },
-  data() {
+  data () {
     return {
       driver: {
         flag: true,

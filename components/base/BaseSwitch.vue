@@ -1,6 +1,6 @@
 <template>
   <label class="switch">
-    <input type="checkbox" :id="id" @click="onSwitch">
+    <input :id="id" type="checkbox" @click="onSwitch">
     <span class="slider" />
   </label>
 </template>

@@ -7,12 +7,12 @@
       class="baseRadio__item"
     >
       <input
+        :id="id"
         type="radio"
         class="baseRadio__hidden"
         :name="name"
         :value="option.value"
         :checked="option.checked"
-        :id="id"
       >
       <div class="baseRadio__visible" />
       <div class="baseRadio__text">{{ option.text }}</div>

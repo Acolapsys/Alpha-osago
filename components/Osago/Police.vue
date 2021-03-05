@@ -4,55 +4,57 @@
       <span>5. </span>Полис
     </h2>
     <div class="osagoForm__row osagoForm__row_date">
-        <div class="baseField">
-            <label for="police-date-begin" class="baseField__label">Дата начала страховки</label>
-            <BaseInput
-                id="police-date-begin"
-                type="date"
-                class="baseField__input"
-            />
-        </div>
-        <div class="baseField">
-            <span class="baseField__label">Срок действия полиса</span>
-            <BaseSelect
-                id="police-term"
-                :options="termTime"
-                :default="termDefault"
-                class="baseField__input"
-            />
-        </div>
-        <span class="osagoForm__hint">Последний день действия полиса — 11 сентября 2021</span>
+      <div class="baseField">
+        <label for="police-date-begin" class="baseField__label">Дата начала страховки</label>
+        <BaseInput
+          id="police-date-begin"
+          type="date"
+          class="baseField__input"
+        />
+      </div>
+      <div class="baseField">
+        <span class="baseField__label">Срок действия полиса</span>
+        <BaseSelect
+          id="police-term"
+          :options="termTime"
+          :default="termDefault"
+          class="baseField__input"
+        />
+      </div>
+      <span class="osagoForm__hint">Последний день действия полиса — 11 сентября 2021</span>
     </div>
     <div class="osagoForm__row osagoForm__row_target">
-        <div class="baseField">
-            <span class="baseField__label">Цель использования</span>
-            <BaseSelect
-                id="police-target"
-                :options="targetType"
-                class="baseField__input"
-            />
-        </div>
+      <div class="baseField">
+        <span class="baseField__label">Цель использования</span>
+        <BaseSelect
+          id="police-target"
+          :options="targetType"
+          class="baseField__input"
+        />
+      </div>
     </div>
     <div class="osagoForm__row osagoForm__row_contacts">
-        <div class="baseField">
-            <label for="police-email" class="baseField__label">Электронная почта, на которую прислать полис</label>
-            <BaseInput
-                id="police-email"
-                type="email"
-                placeholder="owner@domain.com"
-                class="baseField__input"
-            />
-        </div>
-        <div class="baseField">
-            <label for="police-tel" class="baseField__label">Телефон</label>
-            <BaseInput
-                id="police-tel"
-                placeholder="+7 (927) 775 34 02"
-                class="baseField__input"
-            />
-        </div>
+      <div class="baseField">
+        <label for="police-email" class="baseField__label">Электронная почта, на которую прислать полис</label>
+        <BaseInput
+          id="police-email"
+          type="email"
+          placeholder="owner@domain.com"
+          class="baseField__input"
+        />
+      </div>
+      <div class="baseField">
+        <label for="police-tel" class="baseField__label">Телефон</label>
+        <BaseInput
+          id="police-tel"
+          placeholder="+7 (927) 775 34 02"
+          class="baseField__input"
+        />
+      </div>
     </div>
-    <div class="osagoForm__row osagoForm__row_hint">Эти данные нужны страховым, передадим только им. Сами ничего присылать не будем.</div>
+    <div class="osagoForm__row osagoForm__row_hint">
+      Эти данные нужны страховым, передадим только им. Сами ничего присылать не будем.
+    </div>
   </section>
 </template>
 
@@ -66,9 +68,9 @@ export default {
   },
   data () {
     return {
-        termTime: ['1 месяц', '6 месяцев', '12 месяцев'],
-        termDefault: '12 месяцев',
-        targetType: ['Личная', 'Юридическая', 'Общая']
+      termTime: ['1 месяц', '6 месяцев', '12 месяцев'],
+      termDefault: '12 месяцев',
+      targetType: ['Личная', 'Юридическая', 'Общая']
     }
   }
 }
