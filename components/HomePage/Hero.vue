@@ -2,6 +2,10 @@
   <div class="hero">
     <div class="wrapper">
       <!-- desktop view -->
+      <popup_cache
+        v-if="isInfoPopupVisible"
+        @closePopup="closeInfoPopup"
+      />
       <div class="flex lg-max:hidden">
         <div class="content text-white font-bold">
           <h2 class="title mb-23 mt-57">
@@ -10,7 +14,7 @@
           <p class="subtitle mb-35 text-left">
             Получите расчёт по всем страховым компаниям, оформите полис онлайн и
             получите
-            <span class="border-dashed border-b-3 border-white">кэшбек 5%</span>
+            <span class="border-dashed border-b-3 border-white" @click="showPopupInfo">кэшбек 5%</span>
           </p>
           <InfoBlock class="small b-orange">
             <div class="body-bold text-brand2">
@@ -85,14 +89,27 @@
 
 <script>
 import InfoBlock from '~/components/base/InfoBlock'
+import Popup_cache from "../popup/popup_cache";
 export default {
   components: {
+    Popup_cache,
     InfoBlock
+  },
+  data () {
+    return {
+      isInfoPopupVisible: false
+    }
   },
   methods: {
     detailed () {
       this.$router.push('/')
-    }
+    },
+    showPopupInfo () {
+      this.isInfoPopupVisible = true;
+    },
+    closeInfoPopup () {
+      this.isInfoPopupVisible = false;
+    },
   }
 }
 </script>
@@ -128,6 +145,9 @@ letter-spacing: -0.03em;
 .hero_image {
   max-width: 476px;
   max-height: 360px;
+}
+.border-dashed{
+  cursor: pointer;
 }
 
 </style>
