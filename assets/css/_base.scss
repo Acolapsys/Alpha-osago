@@ -129,10 +129,15 @@ line-height: 130%;
     }
 }
 .osagoForm {
+    position: relative;
     padding: 48px 37px 62px;
     background: #FFFFFF;
     border-radius: 5px;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05), 0px 0px 1px rgba(0, 0, 0, 0.2);
+    &__ancor {
+        position: absolute;
+        top: -10px;
+    }
     &__title {
         margin-bottom: 20px;
         span {
@@ -255,6 +260,9 @@ line-height: 130%;
     .osagoForm {
         width: 100%;
         padding: 33px 16px;
+        &__ancor {
+            top: -100px;
+        }
         &__title {
             span {
                 display: inline;

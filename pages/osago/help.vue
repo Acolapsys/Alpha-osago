@@ -128,6 +128,12 @@ export default {
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05), 0px 0px 1px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     cursor: pointer;
+    overflow: hidden;
+  }
+  &__articleImg {
+    width: 100%;
+    max-height: 216px;
+    object-fit: cover;
   }
   &__articleName {
     padding: 20px;
@@ -140,9 +146,54 @@ export default {
     letter-spacing: -0.02em;
   }
 }
+@media (max-width: 1023px) {
+  .help {
+    background-color: #F6F6F6;
+    &__articleImg {
+      max-height: 166px;
+    }
+    &__articleDescription {
+      width: 50%;
+    }
+  }
+}
 @media (max-width: 767px) {
   .help {
     padding-top: 100px;
+    &__wrapper {
+      padding-bottom: 47px;
+    }
+    &__back {
+      top: 35px;
+    }
+    &__title {
+      margin: 30px 0 25px;
+      font-size: 26px;
+    }
+    &__subtitle {
+      margin-bottom: 5px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+    &__article {
+      flex-direction: column;
+      margin-top: 90px;
+    }
+    &__articleInner {
+      margin-right: 0;
+    }
+    &__articleImg {
+      max-height: 180px;
+    }
+    &__articleName {
+      padding: 16px;
+    }
+    &__articleDescription {
+      width: 100%;
+      margin-top: 20px;
+      font-size: 16px;
+    }
   }
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
   <section class="osagoForm wrapper">
+    <div :id="ancor" class="osagoForm__ancor" />
     <h2 class="osagoForm__title">
-      <span>1. </span>Транспортное средство
+      <span>{{ number }}. </span>Транспортное средство
     </h2>
     <div class="osagoForm__row">
       <ForLogged :list="loggedVehicles" />
@@ -16,7 +17,9 @@
               class="baseField__input"
             />
           </div>
-          <BaseCheckbox id="vehicle-no-number">Номера нет</BaseCheckbox>
+          <BaseCheckbox id="vehicle-no-number">
+            Номера нет
+          </BaseCheckbox>
         </div>
         <div v-if="billet" class="osagoForm__billet">
           <img
@@ -25,7 +28,7 @@
             class="osagoForm__billetClose"
             @click="billet = false"
           >
-          Найдено Mitsubishi Pajero 2010 по этому номеру<br /><span class="osagoForm__billetFill">Заполнить поля этим авто</span>
+          Найдено Mitsubishi Pajero 2010 по этому номеру<br><span class="osagoForm__billetFill">Заполнить поля этим авто</span>
         </div>
         <div class="osagoForm__row osagoForm__row_params">
           <div class="baseField">
@@ -76,12 +79,14 @@
           </div>
         </div>
         <section class="osagoForm__section">
-          <h3 class="osagoForm__sectionTitle">Идентификатор ТС</h3>
+          <h3 class="osagoForm__sectionTitle">
+            Идентификатор ТС
+          </h3>
           <div class="osagoForm__row">
             <BaseRadio
+              id="vehicle-id-type"
               name="idType"
               :options="idType"
-              id="vehicle-id-type"
             />
           </div>
           <div class="osagoForm__row osagoForm__row_idNumber">
@@ -102,12 +107,14 @@
       </div>
       <div class="osagoForm__right">
         <section class="osagoForm__section">
-          <h3 class="osagoForm__sectionTitle">Документы на автомобиль</h3>
+          <h3 class="osagoForm__sectionTitle">
+            Документы на автомобиль
+          </h3>
           <div class="osagoForm__row">
             <BaseRadio
+              id="vehicle-doc-type"
               name="docType"
               :options="docType"
-              id="vehicle-doc-type"
             />
           </div>
           <div class="osagoForm__row osagoForm__row_passportNumber">
@@ -138,7 +145,9 @@
           </div>
         </section>
         <section class="osagoForm__section">
-          <h3 class="osagoForm__sectionTitle osagoForm__sectionTitle_photos">Фотографии документа</h3>
+          <h3 class="osagoForm__sectionTitle osagoForm__sectionTitle_photos">
+            Фотографии документа
+          </h3>
           <div class="osagoForm__row osagoForm__row_photos">
             <div class="baseField">
               <label for="vehicle-photos-front" class="baseField__label">Лицевая сторона</label>
@@ -157,7 +166,9 @@
           </div>
         </section>
         <section class="osagoForm__section">
-          <h3 class="osagoForm__sectionTitle">Технический осмотр</h3>
+          <h3 class="osagoForm__sectionTitle">
+            Технический осмотр
+          </h3>
           <div class="osagoForm__row osagoForm__row_inspectionNumber">
             <div class="baseField">
               <label for="vehicle-inspection-number" class="baseField__label">Номер диагностической карты</label>
@@ -210,7 +221,17 @@ export default {
     BaseFile,
     ForLogged
   },
-  data() {
+  props: {
+    number: {
+      type: [Number, String],
+      default: null
+    },
+    ancor: {
+      type: String,
+      default: null
+    }
+  },
+  data () {
     return {
       loggedVehicles: [
         {

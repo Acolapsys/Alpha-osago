@@ -13,14 +13,14 @@
         >
       </div>
       <div class="steps__list wrapper" :class="{ 'steps__list_active': listFlag }">
-        <nuxt-link v-for="(item, idx) in steps" :key="item.id" :to="item.link" class="steps__item" @click="currentStep(idx)">
+        <div v-for="(item, idx) in steps" :key="item.id" class="steps__item" @click="currentStep(idx)">
           <div class="steps__number">
             {{ item.number }}
           </div>
           <div class="steps__name">
             {{ item.name }}
           </div>
-        </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
@@ -52,6 +52,7 @@ export default {
       stepsItems[id].classList.add('steps__item_active')
       this.$refs.currentText.innerHTML = `${this.steps[id].number}${substr} ${this.steps[id].name}`
       this.modalToggle(false)
+      this.$router.push({ path: this.steps[id].link })
     },
     modalToggle(flag) {
       if (flag) {
@@ -189,6 +190,10 @@ export default {
       margin: 0;
       padding: 12px 0;
       background: inherit;
+      &_active,
+      &:hover {
+        background-color: transparent;
+      }
     }
     &__number {
       display: none;

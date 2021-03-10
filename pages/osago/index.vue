@@ -1,11 +1,11 @@
 <template>
   <div class="osago">
     <Steps :steps="steps" />
-    <Vehicle id="vehicle" />
-    <Owner id="owner" />
-    <Insurer id="insurer" />
-    <Driver id="driver" />
-    <Police id="police" />
+    <Vehicle class="vehicle" number="1" ancor="vehicle" />
+    <Owner class="owner" number="2" ancor="owner" />
+    <Insurer class="insurer" number="3" ancor="insurer" />
+    <Driver class="driver" number="4" ancor="driver" />
+    <Police class="police" number="5" ancor="police" />
     <BaseButton class="osago__submit" id="calculationSubmit">Рассчитать ОСАГО</BaseButton>
     <div class="wrapper">
       <CalculationResult v-for="item in 5" :key="item.id" :calculationOptions="calculation1" />
@@ -102,13 +102,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#vehicle {
+.vehicle {
   margin-top: 74px;
   margin-bottom: 31px;
 }
-#owner,
-#insurer,
-#driver {
+.owner,
+.insurer,
+.driver {
   margin-bottom: 31px;
 }
 .calculationResult {
@@ -125,21 +125,21 @@ export default {
   }
 }
 @media (max-width: 1023px) {
-  #vehicle {
+  .vehicle {
     margin-top: 30px;
   }
 }
 @media (max-width: 767px) {
-  #vehicle {
+  .vehicle {
     margin-top: 0;
     margin-bottom: 0;
   }
-  #owner,
-  #insurer,
-  #driver {
+  .owner,
+  .insurer,
+  .driver {
     margin-bottom: 0;
   }
-  #police {
+  .police {
     border-top: 1px solid #E0E0E0;
     box-shadow: none;
   }
