@@ -20,6 +20,7 @@ import BaseSwitch from '~/components/base/BaseSwitch'
 import BaseButton from '~/components/base/BaseButton'
 import DriverItem from '~/components/Osago/DriverItem'
 export default {
+  name: 'Driver',
   components: {
     BaseSwitch,
     BaseButton,

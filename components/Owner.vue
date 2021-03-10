@@ -126,6 +126,7 @@ import BaseRadio from '~/components/base/BaseRadio'
 import BaseFile from '~/components/base/BaseFile'
 import ForLogged from '~/components/ForLogged'
 export default {
+  name: 'Owner',
   components: {
     BaseInput,
     BaseRadio,

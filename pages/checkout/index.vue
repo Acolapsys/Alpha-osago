@@ -9,7 +9,7 @@
     <p class="checkoutPage__description description">
       КБМ – это коэффициент бонус-малус, который показывает как часто водитель попадает в аварии. Влияет на цену ОСАГО: чем меньше КБМ, тем дешевле будет стоить полис ОСАГО
     </p>
-    <div class="checkoutPage__form">
+    <form class="checkoutPage__form">
       <div class="checkoutPage__inner">
         <div class="baseField">
           <label for="checkoutPage-surname" class="baseField__label">Фамилия</label>
@@ -62,7 +62,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </form>
     <section class="checkoutPage__improve">
       <h2 class="checkoutPage__improveTitle mb-11">
         Как улучшить КБМ

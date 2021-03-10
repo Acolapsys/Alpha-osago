@@ -212,6 +212,7 @@ import BaseSelect from '~/components/base/BaseSelect'
 import BaseFile from '~/components/base/BaseFile'
 import ForLogged from '~/components/ForLogged'
 export default {
+  name: 'Vehicle',
   components: {
     BaseInput,
     BaseCheckbox,

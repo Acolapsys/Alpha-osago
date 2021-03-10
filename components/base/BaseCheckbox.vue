@@ -16,6 +16,7 @@
 
 <script>
 export default {
+  name: 'BaseCheckbox',
   props: {
     checked: {
       type: Boolean,

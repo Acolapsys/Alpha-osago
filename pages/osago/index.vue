@@ -1,12 +1,14 @@
 <template>
   <div class="osago">
     <Steps :steps="steps" />
-    <Vehicle class="vehicle" number="1" ancor="vehicle" />
-    <Owner class="owner" number="2" ancor="owner" />
-    <Insurer class="insurer" number="3" ancor="insurer" />
-    <Driver class="driver" number="4" ancor="driver" />
-    <Police class="police" number="5" ancor="police" />
-    <BaseButton class="osago__submit" id="calculationSubmit">Рассчитать ОСАГО</BaseButton>
+    <form class="osago__form">
+      <Vehicle class="vehicle" number="1" ancor="vehicle" />
+      <Owner class="owner" number="2" ancor="owner" />
+      <Insurer class="insurer" number="3" ancor="insurer" />
+      <Driver class="driver" number="4" ancor="driver" />
+      <Police class="police" number="5" ancor="police" />
+      <BaseButton class="osago__submit" id="calculation-submit">Рассчитать ОСАГО</BaseButton>
+    </form>
     <div class="wrapper">
       <CalculationResult v-for="item in 5" :key="item.id" :calculationOptions="calculation1" />
     </div>

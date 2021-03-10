@@ -32,6 +32,7 @@
 
 <script>
 export default {
+  name: 'BaseFile',
   props: {
     tabindex: {
       type: Number,

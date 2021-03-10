@@ -61,6 +61,7 @@
 import BaseInput from '~/components/base/BaseInput'
 import BaseSelect from '~/components/base/BaseSelect'
 export default {
+  name: 'Police',
   components: {
     BaseInput,
     BaseSelect

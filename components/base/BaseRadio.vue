@@ -22,6 +22,7 @@
 
 <script>
 export default {
+  name: 'BaseRadio',
   props: {
     name: {
       type: String,

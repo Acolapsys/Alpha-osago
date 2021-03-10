@@ -13,6 +13,7 @@
 
 <script>
 export default {
+  name: 'ForLogged',
   props: {
     list: {
       type: Array,
