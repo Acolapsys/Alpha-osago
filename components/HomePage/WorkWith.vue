@@ -9,8 +9,9 @@
         <br>
         Вы получаете предложения от этих компаний
       </div>
-      <div class="slider flex items-center">
-        <VueSlickCarousel v-bind="settings" ref="carousel">
+      <div class="slider">
+        <div class="next"><img src="../../assets/images/icons/left_row.png" alt=""></div>
+        <VueSlickCarousel v-bind="settings" ref="carousel" class="carousel">
           <div class="slider__logo">
             <img src="../../assets/images/icons/work_logo.png" alt="">
           </div>
@@ -32,6 +33,7 @@
           <div class="slider__logo">
             <img src="../../assets/images/icons/work_logo.png" alt="">
           </div>
+          <div class="next"><img src="../../assets/images/icons/right_row.png" alt=""></div>
         </VueSlickCarousel>
       </div>
     </div>
@@ -76,9 +78,12 @@ button::-moz-focus-inner {
 .slick-slider {
   width: 896px;
 }
+.carousel{
+  width: 600px;
+}
 .slick-prev:before {
   color: black !important;
-  margin-right: 60px;
+
 }
 .slick-next:before {
   color: black !important;
