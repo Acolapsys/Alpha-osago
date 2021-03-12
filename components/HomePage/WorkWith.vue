@@ -10,7 +10,12 @@
         Вы получаете предложения от этих компаний
       </div>
       <div class="slider">
-        <div class="next"><img src="../../assets/images/icons/left_row.png" alt=""></div>
+        <div
+          @click="prev"
+          class="prev flex items-center mr-100 cursor-pointer">
+          <img src="../../assets/images/icons/left_row.png" alt="">
+        </div>
+
         <VueSlickCarousel v-bind="settings" ref="carousel" class="carousel">
           <div class="slider__logo">
             <img src="../../assets/images/icons/work_logo.png" alt="">
@@ -33,8 +38,13 @@
           <div class="slider__logo">
             <img src="../../assets/images/icons/work_logo.png" alt="">
           </div>
-          <div class="next"><img src="../../assets/images/icons/right_row.png" alt=""></div>
         </VueSlickCarousel>
+
+        <div
+          @click="next"
+          class="next flex items-center ml-100 cursor-pointer">
+          <img src="../../assets/images/icons/right_row.png" alt="">
+        </div>
       </div>
     </div>
   </div>
@@ -53,18 +63,47 @@ export default {
     settings: {
       slidesToShow: 5,
       slidesToScroll: 1,
-      arrows: true,
+      arrows: false,
       infinite: false,
       // stopAtEnd: true,
       // waitForAnimate: false,
       // cssEase: "easeOutElastic",
       draggable: false,
-      initialSlide: 0
+      initialSlide: 0,
+      "responsive": [
+        {
+          "breakpoint": 1024,
+          "settings": {
+            "slidesToShow": 4.3,
+            "slidesToScroll": 3,
+            "infinite": false,
+            "dots": false
+          }
+        },
+        {
+          "breakpoint": 767,
+          "settings": {
+            "slidesToShow": 3.2,
+            "slidesToScroll": 3.6,
+            "infinite": false,
+            "dots": false
+          }
+        }
+        ]
       // speed: 0
     },
     slideCount: null,
     currentSlide: 0
-  })
+  }),
+  methods: {
+    next() {
+      this.$refs.carousel.next();
+    },
+
+    prev() {
+      this.$refs.carousel.prev();
+    },
+  }
 }
 </script>
 
@@ -78,16 +117,9 @@ button::-moz-focus-inner {
 .slick-slider {
   width: 896px;
 }
-.carousel{
-  width: 600px;
-}
-.slick-prev:before {
-  color: black !important;
-
-}
-.slick-next:before {
-  color: black !important;
-}
+//.carousel{
+//  width: 896px;
+//}
 .slider{
   margin-top: 88.09px;
   display: flex;
@@ -101,5 +133,27 @@ button::-moz-focus-inner {
 }
 .slider__logo:last-child{
   margin-right: 0px;
+}
+@media (max-width: 1023px) {
+  .slick-slider {
+    width: 750px;
+  }
+  .prev{
+    display: none;
+  }
+  .next{
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .slick-slider {
+    width: 494px;
+  }
+  .prev{
+    display: none;
+  }
+  .next{
+    display: none;
+  }
 }
 </style>

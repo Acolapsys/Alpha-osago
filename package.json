@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.12.5",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
+    "v-tooltip": "^2.1.2",
     "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {

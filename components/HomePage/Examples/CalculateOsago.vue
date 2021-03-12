@@ -11,53 +11,102 @@
         <div class="col">
           <div class="first_row flex">
             <div class="part flex items-center">
-              <p>База</p>
-              <div class="logo"><img src="../../../assets/images/icons/question.png" alt=""></div>
+              <tooltip />
+              <p >База</p>
+              <div class="logo">
+                <img src="../../../assets/images/icons/question.png" alt="">
+              </div>
             </div>
             <div class="part flex items-center">
               <p>кт</p>
-              <div class="logo"><img src="../../../assets/images/icons/question.png" alt=""></div>
+              <div class="logo">
+                <img src="../../../assets/images/icons/question.png" alt="">
+              </div>
             </div>
             <div class="part flex items-center">
               <p>кмб</p>
-              <div class="logo"><img src="../../../assets/images/icons/question.png" alt=""></div>
+              <div class="logo">
+                <img src="../../../assets/images/icons/question.png" alt="">
+              </div>
             </div>
             <div class="part flex items-center">
               <p>квс</p>
-              <div class="logo"><img src="../../../assets/images/icons/question.png" alt=""></div>
+              <div class="logo">
+                <img src="../../../assets/images/icons/question.png" alt="">
+              </div>
             </div>
             <div class="part flex items-center">
               <p>ко</p>
-              <div class="logo"><img src="../../../assets/images/icons/question.png" alt=""></div>
+              <div class="logo">
+                <img src="../../../assets/images/icons/question.png" alt="">
+              </div>
             </div>
             <div class="part flex items-center">
               <p>км</p>
-              <div class="logo"><img src="../../../assets/images/icons/question.png" alt=""></div>
+              <div class="logo">
+                <img src="../../../assets/images/icons/question.png" alt="">
+              </div>
             </div>
             <div class="part flex items-center">
               <p>кс</p>
-              <div class="logo"><img src="../../../assets/images/icons/question.png" alt=""></div>
+              <div class="logo">
+                <img src="../../../assets/images/icons/question.png" alt="">
+              </div>
             </div>
-            <p class="part__price">стоимость</p>
+            <p class="part__price">
+              стоимость
+            </p>
           </div>
           <div class="second_row mt-9 flex items-center">
-            <p class="second_row__price">3 750₽</p>
-            <div class="x ml-13"><img src="../../../assets/images/icons/x.png" alt=""></div>
-            <p class="second_row__cof ml-13">1.0</p>
+            <p class="second_row__price">
+              3 750₽
+            </p>
+            <div class="x ml-13">
+              <img src="../../../assets/images/icons/x.png" alt="">
+            </div>
+            <p class="second_row__cof ml-13">
+              1.0
+            </p>
 
-            <div class="x ml-13"><img src="../../../assets/images/icons/x.png" alt=""></div>
-            <p class="second_row__cof ml-13">1.0</p>
-            <div class="x ml-13"><img src="../../../assets/images/icons/x.png" alt=""></div>
-            <p class="second_row__cof ml-13">1.0</p>
-            <div class="x ml-13"><img src="../../../assets/images/icons/x.png" alt=""></div>
-            <p class="second_row__cof ml-13">1.0</p>
-            <div class="x ml-13"><img src="../../../assets/images/icons/x.png" alt=""></div>
-            <p class="second_row__cof ml-13">1.0</p>
-            <div class="x ml-13"><img src="../../../assets/images/icons/x.png" alt=""></div>
-            <p class="second_row__cof ml-13">1.0</p>
-            <div class="x ml-13"><img src="../../../assets/images/icons/x.png" alt=""></div>
-            <p class="second_row__cof ml-13">1.0</p>
-            <div class="equal"><img src="../../../assets/images/icons/equal.png" alt=""></div>
+            <div class="x ml-13">
+              <img src="../../../assets/images/icons/x.png" alt="">
+            </div>
+            <p class="second_row__cof ml-13">
+              1.0
+            </p>
+            <div class="x ml-13">
+              <img src="../../../assets/images/icons/x.png" alt="">
+            </div>
+            <p class="second_row__cof ml-13">
+              1.0
+            </p>
+            <div class="x ml-13">
+              <img src="../../../assets/images/icons/x.png" alt="">
+            </div>
+            <p class="second_row__cof ml-13">
+              1.0
+            </p>
+            <div class="x ml-13">
+              <img src="../../../assets/images/icons/x.png" alt="">
+            </div>
+            <p class="second_row__cof ml-13">
+              1.0
+            </p>
+            <div class="x ml-13">
+              <img src="../../../assets/images/icons/x.png" alt="">
+            </div>
+            <p class="second_row__cof ml-13">
+              1.0
+            </p>
+            <div class="x ml-13">
+              <img src="../../../assets/images/icons/x.png" alt="">
+            </div>
+            <p class="second_row__cof ml-13">
+              1.0
+            </p>
+            <div class="equal">
+              <img src="../../../assets/images/icons/equal.png" alt="">
+            </div>
             <p>4 749 ₽</p>
           </div>
         </div>
@@ -69,7 +118,9 @@
   </div>
 </template>
 <script>
+import Tooltip from '../../tooltips/tooltip'
 export default {
+  components: { Tooltip },
   props: {
     example: {
       type: Object,
