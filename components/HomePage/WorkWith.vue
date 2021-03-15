@@ -11,8 +11,9 @@
       </div>
       <div class="slider">
         <div
+          class="prev flex items-center mr-100 cursor-pointer"
           @click="prev"
-          class="prev flex items-center mr-100 cursor-pointer">
+        >
           <img src="../../assets/images/icons/left_row.png" alt="">
         </div>
 
@@ -41,8 +42,9 @@
         </VueSlickCarousel>
 
         <div
+          class="next flex items-center ml-100 cursor-pointer"
           @click="next"
-          class="next flex items-center ml-100 cursor-pointer">
+        >
           <img src="../../assets/images/icons/right_row.png" alt="">
         </div>
       </div>
@@ -70,39 +72,39 @@ export default {
       // cssEase: "easeOutElastic",
       draggable: false,
       initialSlide: 0,
-      "responsive": [
+      responsive: [
         {
-          "breakpoint": 1024,
-          "settings": {
-            "slidesToShow": 4.3,
-            "slidesToScroll": 3,
-            "infinite": false,
-            "dots": false
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4.3,
+            slidesToScroll: 3,
+            infinite: false,
+            dots: false
           }
         },
         {
-          "breakpoint": 767,
-          "settings": {
-            "slidesToShow": 3.2,
-            "slidesToScroll": 3.6,
-            "infinite": false,
-            "dots": false
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 3.2,
+            slidesToScroll: 3.6,
+            infinite: false,
+            dots: false
           }
         }
-        ]
+      ]
       // speed: 0
     },
     slideCount: null,
     currentSlide: 0
   }),
   methods: {
-    next() {
-      this.$refs.carousel.next();
+    next () {
+      this.$refs.carousel.next()
     },
 
-    prev() {
-      this.$refs.carousel.prev();
-    },
+    prev () {
+      this.$refs.carousel.prev()
+    }
   }
 }
 </script>

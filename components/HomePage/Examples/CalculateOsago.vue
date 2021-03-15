@@ -10,48 +10,9 @@
       <div class="calculator flex">
         <div class="col">
           <div class="first_row flex">
-            <div class="part flex items-center">
-              <tooltip />
-              <p >База</p>
-              <div class="logo">
-                <img src="../../../assets/images/icons/question.png" alt="">
-              </div>
-            </div>
-            <div class="part flex items-center">
-              <p>кт</p>
-              <div class="logo">
-                <img src="../../../assets/images/icons/question.png" alt="">
-              </div>
-            </div>
-            <div class="part flex items-center">
-              <p>кмб</p>
-              <div class="logo">
-                <img src="../../../assets/images/icons/question.png" alt="">
-              </div>
-            </div>
-            <div class="part flex items-center">
-              <p>квс</p>
-              <div class="logo">
-                <img src="../../../assets/images/icons/question.png" alt="">
-              </div>
-            </div>
-            <div class="part flex items-center">
-              <p>ко</p>
-              <div class="logo">
-                <img src="../../../assets/images/icons/question.png" alt="">
-              </div>
-            </div>
-            <div class="part flex items-center">
-              <p>км</p>
-              <div class="logo">
-                <img src="../../../assets/images/icons/question.png" alt="">
-              </div>
-            </div>
-            <div class="part flex items-center">
-              <p>кс</p>
-              <div class="logo">
-                <img src="../../../assets/images/icons/question.png" alt="">
-              </div>
+            <div v-for="(item,index) in tooltipTitles" :key="index" class="part flex items-center">
+              <p>{{item.name}}</p>
+              <tooltip :item="item" />
             </div>
             <p class="part__price">
               стоимость
@@ -126,6 +87,47 @@ export default {
       type: Object,
       default: () => {}
     }
+  },
+  data () {
+    return {
+      tooltipTitles: [
+        {
+          name: 'База',
+          title: 'Базовая ставка',
+          desc: 'Каждая страховка определяет свою базову ставку, но в коридоре цен, установленном законодательством.'
+        },
+        {
+          name: 'кт',
+          title: 'Коэффициент территории преимущественного использования.',
+          desc: 'Определяется исходя из места жительства, указанного в паспорте.'
+        },
+        {
+          name: 'кбм',
+          title: 'Коэффициент бонус-малус.',
+          desc: 'Зависит от количества ДТП, произошедших по вине водителя за 1 год.'
+        },
+        {
+          name: 'квс',
+          title: 'Коэффициент возраста и стажа.',
+          desc: 'Чем меньше возраст и стаж автовладельца, тем выше будет коэффициент. Если полис оформляется на несколько водителей, тогда КВС будет определяться по самому младшему и наименее опытному.'
+        },
+        {
+          name: 'ко',
+          title: 'Коэффициент количества водителей.',
+          desc: 'Для неограниченной страховки выше, чем для ограниченной.'
+        },
+        {
+          name: 'км',
+          title: 'Коэффициент мощности двигателя.',
+          desc: 'Чем выше показатель мощности двигателя, тем больше этот коэффициент.'
+        },
+        {
+          name: 'кс',
+          title: 'Коэффициент периода использования транспортного средства.',
+          desc: 'Чем выше период, тем меньше коэффициент. Минимальный период использования — 3 месяца, максимальный — 12 месяцев.'
+        }
+      ]
+    }
   }
 }
 </script>
@@ -155,9 +157,6 @@ export default {
   }
   .logo{
     max-width: 14.4px;
-    img{
-      width: 100%;
-    }
   }
   &__price{
     margin-left: 29.53px;
@@ -196,7 +195,7 @@ export default {
   }
   .equal{
     max-width: 9px;
-    margin-left: 46.5px;
+    margin-left: 59.5px;
     img{
       width: 100%;
     }
