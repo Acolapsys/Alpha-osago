@@ -347,7 +347,6 @@ line-height: 130%;
         align-items: flex-start;
     }
     &__detailsBlock {
-        max-width: 50%;
         &:first-child {
             margin-right: 30px;
         }
@@ -366,16 +365,18 @@ line-height: 130%;
     }
 }
 @media (max-width: 1023px) {
-    .profileCard:not(.profileCard_short) {
-        &__detailsInner {
-          flex-direction: column;
-        }
-        &__detailsBlock {
-          max-width: 100%;
-          &:first-child {
-            margin-right: 0;
-            margin-bottom: 16px;
-          }
+    .profileCard {
+        $root: &;
+        &:not(&_short) { 
+            #{$root}__detailsInner {
+                flex-direction: column;
+            }
+            #{$root}__detailsBlock {
+                &:first-child {
+                    margin-right: 0;
+                    margin-bottom: 16px;
+                }
+            }
         }
     }
 }
