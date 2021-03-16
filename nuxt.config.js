@@ -32,9 +32,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     ['@nuxtjs/eslint-module', {
-      
-        fix: true
-      
+
+      fix: true
+
     }],
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss'

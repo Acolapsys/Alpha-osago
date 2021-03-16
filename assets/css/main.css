@@ -7,8 +7,14 @@ body {
   @apply px-70;
   max-width: 1280px;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  @screen lg-max {
+    @apply px-30;
+    max-width: 1024px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper {
+    max-width: 100%;
+    @apply px-16;
+  }
 }

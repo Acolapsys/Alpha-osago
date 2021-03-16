@@ -1,5 +1,5 @@
 <template>
-  <button class="base-button flex justify-center items-center" :class="classes" :disabled="disabled" @click="$emit('click')">
+  <button class="base-button flex justify-center items-center body-bold" :class="classes" :disabled="disabled" :id="id">
     <button-spinner v-show="loading" />
     <slot />
   </button>
@@ -27,6 +27,10 @@ export default {
     classes: {
       type: Array,
       default: () => ['rounded-5']
+    },
+    id: {
+      type: String,
+      default: null
     }
   }
 }
@@ -35,17 +39,28 @@ export default {
 <style scoped>
   .base-button {
     @apply cursor-pointer;
+    width: 268px;
+    height: 50px;
+  }
+  .outline {
+    @apply text-brand1;
+border: 1.5px solid #04A678;
+box-sizing: border-box;
+border-radius: 5px;
   }
 
   .account {
     color: white;
     background-color: rgba(255,255,255,0.2);
     width: 154px;
+    height: 32px;
   }
   .upload {
     @apply bg-grey max-w-236 h-55;
     @extend .body-bold;
     color: #088DED;
-
+  }
+  .shadow {
+    box-shadow: 0px 3px 15px rgba(4, 166, 120, 0.3);
   }
 </style>
