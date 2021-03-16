@@ -1,11 +1,11 @@
 <template>
   <section class="osagoForm wrapper">
-    <div :id="ancor" class="osagoForm__ancor"></div>
+    <div :id="ancor" class="osagoForm__ancor" />
     <h2 class="osagoForm__title">
       <span>{{ number }}. </span>Страхователь
     </h2>
     <div class="osagoForm__row">
-        <ForLogged :list="loggedInsurers" />
+      <ForLogged :list="loggedInsurers" />
     </div>
     <div class="osagoForm__row osagoForm__row_same">
       <BaseSwitch id="insurer-same" />
@@ -153,13 +153,13 @@ export default {
     return {
       loggedInsurers: [
         {
-            title: 'Новый человек'
+          title: 'Новый человек'
         },
         {
-            title: 'Селиверстов Иван Петрович'
+          title: 'Селиверстов Иван Петрович'
         },
         {
-            title: 'Селиверстова Елена Константиновна'
+          title: 'Селиверстова Елена Константиновна'
         }
       ],
       genderType: [

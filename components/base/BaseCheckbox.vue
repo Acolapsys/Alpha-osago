@@ -1,17 +1,17 @@
 <template>
-    <label
-      :tabindex="tabindex"
-      class="baseCheckbox"
+  <label
+    :tabindex="tabindex"
+    class="baseCheckbox"
+  >
+    <input
+      :id="id"
+      type="checkbox"
+      class="baseCheckbox__hidden"
+      :checked="checked"
     >
-      <input
-        type="checkbox"
-        class="baseCheckbox__hidden"
-        :id="id"
-        :checked="checked"
-      >
-      <div class="baseCheckbox__visible" />
-      <slot />
-    </label>
+    <div class="baseCheckbox__visible" />
+    <slot />
+  </label>
 </template>
 
 <script>

@@ -11,14 +11,21 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
+    script: [
+      {
+        src: "https://unpkg.com/v-tooltip@2.0.2",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~assets/css/main.css',
-    { src: '~assets/css/_base', lang: 'scss' }
+    { src: '~assets/css/_base', lang: 'scss' },
+    { src: '~assets/css/_osago', lang: 'scss' },
+    { src: '~assets/css/_profile', lang: 'scss' }
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

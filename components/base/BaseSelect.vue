@@ -5,9 +5,9 @@
     @blur="open = false"
   >
     <div
+      :id="id"
       class="baseSelect__selected"
       :class="{ 'baseSelect__selected_open': open }"
-      :id="id"
       :data-selected="selected"
       @click="open = !open"
     >
@@ -23,9 +23,9 @@
       :class="{ hidden: !open }"
     >
       <div
-        class="baseSelect__item"
         v-for="option of options"
         :key="option.id"
+        class="baseSelect__item"
         @click="
           selected = option;
           open = false;

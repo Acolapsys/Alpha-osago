@@ -2,7 +2,9 @@
   <div class="header bg-brand1">
     <div class="px-70 py-20 mx-auto flex justify-between items-center lg-max:px-16 lg-max:py-16">
       <span class="logo max-w-124 mr-72 mobile-max">
-        <img src="@/assets/images/logo.png" alt="Логотип ОСАГО">
+        <nuxt-link to="/">
+          <img src="@/assets/images/logo.png" alt="Логотип ОСАГО">
+        </nuxt-link>
       </span>
       <ul class="navbar ">
         <li class="lg:mr-50">

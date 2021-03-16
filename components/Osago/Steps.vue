@@ -41,7 +41,7 @@ export default {
     }
   },
   methods: {
-    currentStep(id) {
+    currentStep (id) {
       const stepsItems = document.querySelectorAll('.steps__item')
       const substr = (id !== this.steps.length - 1) ? ` / ${this.steps.length - 1}` : ''
 
@@ -54,14 +54,14 @@ export default {
       this.modalToggle(false)
       this.$router.push({ path: this.steps[id].link })
     },
-    modalToggle(flag) {
+    modalToggle (flag) {
       if (flag) {
-        document.body.style.paddingRight = window.innerWidth - document.body.clientWidth + "px"
+        document.body.style.paddingRight = window.innerWidth - document.body.clientWidth + 'px'
         document.body.style.overflow = 'hidden'
       } else {
         document.body.removeAttribute('style')
       }
-      
+
       this.listFlag = flag
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="faqPage wrapper">
+  <main class="faqPage wrapper">
     <h1 class="faqPage__title title text-center mb-7">
       Полезная информация
     </h1>
@@ -12,7 +12,7 @@
     <BaseButton class="faqPage__loadButton mx-auto">
       Показать ещё статьи
     </BaseButton>
-  </div>
+  </main>
 </template>
 
 <script>
