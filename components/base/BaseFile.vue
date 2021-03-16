@@ -4,10 +4,10 @@
     class="baseFile"
   >
     <input
+      :id="id"
       ref="input"
       type="file"
       class="baseFile__hidden"
-      :id="id"
       @input="uploadFn($event.target.files[0].name)"
     >
     <div ref="control" class="baseFile__control">
@@ -44,12 +44,12 @@ export default {
     }
   },
   methods: {
-    uploadFn(value) {
+    uploadFn (value) {
       this.$refs.control.classList.add('hidden')
       this.$refs.result.classList.remove('hidden')
       this.$refs.resultName.innerHTML = value
     },
-    removeFile(e) {
+    removeFile (e) {
       e.preventDefault()
       e.stopPropagation()
       this.$refs.control.classList.remove('hidden')

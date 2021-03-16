@@ -11,9 +11,13 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@nuxtjs/axios": "^5.12.5",
     "core-js": "^3.8.3",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "v-tooltip": "^2.1.2",
+    "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",

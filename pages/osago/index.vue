@@ -10,7 +10,7 @@
       <BaseButton class="osago__submit" id="calculation-submit">Рассчитать ОСАГО</BaseButton>
     </form>
     <div class="wrapper">
-      <CalculationResult v-for="item in 5" :key="item.id" :calculationOptions="calculation1" />
+      <CalculationResult v-for="item in 5" :key="item.id" :calculation-options="calculation1" />
     </div>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
     BaseButton,
     CalculationResult
   },
-  data() {
+  data () {
     return {
       steps: [
         {
