@@ -1,7 +1,8 @@
 <template>
   <section class="osagoForm wrapper">
+    <div :id="ancor" class="osagoForm__ancor"></div>
     <h2 class="osagoForm__title">
-      <span>5. </span>Полис
+      <span>{{ number }}. </span>Полис
     </h2>
     <div class="osagoForm__row osagoForm__row_date">
       <div class="baseField">
@@ -62,9 +63,20 @@
 import BaseInput from '~/components/base/BaseInput'
 import BaseSelect from '~/components/base/BaseSelect'
 export default {
+  name: 'Police',
   components: {
     BaseInput,
     BaseSelect
+  },
+  props: {
+    number: {
+      type: [Number, String],
+      default: null
+    },
+    ancor: {
+      type: String,
+      default: null
+    }
   },
   data () {
     return {

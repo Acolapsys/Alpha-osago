@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="data.link" class="articlePost" :class="{ articlePost_mini: data.mini }">
+  <nuxt-link :to="data.link" class="articlePost" :class="{ articlePost_mini: data.mini }">
     <img :src="data.image" class="articlePost__image" alt="image">
     <div class="articlePost__info">
       <div v-if="data.date" class="articlePost__date mb-7">
@@ -12,7 +12,7 @@
         {{ data.description }}
       </p>
     </div>
-  </router-link>
+  </nuxt-link>
 </template>
 <script>
 export default {

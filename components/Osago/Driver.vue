@@ -1,7 +1,8 @@
 <template>
   <section class="osagoForm wrapper">
+    <div :id="ancor" class="osagoForm__ancor"></div>
     <h2 class="osagoForm__title">
-      <span>4. </span>Водители
+      <span>{{ number }}. </span>Водители
     </h2>
     <div class="osagoForm__row osagoForm__row_nolimit">
       <BaseSwitch id="driver-nolimit" />
@@ -19,12 +20,23 @@ import BaseSwitch from '~/components/base/BaseSwitch'
 import BaseButton from '~/components/base/BaseButton'
 import DriverItem from '~/components/Osago/DriverItem'
 export default {
+  name: 'Driver',
   components: {
     BaseSwitch,
     BaseButton,
     DriverItem
   },
-  data () {
+  props: {
+    number: {
+      type: [Number, String],
+      default: null
+    },
+    ancor: {
+      type: String,
+      default: null
+    }
+  },
+  data() {
     return {
       driver: {
         flag: true,

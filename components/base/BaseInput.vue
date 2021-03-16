@@ -1,6 +1,10 @@
 <template>
-  <div class="w-full flex flex-col">
+  <div class="w-full flex flex-col input-wrapper">
     <div class="base_input w-full relative">
+      <div v-if="type === 'password'" ref="eye" class="password-wrapper" @click="changeVisiblePassword">
+        <img src="~/assets/images/icons/eye.svg" alt="eye">
+        <img src="~/assets/images/icons/eye-strike.svg" alt="eye">
+      </div>
       <!-- <label class="text-sm text-darkgray w-maxContent" @click="makeActive">
         {{ currentTip }}
       </label> -->
@@ -10,10 +14,10 @@
         class="rounded-6 border px-12 py-12 w-full"
         :readonly="readonly"
         :placeholder="placeholder"
-        :class="{ empty: isEmpty, 'border-red': hasErrors }"
+        :class="[{ empty: isEmpty, 'border-red': hasErrors }, classes]"
         :autocomplete="autocomplete"
         :value="value"
-        :type="type === 'password' ? passwordCondition : type"
+        :type="type"
         @focus="setFocus(true)"
         @keyup.enter.prevent="enter"
         @blur="setFocus(false)"
@@ -76,11 +80,14 @@ export default {
     id: {
       type: String,
       default: null
+    },
+    classes: {
+      type: String,
+      default: null
     }
   },
   data () {
     return {
-      passwordCondition: 'password',
       isVisible: false,
       focused: this.focus
     }
@@ -106,8 +113,9 @@ export default {
   },
   methods: {
     changeVisiblePassword () {
-      this.passwordCondition =
-        this.passwordCondition === 'password' ? 'text' : 'password'
+      this.$refs.placeholder.getAttribute('type') === 'password' ? this.$refs.placeholder.setAttribute('type', 'text') : this.$refs.placeholder.setAttribute('type', 'password')
+
+      this.$refs.eye.classList.toggle('password-wrapper_visible')
       this.$refs.placeholder.focus()
     },
     setFocus (bool) {
@@ -120,7 +128,30 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.input-wrapper {
+  position: relative;
+}
+.password-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  img:last-child {
+    display: none;
+  }
+  &_visible {
+    img {
+      &:first-child {
+        display: none;
+      }
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}
 /* .eye_open {
     width: 20px;
     height: 20px;

@@ -29,35 +29,15 @@
 <script>
 export default {
   name: 'Steps',
+  props: {
+    steps: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
-      listFlag: false,
-      steps: [
-        {
-          number: 1,
-          name: 'Транспортное средство'
-        },
-        {
-          number: 2,
-          name: 'Владелец'
-        },
-        {
-          number: 3,
-          name: 'Страхователь'
-        },
-        {
-          number: 4,
-          name: 'Водители'
-        },
-        {
-          number: 5,
-          name: 'Полис'
-        },
-        {
-          number: '+',
-          name: 'Помощь'
-        }
-      ]
+      listFlag: false
     }
   },
   methods: {
@@ -72,6 +52,7 @@ export default {
       stepsItems[id].classList.add('steps__item_active')
       this.$refs.currentText.innerHTML = `${this.steps[id].number}${substr} ${this.steps[id].name}`
       this.modalToggle(false)
+      this.$router.push({ path: this.steps[id].link })
     },
     modalToggle (flag) {
       if (flag) {
@@ -209,6 +190,10 @@ export default {
       margin: 0;
       padding: 12px 0;
       background: inherit;
+      &_active,
+      &:hover {
+        background-color: transparent;
+      }
     }
     &__number {
       display: none;
