@@ -2,7 +2,7 @@
   <main class="profileItem wrapper">
     <div class="profileItem__top">
       <div class="breadCrumbs">
-        <nuxt-link to="./" class="breadCrumbs__item">
+        <nuxt-link to=".." class="breadCrumbs__item">
           Личный кабинет
         </nuxt-link>
         <span class="breadCrumbs__item breadCrumbs__item_current">Yamaha R3</span>
@@ -18,10 +18,12 @@
         </div>
       </div>
       <div class="profileItem__buttons">
-        <BaseButton id="edit" class="profileItem__button">
-          <img src="~/assets/images/icons/pen-blue.svg" alt="image">
-          <span>Редактировать ТС</span>
-        </BaseButton>
+        <nuxt-link :to="`/profile/vehicle/${1}/edit`">
+          <BaseButton id="edit" class="profileItem__button">
+            <img src="~/assets/images/icons/pen-blue.svg" alt="image">
+            <span>Редактировать ТС</span>
+          </BaseButton>
+        </nuxt-link>
         <BaseButton id="remove" class="profileItem__button">
           <img src="~/assets/images/icons/delete-red.svg" alt="image">
           <span>Удалить ТС</span>
@@ -74,10 +76,10 @@
         <h2 class="profileItem__detailsTitle">
           Водители
         </h2>
-        <nuxt-link to="/profile/person/1" class="profileItem__detailsLink">
+        <nuxt-link to="~/person/1" class="profileItem__detailsLink">
           Селиверстов Иван Петрович
         </nuxt-link>
-        <nuxt-link to="/profile/person/2" class="profileItem__detailsLink">
+        <nuxt-link to="~/person/2" class="profileItem__detailsLink">
           Селиверстова Елена Константиновна
         </nuxt-link>
       </div>

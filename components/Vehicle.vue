@@ -2,7 +2,7 @@
   <section class="osagoForm wrapper">
     <div :id="ancor" class="osagoForm__ancor" />
     <h2 class="osagoForm__title">
-      <span>{{ number }}. </span>Транспортное средство
+      <span v-if="number">{{ number }}. </span>Транспортное средство
     </h2>
     <div class="osagoForm__row">
       <ForLogged :list="loggedVehicles" />

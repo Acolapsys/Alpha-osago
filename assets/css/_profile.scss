@@ -135,7 +135,6 @@
         align-items: center;
         width: max-content !important;
         height: max-content !important;
-        margin-right: 16px;
         padding: 10px 20px;
         font-size: 14px;
         background: #F6F6F6;
@@ -144,7 +143,7 @@
             margin-right: 10px;
         }
         &:last-child {
-            margin-right: 0;
+            margin-left: 16px;
         }
     }
     &__detailsSection {
@@ -262,6 +261,44 @@
                 display: block;
                 margin-right: 10px;
             }
+        }
+    }
+}
+.profileEdit {
+    padding-top: 60px;
+    padding-bottom: 180px;
+    &__wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &__submit {
+        margin-top: 34px;
+        color: #fff;
+        background-color: #038661;
+    }
+}
+@media (max-width: 1023px) {
+    .profileEdit {
+        padding-top: 25px;
+        &__wrapper {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .profileEdit {
+        padding-top: 90px;
+        padding-bottom: 70px;
+        .breadCrumbs {
+            display: flex;
+        }
+        &__wrapper {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &__submit {
+            margin: 0 auto;
         }
     }
 }

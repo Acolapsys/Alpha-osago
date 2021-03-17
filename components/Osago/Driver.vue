@@ -2,7 +2,7 @@
   <section class="osagoForm wrapper">
     <div :id="ancor" class="osagoForm__ancor" />
     <h2 class="osagoForm__title">
-      <span>{{ number }}. </span>Водители
+      <span v-if="number">{{ number }}. </span>Водители
     </h2>
     <div class="osagoForm__row osagoForm__row_nolimit">
       <BaseSwitch id="driver-nolimit" />

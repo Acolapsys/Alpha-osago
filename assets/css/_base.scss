@@ -135,10 +135,13 @@ line-height: 130%;
     }
 }
 .breadCrumbs {
+    display: flex;
+    flex-wrap: wrap;
     &__item {
         text-decoration: underline;
         letter-spacing: -0.03em;
         color: #088DED;
+        cursor: pointer;
         &::before {
             content: '/';
             color: inherit;
@@ -151,6 +154,7 @@ line-height: 130%;
         &_current {
             text-decoration: none;
             color: #000;
+            cursor: text;
         }
     }
 }

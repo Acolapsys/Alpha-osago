@@ -2,7 +2,7 @@
   <section class="osagoForm wrapper">
     <div :id="ancor" class="osagoForm__ancor" />
     <h2 class="osagoForm__title">
-      <span>{{ number }}. </span>Полис
+      <span v-if="number">{{ number }}. </span>Полис
     </h2>
     <div class="osagoForm__row osagoForm__row_date">
       <div class="baseField">

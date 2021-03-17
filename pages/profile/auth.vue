@@ -17,7 +17,7 @@
           <img src="~/assets/images/icons/vk-logo.svg" alt="vk" class="auth__socialItem">
         </div>
       </div>
-      <form class="auth__form">
+      <form class="auth__form" @submit.prevent="$router.push('/profile')">
         <div class="auth__formTitle">
           Или войти, используя учётную запись
         </div>
