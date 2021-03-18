@@ -76,10 +76,10 @@
       </div>
     </section>
     <div class="profile__buttons">
-      <BaseButton id="profile-exit" class="profile__exit">
+      <BaseButton id="exit" class="profile__exit">
         Выйти из аккаунта
       </BaseButton>
-      <span id="profile-remove" class="profile__remove">
+      <span id="remove" class="profile__remove">
         Удалить аккаунт...
       </span>
     </div>

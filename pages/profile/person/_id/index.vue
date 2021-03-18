@@ -15,7 +15,7 @@
         </h1>
       </div>
       <div class="profileItem__buttons">
-        <nuxt-link :to="`/profile/person/${1}/edit`">
+        <nuxt-link to="~/edit">
           <BaseButton id="edit" class="profileItem__button">
             <img src="~/assets/images/icons/pen-blue.svg" alt="image">
             <span>Редактировать персону</span>

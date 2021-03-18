@@ -23,11 +23,11 @@
         </div>
         <div class="auth__formInner">
           <div class="baseField">
-            <label for="auth-email" class="baseField__label">
+            <label for="email" class="baseField__label">
               Электронная почта
             </label>
             <BaseInput
-              id="auth-email"
+              id="email"
               type="email"
               placeholder="owner@domain.com"
               class="baseField__input"
@@ -35,18 +35,18 @@
             />
           </div>
           <div class="baseField">
-            <label for="auth-password" class="baseField__label">
+            <label for="password" class="baseField__label">
               Пароль
             </label>
             <BaseInput
-              id="auth-password"
+              id="password"
               type="password"
               class="baseField__input"
               classes="authInput"
             />
           </div>
         </div>
-        <BaseButton id="auth-submit" class="auth__submit">
+        <BaseButton id="submit" class="auth__submit">
           Войти
         </BaseButton>
         <div class="auth__link">
@@ -70,7 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 .auth {
-  padding: 81px 0 101px;
+  padding: 81px 0;
   background: linear-gradient(180deg, #038661 0%, #FDB215 100%);
   &__wrapper {
     width: 750px;

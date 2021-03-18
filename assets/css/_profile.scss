@@ -7,6 +7,10 @@
       letter-spacing: -0.02em;
       color: #333333;
     }
+    &__description {
+        letter-spacing: -0.01em;
+        color: #4D4D4D;
+    }
     &__section {
       margin-bottom: 75px;
     }
@@ -64,6 +68,7 @@
 }
 @media (max-width: 767px) {
     .profile {
+        width: 100%;
         padding-top: 110px;
         padding-bottom: 70px;
         &__title {

@@ -7,7 +7,7 @@
       <Insurer class="insurer" number="3" ancor="insurer" />
       <Driver class="driver" number="4" ancor="driver" />
       <Police class="police" number="5" ancor="police" />
-      <BaseButton id="calculation-submit" class="osago__submit">
+      <BaseButton id="submit" class="osago__submit">
         Рассчитать ОСАГО
       </BaseButton>
     </form>
