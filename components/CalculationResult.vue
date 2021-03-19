@@ -28,7 +28,13 @@
       </div>
     </div>
     <BaseButton class="calculationResult__button">
-      Оформить ОСАГО
+      <div class="calculationResult__buttonDesktop">
+        Оформить ОСАГО
+      </div>
+      <div class="calculationResult__buttonMobile">
+        Оформить
+        <img src="~/assets/images/icons/arrow-right-green.svg" alt="arrow">
+      </div>
     </BaseButton>
   </div>
 </template>
@@ -36,6 +42,7 @@
 <script>
 import BaseButton from '~/components/base/BaseButton'
 export default {
+  name: 'CalculationResult',
   components: {
     BaseButton
   },
@@ -107,9 +114,81 @@ export default {
         font-size: 14px;
     }
     &__button {
-        width: 210px;
-        color: #fff;
-        background: #FDB215;
+      width: max-content;
+      height: max-content;
+    }
+    &__buttonDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 210px;
+      height: 50px;
+      color: #fff;
+      background: #FDB215;
+      border-radius: 5px;
+    }
+    &__buttonMobile {
+      display: none;
+    }
+}
+@media (max-width: 1023px) {
+    .calculationResult {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        &__inner {
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &__buttonDesktop {
+          height: 40px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .calculationResult {
+        $root: &;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 8px;
+        &__inner {
+            justify-content: flex-start;
+            align-items: center;
+        }
+        &__img {
+            width: 75px;
+        }
+        &__item:not(&__item_result) {
+            display: none;
+        }
+        &__item {
+            &_result {
+                margin-left: 5vw;
+                &::before {
+                    display: none;
+                }
+                #{$root}__name {
+                    display: none;
+                }
+            }
+        }
+        &__button {
+          outline: 0;
+        }
+        &__buttonDesktop {
+          display: none;
+        }
+        &__buttonMobile {
+          display: flex;
+          align-items: center;
+          letter-spacing: -0.01em;
+          color: #038661;
+          img {
+            margin-top: 2px;
+            margin-left: 6px;
+          }
+        }
     }
 }
 </style>

@@ -1,14 +1,14 @@
 <template>
   <div class="osago">
-    <Steps />
-    <Vehicle class="vehicle" />
-    <Owner class="owner" />
-    <Insurer class="insurer" />
-    <Driver class="driver" />
-    <Police class="police" />
-    <BaseButton id="calculationSubmit" class="osago__submit">
-      Рассчитать ОСАГО
-    </BaseButton>
+    <Steps :steps="steps" />
+    <form class="osago__form">
+      <Vehicle class="vehicle" number="1" ancor="vehicle" />
+      <Owner class="owner" number="2" ancor="owner" />
+      <Insurer class="insurer" number="3" ancor="insurer" />
+      <Driver class="driver" number="4" ancor="driver" />
+      <Police class="police" number="5" ancor="police" />
+      <BaseButton class="osago__submit" id="calculation-submit">Рассчитать ОСАГО</BaseButton>
+    </form>
     <div class="wrapper">
       <CalculationResult v-for="item in 5" :key="item.id" :calculation-options="calculation1" />
     </div>
@@ -37,6 +37,38 @@ export default {
   },
   data () {
     return {
+      steps: [
+        {
+          number: 1,
+          name: 'Транспортное средство',
+          link: '/osago#vehicle'
+        },
+        {
+          number: 2,
+          name: 'Владелец',
+          link: '/osago#owner'
+        },
+        {
+          number: 3,
+          name: 'Страхователь',
+          link: '/osago#insurer'
+        },
+        {
+          number: 4,
+          name: 'Водители',
+          link: '/osago#driver'
+        },
+        {
+          number: 5,
+          name: 'Полис',
+          link: '/osago#police'
+        },
+        {
+          number: '+',
+          name: 'Помощь',
+          link: '/osago/help'
+        }
+      ],
       calculation1: {
         price: '3 750',
         items: [

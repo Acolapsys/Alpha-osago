@@ -1,7 +1,8 @@
 <template>
   <section class="osagoForm wrapper">
+    <div :id="ancor" class="osagoForm__ancor" />
     <h2 class="osagoForm__title">
-      <span>1. </span>Транспортное средство
+      <span>{{ number }}. </span>Транспортное средство
     </h2>
     <div class="osagoForm__row">
       <ForLogged :list="loggedVehicles" />
@@ -211,6 +212,7 @@ import BaseSelect from '~/components/base/BaseSelect'
 import BaseFile from '~/components/base/BaseFile'
 import ForLogged from '~/components/ForLogged'
 export default {
+  name: 'Vehicle',
   components: {
     BaseInput,
     BaseCheckbox,
@@ -219,6 +221,16 @@ export default {
     BaseSelect,
     BaseFile,
     ForLogged
+  },
+  props: {
+    number: {
+      type: [Number, String],
+      default: null
+    },
+    ancor: {
+      type: String,
+      default: null
+    }
   },
   data () {
     return {

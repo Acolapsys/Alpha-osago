@@ -23,9 +23,11 @@
           </nuxt-link>
         </li>
       </ul>
-      <BaseButton class="account lg-max:hidden">
-        Личный кабинет
-      </BaseButton>
+      <nuxt-link to="/profile/auth">
+        <BaseButton class="account lg-max:hidden">
+          Личный кабинет
+        </BaseButton>
+      </nuxt-link>
       <div class="burger lg:hidden">
         <img src="~/assets/images/icons/burger.png" alt="">
       </div>

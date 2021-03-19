@@ -1,7 +1,8 @@
 <template>
   <section class="osagoForm wrapper">
+    <div :id="ancor" class="osagoForm__ancor"></div>
     <h2 class="osagoForm__title">
-      <span>3. </span>Страхователь
+      <span>{{ number }}. </span>Страхователь
     </h2>
     <div class="osagoForm__row">
       <ForLogged :list="loggedInsurers" />
@@ -130,12 +131,23 @@ import BaseRadio from '~/components/base/BaseRadio'
 import BaseFile from '~/components/base/BaseFile'
 import ForLogged from '~/components/ForLogged'
 export default {
+  name: 'Insurer',
   components: {
     BaseSwitch,
     BaseInput,
     BaseRadio,
     BaseFile,
     ForLogged
+  },
+  props: {
+    number: {
+      type: [Number, String],
+      default: null
+    },
+    ancor: {
+      type: String,
+      default: null
+    }
   },
   data () {
     return {

@@ -69,6 +69,12 @@ letter-spacing: -0.01em;
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
+.color-yellow {
+    color: #F2994A;
+}
+.color-red {
+    color: #EB5757;
+}
 
 .shadows-on-card {
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05), 0px 0px 1px rgba(0, 0, 0, 0.2);
@@ -129,10 +135,15 @@ line-height: 130%;
     }
 }
 .osagoForm {
+    position: relative;
     padding: 48px 37px 62px;
     background: #FFFFFF;
     border-radius: 5px;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05), 0px 0px 1px rgba(0, 0, 0, 0.2);
+    &__ancor {
+        position: absolute;
+        top: -10px;
+    }
     &__title {
         margin-bottom: 20px;
         span {
@@ -255,6 +266,9 @@ line-height: 130%;
     .osagoForm {
         width: 100%;
         padding: 33px 16px;
+        &__ancor {
+            top: -100px;
+        }
         &__title {
             span {
                 display: inline;
@@ -284,6 +298,112 @@ line-height: 130%;
         &__button {
             background-color: #F6F6F6;
             border: 0;
+        }
+    }
+}
+.profileCard {
+    position: relative;
+    padding: 28px 53px 31px 43px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25), 4px 4px 40px rgba(0, 0, 0, 0.08);
+    &__link {
+        position: absolute;
+        top: 26px;
+        right: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 34px;
+        height: 34px;
+        background-color: rgba(3, 134, 97, 0.06);
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    &__title {
+        margin-bottom: 8px;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: -0.02em;
+        color: #333333;
+    }
+    &__subtitle {
+        margin-bottom: 6px;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        color: #828282;
+    }
+    &__hint {
+        letter-spacing: -0.01em;
+        color: #BDBDBD;
+    }
+    &__details {
+        margin-top: 10px;
+        padding-top: 16px;
+        border-top: 1px solid #F2F2F2;
+    }
+    &__detailsInner {
+        display: flex;
+        align-items: flex-start;
+    }
+    &__detailsBlock {
+        &:first-child {
+            margin-right: 30px;
+        }
+    }
+    &__detailsTitle {
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #BDBDBD;
+    }
+    &__detailsText {
+        line-height: 23px;
+        letter-spacing: -0.01em;
+        color: #333333;
+    }
+}
+@media (max-width: 1023px) {
+    .profileCard {
+        $root: &;
+        &:not(&_short) { 
+            #{$root}__detailsInner {
+                flex-direction: column;
+            }
+            #{$root}__detailsBlock {
+                &:first-child {
+                    margin-right: 0;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .profileCard {
+        $root: &;
+        padding: 15px 20px 18px;
+        &__link {
+            top: 15px;
+            width: 30px;
+            height: 30px;
+        }
+        &__title {
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+        &__subtitle {
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+        &__details {
+            border-top: none;
+        }
+        &:not(&_short) {
+            #{$root}__details {
+                display: none;
+            }
         }
     }
 }
