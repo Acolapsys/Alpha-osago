@@ -4,7 +4,7 @@
       <div class="title body-big-2">
         Водитель 1
       </div>
-      <span>Удалить водителя</span>
+<!--      <span>Удалить водителя</span>-->
     </div>
     <div class="kbm mt-2 py-14">
       <base-switch name="know_kbm" class="mr-16" @onSwitch="onSelectKbm" />
@@ -60,3 +60,8 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+.driver{
+  border-radius: 10px;
+}
+</style>

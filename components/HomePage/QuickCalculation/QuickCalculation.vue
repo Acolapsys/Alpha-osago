@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     openAddition () {
-      this.$router.push('/')
+      this.$router.push('/osago')
     },
     onSelectInsurance (value) {
       this.insurance = value
@@ -110,7 +110,7 @@ input {
 
 }
 .col {
-    @apply  bg-grey
+    //@apply  bg-grey
 }
 .count {
   box-shadow: 0px 0px 4px rgba(255, 208, 55, 0.3), 0px 3px 15px rgba(255, 208, 55, 0.2);
