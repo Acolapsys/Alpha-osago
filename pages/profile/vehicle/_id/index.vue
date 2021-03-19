@@ -24,7 +24,7 @@
             <span>Редактировать ТС</span>
           </BaseButton>
         </nuxt-link>
-        <BaseButton id="remove" class="profileItem__button">
+        <BaseButton id="remove" class="profileItem__button" @click.native="modalRemoveVehicle = true">
           <img src="~/assets/images/icons/delete-red.svg" alt="image">
           <span>Удалить ТС</span>
         </BaseButton>
@@ -84,13 +84,50 @@
         </nuxt-link>
       </div>
     </div>
+    <BaseModal v-if="modalRemoveVehicle" class="modal modal_remove modal_removeVehicle" @closeModal="modalRemoveVehicle = false">
+      <h2 class="modal__title">Удалить?</h2>
+      <div class="modal__subjectTitle">Yamaha R3</div>
+      <div class="modal__subjectSubtitle">5558 АВ 63</div>
+      <p class="modal__description">
+        <span class="color-red">Удаляем данные насовсем.</span><br /> Восстановить нельзя, никак. Это последний шанс вернуться.
+      </p>
+      <div class="baseField">
+        <label for="modal-remove-mail" class="baseField__label">
+          Может, отправить полис на почту? На всякий случай.
+        </label>
+        <BaseInput
+          id="modal-remove-mail"
+          placeholder="owner@domain.com"
+          class="baseField__input"
+        />
+      </div>
+      <div class="modal__buttons">
+        <BaseButton id="modal-remove-fast" class="modal__remove">
+            Удалить без отправки
+        </BaseButton>
+        <BaseButton id="modal-remove-submit" class="modal__submit">
+            Отправить на почту и удалить
+        </BaseButton>
+      </div>
+      
+    </BaseModal>
   </main>
 </template>
 <script>
+import BaseInput from '~/components/base/BaseInput'
 import BaseButton from '~/components/base/BaseButton'
+import BaseModal from '~/components/base/BaseModal'
+
 export default {
   components: {
-    BaseButton
+    BaseInput,
+    BaseButton,
+    BaseModal
+  },
+  data() {
+    return {
+      modalRemoveVehicle: false
+    }
   }
 }
 </script>

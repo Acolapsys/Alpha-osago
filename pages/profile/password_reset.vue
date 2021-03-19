@@ -23,20 +23,41 @@
                 </div>
             </div>
         </div>
-        <BaseButton id="back" class="profile__back">
+        <BaseButton id="submit" class="profile__submit" @click.native="modalError = true">
           Новый пароль
         </BaseButton>
+        <BaseModal v-if="modalSuccess" class="modal modal_success" @closeModal="modalSuccess = false">
+            <h2 class="modal__title">Пароль изменён</h2>
+            <BaseButton id="modal-back" class="modal__back">
+                В личный кабинет
+            </BaseButton>
+        </BaseModal>
+        <BaseModal v-if="modalError" class="modal modal_error" @closeModal="modalError = false">
+            <h2 class="modal__title">Ссылка устарела</h2>
+            <div class="modal__link">Восстановить пароль...</div>
+            <BaseButton id="modal-back" class="modal__back">
+                На главную
+            </BaseButton>
+        </BaseModal>
     </main>
 </template>
 
 <script>
 import BaseInput from '~/components/base/BaseInput'
 import BaseButton from '~/components/base/BaseButton'
+import BaseModal from '~/components/base/BaseModal'
 
 export default {
   components: {
       BaseInput,
-      BaseButton
+      BaseButton,
+      BaseModal
+  },
+  data() {
+      return {
+          modalSuccess: false,
+          modalError: false
+      }
   }
 }
 </script>
@@ -45,11 +66,11 @@ export default {
 .profile {
     width: 700px;
     .baseField,
-    &__back {
+    &__submit {
         width: 364px;
         margin: 0 auto;
     }
-    &__back {
+    &__submit {
         margin-top: 30px;
         border: 1.5px solid #333333;
     }
@@ -58,10 +79,10 @@ export default {
     .profile {
         width: 100%;
         .baseField,
-        &__back {
+        &__submit {
             width: 90%;
         }
-        &__back {
+        &__submit {
             margin-top: 40px;
         }
     }

@@ -1,0 +1,122 @@
+.modal {
+    $root: &;
+    &_remove {
+        .baseField {
+            width: 364px;
+            &__label {
+                display: block;
+                margin-bottom: 16px;
+                font-size: 16px;
+                font-weight: bold;
+                white-space: nowrap;
+                letter-spacing: -0.01em;
+                color: #4D4D4D;
+            }
+        }
+        #{$root}__title {
+            margin-bottom: 0;
+            color: #D73E29;
+        }
+    }
+    &_success {
+        #{$root}__title {
+            margin-bottom: 55px;
+            text-align: center;
+        }
+    }
+    &_error {
+        #{$root}__title,
+        #{$root}__link {
+            text-align: center;
+        }
+        #{$root}__link {
+            margin-bottom: 42px;
+        }
+    }
+    &__title {
+        margin-bottom: 20px;
+        font-size: 36px;
+        letter-spacing: -0.03em;
+    }
+    &__subjectTitle {
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: -0.02em;
+        color: #333333;
+    }
+    &__subjectSubtitle {
+        margin-bottom: 24px;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        color: #828282;
+    }
+    &__description {
+        margin-bottom: 24px;
+        letter-spacing: -0.01em;
+        color: #333;
+    }
+    &__link {
+        text-decoration-line: underline;
+        line-height: 23px;
+        letter-spacing: -0.01em;
+        color: #088DED;
+    }
+    &__buttons {
+        display: flex;
+        margin-top: 40px;
+    }
+    &__remove {
+        margin-right: 24px;
+        color: #fff;
+        background: #D73E29;
+    }
+    &__submit,
+    &__back {
+        margin: 0 auto;
+        border: 1px solid #333333;
+    }
+}
+
+@media (max-width: 767px) {
+    .modal {
+        $root: &;
+        &_remove {
+            .baseField {
+                width: 100%;
+                &__label {
+                    display: none;
+                }
+            }
+            #{$root}__title {
+                text-align: center;
+            }
+        }
+        &__title {
+            margin-bottom: 15px;
+            font-size: 26px;
+        }
+        &__subjectTitle,
+        &__subjectSubtitle,
+        &__description {
+            text-align: center;
+        }
+        &__subjectSubtitle {
+            font-size: 16px;
+        }
+        &__buttons {
+            flex-direction: column;
+            margin-top: 24px;
+        }
+        &__remove,
+        &__submit,
+        &__back {
+            width: 100% !important;
+            height: 40px !important;
+            font-size: 14px;
+        }
+        &__remove {
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+    }
+}
