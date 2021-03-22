@@ -21,7 +21,7 @@
             <span>Редактировать персону</span>
           </BaseButton>
         </nuxt-link>
-        <BaseButton id="remove" class="profileItem__button">
+        <BaseButton id="remove" class="profileItem__button" @click.native="modalRemove = true">
           <img src="~/assets/images/icons/delete-red.svg" alt="image">
           <span>Удалить персону</span>
         </BaseButton>
@@ -49,18 +49,52 @@
         </div>
       </div>
     </div>
+    <BaseModal v-if="modalRemove" class="modal modal_remove" @closeModal="modalRemove = false">
+      <h2 class="modal__title">
+        Удалить?
+      </h2>
+      <div class="modal__subjectTitle">
+        Селиверстова Елена Константиновна
+      </div>
+      <p class="modal__description">
+        Мы удалим данные из персон, однако они останутся в полисах.<br><span class="color-red">Восстановить нельзя, только заново создать.</span>
+      </p>
+      <div class="modal__buttons">
+        <BaseButton id="modal-remove-fast" class="modal__remove" @click.native="modalRemove = false; modalRemoved = true">
+          Удалить?
+        </BaseButton>
+        <BaseButton id="modal-remove-submit" class="modal__submit" @click.native="modalRemove = false; modalRemoved = true">
+          Отмена
+        </BaseButton>
+      </div>
+    </BaseModal>
+    <BaseModal v-if="modalRemoved" class="modal modal_removed" :short="true" @closeModal="modalRemoved = false">
+      <h2 class="modal__title">
+        Удалено
+      </h2>
+      <p class="modal__description">
+        Но данные о человеке остались в полисах.<br>Их можно поменять только обратившись в страховую.
+      </p>
+      <BaseButton id="modal-removed-submit" class="modal__submit" @click.native="modalRemoved = false">
+        Закрыть
+      </BaseButton>
+    </BaseModal>
   </main>
 </template>
 <script>
 import VehicleCard from '~/components/Profile/VehicleCard'
 import BaseButton from '~/components/base/BaseButton'
+import BaseModal from '~/components/base/BaseModal'
 export default {
   components: {
     VehicleCard,
-    BaseButton
+    BaseButton,
+    BaseModal
   },
   data () {
     return {
+      modalRemove: false,
+      modalRemoved: false,
       vehicles: [
         {
           link: '/profile/vehicle/1',

@@ -44,6 +44,40 @@
         flex-wrap: wrap;
         margin-bottom: 45px;
     }
+    &__input {
+        padding: 10px 34px 18px;
+        background: #FFFFFF;
+        border-radius: 5px;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05), 0px 0px 1px rgba(0, 0, 0, 0.2);
+    }
+    &__inputName {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        color: #BDBDBD;
+    }
+    &__inputInner {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2px;
+    }
+    &__inputValue {
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: -0.02em;
+        color: #333333;
+        outline: 0;
+    }
+    &__inputEdit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 31px;
+        height: 31px;
+        background-color: rgba(3, 134, 97, 0.06);
+        border-radius: 50%;
+        cursor: pointer;
+    }
     &__social {
       margin-right: 24px;
       cursor: pointer;
@@ -230,6 +264,9 @@
         }
         &__title {
             font-size: 22px;
+        }
+        &__input {
+            padding: 8px 20px 22px;
         }
         &__subtitle {
             font-size: 18px;

@@ -24,7 +24,7 @@
             <span>Редактировать ТС</span>
           </BaseButton>
         </nuxt-link>
-        <BaseButton id="remove" class="profileItem__button" @click.native="modalRemoveVehicle = true">
+        <BaseButton id="remove" class="profileItem__button" @click.native="modalRemoveAccount = true">
           <img src="~/assets/images/icons/delete-red.svg" alt="image">
           <span>Удалить ТС</span>
         </BaseButton>
@@ -48,7 +48,7 @@
             </div>
             <img src="~/assets/images/icons/arrow-right-gray.svg" class="arrow" alt="arrow">
           </BaseButton>
-          <BaseButton id="post" class="profileItem__detailsButton">
+          <BaseButton id="post" class="profileItem__detailsButton" @click.native="modalSend = true">
             <div>
               <img src="~/assets/images/icons/mail.svg" class="icon" alt="icon">
               Отправить на почту
@@ -84,12 +84,18 @@
         </nuxt-link>
       </div>
     </div>
-    <BaseModal v-if="modalRemoveVehicle" class="modal modal_remove modal_removeVehicle" @closeModal="modalRemoveVehicle = false">
-      <h2 class="modal__title">Удалить?</h2>
-      <div class="modal__subjectTitle">Yamaha R3</div>
-      <div class="modal__subjectSubtitle">5558 АВ 63</div>
+    <BaseModal v-if="modalRemove" class="modal modal_remove" @closeModal="modalRemove = false">
+      <h2 class="modal__title">
+        Удалить?
+      </h2>
+      <div class="modal__subjectTitle">
+        Yamaha R3
+      </div>
+      <div class="modal__subjectSubtitle">
+        5558 АВ 63
+      </div>
       <p class="modal__description">
-        <span class="color-red">Удаляем данные насовсем.</span><br /> Восстановить нельзя, никак. Это последний шанс вернуться.
+        <span class="color-red">Удаляем данные насовсем.</span><br> Восстановить нельзя, никак. Это последний шанс вернуться.
       </p>
       <div class="baseField">
         <label for="modal-remove-mail" class="baseField__label">
@@ -102,14 +108,102 @@
         />
       </div>
       <div class="modal__buttons">
-        <BaseButton id="modal-remove-fast" class="modal__remove">
-            Удалить без отправки
+        <BaseButton id="modal-remove-fast" class="modal__remove" @click.native="modalRemove = false; modalRemoved = true">
+          Удалить без отправки
         </BaseButton>
-        <BaseButton id="modal-remove-submit" class="modal__submit">
-            Отправить на почту и удалить
+        <BaseButton id="modal-remove-submit" class="modal__submit" @click.native="modalRemove = false; modalRemoved = true">
+          Отправить на почту и удалить
         </BaseButton>
       </div>
-      
+    </BaseModal>
+    <BaseModal v-if="modalRemoved" class="modal modal_removed" :short="true" @closeModal="modalRemoved = false">
+      <h2 class="modal__title">
+        Удалено
+      </h2>
+      <div class="modal__subjectTitle">
+        Yamaha R3
+      </div>
+      <div class="modal__subjectSubtitle">
+        5558 АВ 63
+      </div>
+      <p class="modal__description">
+        Полис отправлен на owner@domain.com
+      </p>
+      <BaseButton id="modal-removed-submit" class="modal__submit" @click.native="modalRemoved = false">
+        Закрыть
+      </BaseButton>
+    </BaseModal>
+    <BaseModal v-if="modalSend" class="modal modal_send" @closeModal="modalSend = false">
+      <h2 class="modal__title">
+        Отправить полис
+      </h2>
+      <div class="modal__subjectTitle">
+        Yamaha R3
+      </div>
+      <div class="modal__subjectSubtitle">
+        5558 АВ 63
+      </div>
+      <div class="baseField">
+        <label for="modal-send-mail" class="baseField__label">
+          На почту
+        </label>
+        <BaseInput
+          id="modal-send-mail"
+          placeholder="owner@domain.com"
+          class="baseField__input"
+        />
+      </div>
+      <BaseButton id="modal-send-submit" class="modal__submit" @click.native="modalSend = false; modalSended = true">
+        Отправить
+      </BaseButton>
+    </BaseModal>
+    <BaseModal v-if="modalSended" class="modal modal_success" :short="true" @closeModal="modalSended = false">
+      <h2 class="modal__title">
+        Полис отправлен
+      </h2>
+      <p class="modal__description">
+        на owner@domain.com
+      </p>
+      <BaseButton id="modal-back" class="modal__back" @click.native="modalSended = false">
+        Закрыть
+      </BaseButton>
+    </BaseModal>
+    <BaseModal v-if="modalRemoveAccount" class="modal modal_remove" @closeModal="modalRemoveAccount = false">
+      <h2 class="modal__title">
+        Удалить аккаунт?
+      </h2>
+      <p class="modal__description">
+        <span class="color-red">Удаляем данные насовсем.</span><br> Восстановить нельзя, никак. Это последний шанс вернуться. При этом полисы останутся у страховых.
+      </p>
+      <div class="baseField">
+        <label for="modal-remove-account-mail" class="baseField__label">
+          Может, отправить полисы на почту? На всякий случай.
+        </label>
+        <BaseInput
+          id="modal-remove-account-mail"
+          placeholder="owner@domain.com"
+          class="baseField__input"
+        />
+      </div>
+      <div class="modal__buttons">
+        <BaseButton id="modal-remove-fast" class="modal__remove" @click.native="modalRemoveAccount = false; modalRemovedAccount = true">
+          Удалить без отправки
+        </BaseButton>
+        <BaseButton id="modal-remove-submit" class="modal__submit" @click.native="modalRemoveAccount = false; modalRemovedAccount = true">
+          Отправить на почту и удалить
+        </BaseButton>
+      </div>
+    </BaseModal>
+    <BaseModal v-if="modalRemovedAccount" class="modal modal_success" :short="true" @closeModal="modalRemovedAccount = false">
+      <h2 class="modal__title">
+        Аккаунт удалён
+      </h2>
+      <p class="modal__description">
+        Полисы отправлен на owner@domain.com 
+      </p>
+      <BaseButton id="modal-back" class="modal__back" @click.native="modalRemovedAccount = false">
+        Закрыть
+      </BaseButton>
     </BaseModal>
   </main>
 </template>
@@ -124,9 +218,14 @@ export default {
     BaseButton,
     BaseModal
   },
-  data() {
+  data () {
     return {
-      modalRemoveVehicle: false
+      modalRemove: false,
+      modalRemoved: false,
+      modalSend: false,
+      modalSended: false,
+      modalRemoveAccount: false,
+      modalRemovedAccount: false
     }
   }
 }

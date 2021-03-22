@@ -2,26 +2,46 @@
     $root: &;
     &_remove {
         .baseField {
-            width: 364px;
+            width: 80%;
             &__label {
                 display: block;
                 margin-bottom: 16px;
                 font-size: 16px;
                 font-weight: bold;
-                white-space: nowrap;
                 letter-spacing: -0.01em;
                 color: #4D4D4D;
             }
         }
         #{$root}__title {
-            margin-bottom: 0;
+            margin: 0 0 5px;
             color: #D73E29;
+        }
+    }
+    &_removed {
+        #{$root}__title {
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        #{$root}__subjectTitle,
+        #{$root}__subjectSubtitle {
+            text-align: center;
+            text-decoration: line-through;
+            color: #808080;
+        }
+        #{$root}__description {
+            margin-bottom: 40px;
+            text-align: center;
         }
     }
     &_success {
         #{$root}__title {
             margin-bottom: 55px;
             text-align: center;
+        }
+        #{$root}__description {
+            margin: 40px 0;
+            text-align: center;
+            font-weight: bold;
         }
     }
     &_error {
@@ -33,7 +53,27 @@
             margin-bottom: 42px;
         }
     }
+    &_send {
+        .baseField {
+            width: 80%;
+            &__label {
+                display: block;
+                margin-bottom: 16px;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: -0.01em;
+                color: #4D4D4D;
+            }
+        }
+        #{$root}__title {
+            margin-bottom: 5px;
+        }
+        #{$root}__submit {
+            margin: 40px 0 0
+        }
+    }
     &__title {
+        margin-top: 0;
         margin-bottom: 20px;
         font-size: 36px;
         letter-spacing: -0.03em;
@@ -45,12 +85,12 @@
         color: #333333;
     }
     &__subjectSubtitle {
-        margin-bottom: 24px;
         font-size: 18px;
         letter-spacing: -0.02em;
         color: #828282;
     }
     &__description {
+        margin-top: 24px;
         margin-bottom: 24px;
         letter-spacing: -0.01em;
         color: #333;
@@ -64,6 +104,9 @@
     &__buttons {
         display: flex;
         margin-top: 40px;
+        #{$root}__submit {
+            margin: 0;
+        }
     }
     &__remove {
         margin-right: 24px;
@@ -85,6 +128,18 @@
                 width: 100%;
                 &__label {
                     display: none;
+                }
+            }
+            #{$root}__title {
+                text-align: center;
+                margin-bottom: 5px;
+            }
+        }
+        &_send {
+            .baseField {
+                width: 100%;
+                &__label {
+                    font-size: 14px;
                 }
             }
             #{$root}__title {

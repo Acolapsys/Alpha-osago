@@ -48,23 +48,54 @@
         Учётная запись
       </h3>
       <div class="profile__sectionInner">
-        <ProfileInput
-          id="email"
-          label="email"
-          type-default="email"
-          value-default="registered_email@mail.ru"
-        />
-        <ProfileInput
-          id="password"
-          label="пароль"
-          type-default="password"
-          value-default="12345"
-        />
-        <ProfileInput
-          id="tel"
-          label="телефон"
-          value-default="+7 999 123 00-00"
-        />
+        <div class="profile__input">
+          <div class="profile__inputName">
+            email
+          </div>
+          <div class="profile__inputInner">
+            <input
+              type="text"
+              readonly="readonly"
+              class="profile__inputValue"
+              :value="email"
+            >
+            <div class="profile__inputEdit">
+              <img src="~/assets/images/icons/pen-green.svg" alt="edit">
+            </div>
+          </div>
+        </div>
+        <div class="profile__input">
+          <div class="profile__inputName">
+            пароль
+          </div>
+          <div class="profile__inputInner">
+            <input
+              type="password"
+              readonly="readonly"
+              class="profile__inputValue"
+              :value="password"
+            >
+            <div class="profile__inputEdit">
+              <img src="~/assets/images/icons/pen-green.svg" alt="edit">
+            </div>
+          </div>
+        </div>
+        <div class="profile__input">
+          <div class="profile__inputName">
+            телефон
+          </div>
+          <div class="profile__inputInner">
+            <input
+              type="text"
+              readonly="readonly"
+              class="profile__inputValue"
+              :value="tel"
+            >
+            <div class="profile__inputEdit">
+              <img src="~/assets/images/icons/pen-green.svg" alt="edit">
+            </div>
+          </div>
+        </div>
       </div>
       <h3 class="profile__sectionSubtitle">
         Добавить вход через
@@ -89,13 +120,11 @@
 <script>
 import VehicleCard from '~/components/Profile/VehicleCard'
 import PersonCard from '~/components/Profile/PersonCard'
-import ProfileInput from '~/components/Profile/ProfileInput'
 import BaseButton from '~/components/base/BaseButton'
 export default {
   components: {
     VehicleCard,
     PersonCard,
-    ProfileInput,
     BaseButton
   },
   data () {
@@ -139,7 +168,10 @@ export default {
           kbm: '1.0',
           certificate: '<span class="color-yellow">Действительны ещё 1 месяц</span>'
         }
-      ]
+      ],
+      email: 'registered_email@mail.ru',
+      password: '324234532',
+      tel: '+7 999 123 00-00'
     }
   }
 }
@@ -152,21 +184,19 @@ export default {
       width: calc(50% - 12px);
       margin-bottom: 24px;
     }
-    .profileInput {
-      width: 32%;
-    }
     &_social {
       justify-content: flex-start;
     }
   }
+  &__input {
+    width: 32%;
+  }
 }
 @media (max-width: 1023px) {
   .profile {
-    &__sectionInner {
-      .profileInput {
-        width: calc(50% - 10px);
-        margin-bottom: 20px;
-      }
+    &__input {
+      width: calc(50% - 10px);
+      margin-bottom: 20px;
     }
   }
 }
@@ -177,10 +207,10 @@ export default {
         width: 100%;
         margin-bottom: 12px;
       }
-      .profileInput {
-        width: 100%;
-        margin-bottom: 12px;
-      }
+    }
+    &__input {
+      width: 100%;
+      margin-bottom: 12px;
     }
   }
 }

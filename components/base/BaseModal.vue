@@ -1,5 +1,5 @@
 <template>
-  <div class="baseModal">
+  <div class="baseModal" :class="{ 'baseModal_short': short }">
     <div class="baseModal__wrapper" @click.self="closeModal">
       <div class="baseModal__box">
           <div class="baseModal__close" @click="closeModal">
@@ -16,6 +16,12 @@
 <script>
 export default {
   name: 'BaseModal',
+  props: {
+      short: {
+          type: Boolean,
+          default: false
+      }
+  },
   methods: {
     closeModal(args) {
         document.body.removeAttribute('style')
@@ -25,6 +31,9 @@ export default {
   mounted() {
     document.body.style.paddingRight = window.innerWidth - document.body.clientWidth + "px"
 	document.body.style.overflow = 'hidden'
+  },
+  beforeDestroy() {
+    this.closeModal()
   }
 }
 </script>
@@ -54,7 +63,7 @@ export default {
         position: relative;
         width: 752px;
         margin: 0 auto;
-        padding: 76px 91px 89px;
+        padding: 76px 60px 89px;
         background-color: #fff;
     }
     &__close {
@@ -99,6 +108,12 @@ export default {
 }
 @media (max-width: 767px) {
     .baseModal {
+        $root: &;
+        &_short {
+            #{$root}__box {
+                width: 95%;
+            }
+        }
         &__wrapper {
             padding-top: 50px;
         }

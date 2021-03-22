@@ -12,10 +12,19 @@
     <Vehicle class="vehicle" />
     <Owner class="owner" />
     <div class="profileEdit__wrapper wrapper">
-      <BaseButton id="submit" class="profileEdit__submit">
+      <BaseButton id="submit" class="profileEdit__submit" @click.native="modalSuccess = true">
         Сохранить
       </BaseButton>
-    </div> 
+    </div>
+    <BaseModal v-if="modalSuccess" class="modal modal_success" :short="true" @closeModal="modalSuccess = false">
+      <h2 class="modal__title">Сохранено</h2>
+      <p class="modal__description">
+        В ранее оформленных полисах остались прежние данные.
+      </p>
+      <BaseButton id="modal-back" class="modal__back" @click.native="modalSuccess = false">
+          Закрыть
+      </BaseButton>
+    </BaseModal>
   </main>
 </template>
 
@@ -23,11 +32,18 @@
 import Vehicle from '~/components/Vehicle'
 import Owner from '~/components/Owner'
 import BaseButton from '~/components/base/BaseButton'
+import BaseModal from '~/components/base/BaseModal'
 export default {
   components: {
     Vehicle,
     Owner,
-    BaseButton
+    BaseButton,
+    BaseModal
+  },
+  data() {
+    return {
+      modalSuccess: false
+    }
   }
 }
 </script>
