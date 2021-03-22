@@ -121,13 +121,23 @@
         </div>
       </div>
       <div class="flex flex-col w-full items-center ">
-        <button type="submit" class="count_button text-center w-265 h-50 text-white bg-brand1 rounded-5 mb-12">
+        <button @click="openAddition" class="count_button text-center w-265 h-50 text-white bg-brand1 rounded-5 mb-12">
           Рассчитать ОСАГО
         </button>
       </div>
     </div>
   </div>
 </template>
+<script>
+export default {
+  name:"Help",
+  methods:{
+    openAddition () {
+      this.$router.push('/osago')
+    },
+  }
+}
+</script>
 <style lang="scss" scoped>
 .row {
   @apply py-29 border-grey6 border-t-DEFAULT border-opacity-20 flex justify-between w-full items-center ;

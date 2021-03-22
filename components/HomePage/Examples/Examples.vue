@@ -5,9 +5,9 @@
         Примеры расчеты ОСАГО
       </h1>
       <CalculateOsago v-for="(example, index) in examples" :key="index" :example="example" />
-      <BaseButton class="text-white bg-brand1 shadow">
+      <button @click="openAddition" class="count_button text-center w-265 h-50 text-white bg-brand1 rounded-5">
         Рассчитать ОСАГО
-      </BaseButton>
+      </button>
     </div>
 
   </div>
@@ -34,9 +34,16 @@ export default {
         },
       ]
     }
+  },
+  methods:{
+    openAddition () {
+      this.$router.push('/osago')
+    },
   }
 }
 </script>
 <style lang="scss" scoped>
-
+.count_button {
+  box-shadow: 0px 3px 15px rgba(4, 166, 120, 0.3);
+}
 </style>

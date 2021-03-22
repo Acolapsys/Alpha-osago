@@ -1,6 +1,6 @@
 <template>
   <section class="osagoForm wrapper">
-    <div :id="ancor" class="osagoForm__ancor"></div>
+    <div :id="ancor" class="osagoForm__ancor" />
     <h2 class="osagoForm__title">
       <span>{{ number }}. </span>Полис
     </h2>

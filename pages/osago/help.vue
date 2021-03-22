@@ -6,28 +6,38 @@
         <img src="~/assets/images/icons/arrow-left-blue.svg" alt="arrow">
         Назад, к форме
       </nuxt-link>
-      <h1 class="help__title">Помощь в оформлении</h1>
-      <h2 class="help__subtitle">Как работает</h2>
+      <h1 class="help__title">
+        Помощь в оформлении
+      </h1>
+      <h2 class="help__subtitle">
+        Как работает
+      </h2>
       <p class="help__text">
-        1. Заполните обычную форму расчёта ОСАГО<br />
-        2. Войдите, или зарегистрируйтесь, чтобы мы могли отправить вам полис.<br />
-        3. Оплатите оформление полиса:<br />
-        — Заморозим стоимость полиса + 800 ₽ за услугу<br />
-        — Деньги спишутся только после оформления<br />
-        — Деньги автоматически разморозятся, если полис не оформили за 48 часов<br />
+        1. Заполните обычную форму расчёта ОСАГО<br>
+        2. Войдите, или зарегистрируйтесь, чтобы мы могли отправить вам полис.<br>
+        3. Оплатите оформление полиса:<br>
+        — Заморозим стоимость полиса + 800₽ за услугу<br>
+        — Деньги спишутся только после оформления<br>
+        — Деньги автоматически разморозятся, если полис не оформили за 48 часов<br>
         4. Полис у вас. Или деньги, как повезёт.
       </p>
-      <BaseButton class="help__button">Перейти к оплате</BaseButton>
+      <BaseButton class="help__button">
+        Перейти к оплате
+      </BaseButton>
       <div class="help__hint">
-        Мы будем оформлять полис для Toyota Land Cruiser (без <br />
+        Мы будем оформлять полис для Toyota Land Cruiser (без <br>
         госномера). Проверьте данные на прошлых шагах.
       </div>
       <div class="help__article">
         <div class="help__articleInner">
           <img src="~/assets/images/article4.png" alt="image" class="help__articleImg">
-          <div class="help__articleName">Несегмент</div>
+          <div class="help__articleName">
+            Несегмент
+          </div>
         </div>
-        <div class="help__articleDescription">Читайте разбор, что такое несегмент, почему на некоторые виды транспорта все страховые выдают ошибки и не оформляют страховки и как мы работаем с такими случаями, чтобы страховку всё-таки оформили.</div>
+        <div class="help__articleDescription">
+          Читайте разбор, что такое несегмент, почему на некоторые виды транспорта все страховые выдают ошибки и не оформляют страховки и как мы работаем с такими случаями, чтобы страховку всё-таки оформили.
+        </div>
       </div>
     </div>
   </div>
@@ -39,9 +49,9 @@ import BaseButton from '~/components/base/BaseButton'
 export default {
   components: {
     Steps,
-    BaseButton,
+    BaseButton
   },
-  data() {
+  data () {
     return {
       steps: [
         {

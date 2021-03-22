@@ -22,32 +22,51 @@
         <form submit.prevent="submitHandler" class="mt-37">
           <div class="grid grid-cols-2-266 grid-rows-2 gap-25 tablet-max:grid-cols-1 tablet-max:gap-19">
             <div class="col">
-              <label for="vehicle">Транспортное средство</label>
-              <select id="vehicle" name="vehicle" />
+              <div class="baseField">
+                <span class="baseField__label">Транспортное средство</span>
+                <BaseSelect
+                  id="vehicle"
+                  :options="carsList"
+                  :default="carDefault"
+                  class="baseField__input"
+                />
+              </div>
+<!--              <label for="vehicle">Транспортное средство</label>-->
+<!--              <select id="vehicle" name="vehicle" />-->
             </div>
             <div class="col">
-              <label for="horsepower">Мощность</label>
+              <label for="horsepower" class="mb-3 mt-3">Мощность</label>
               <div class="flex items-center justify-between">
                 <BaseInput id="horsepower" name="horsepower" value="100 л.с." class="w-120" />
-                <span>=</span>
+                <span class="ml-8 mr-8">=</span>
                 <BaseInput id="power_kwt" name="power_kwt" value="73.6 кВт" class="w-120" />
               </div>
             </div>
             <div class="col">
-              <label for="registration-place">Место регистрации владельца</label>
+              <label for="registration-place" class="mb-3 mt-5">Место регистрации владельца</label>
               <BaseInput id="registration-place" name="registration-place" value="Волгоград" />
             </div>
             <div class="col">
-              <label for="expiration-time">Срок действия полиса</label>
-              <select id="expiration-time" name="expiration-time" />
+              <div class="baseField">
+                <span class="baseField__label">Транспортное средство</span>
+                <BaseSelect
+                  id="expiration-time"
+                  :options="dateList"
+                  :default="dateDefault"
+                  class="baseField__input"
+                />
+              </div>
+<!--              <label for="expiration-time">Срок действия полиса</label>-->
+<!--              <select id="expiration-time" name="expiration-time" />-->
             </div>
           </div>
           <div class="insurance flex mt-18 items-center">
-            <BaseSwitch @onSwitch="onSelectInsurance" />
+            <BaseSwitch :id="insurance" id="insurance" class="mr-16"/>
             <label for="insurance">Неограниченная страховка</label>
           </div>
           <Driver />
-          <div class="add_driver body-bold text-primary mt-20 tablet-max:text-center" @click="addDriver">
+          <div class="add_driver body-bold text-primary mt-20 tablet-max:text-center cursor-pointer"
+               @click="addDriver">
             <span class="mr-10">+</span>
             <span>Добавить водителя</span>
           </div>
@@ -67,8 +86,10 @@ import BaseInput from '~/components/base/BaseInput'
 import BaseSwitch from '~/components/base/BaseSwitch'
 import BaseButton from '~/components/base/BaseButton'
 import Driver from '~/components/HomePage/QuickCalculation/Driver'
+import BaseSelect from "../../base/BaseSelect";
 export default {
   components: {
+    BaseSelect,
     Driver,
     BaseInput,
     BaseSwitch,
@@ -76,7 +97,11 @@ export default {
   },
   data () {
     return {
-      insurance: true
+      insurance: true,
+      carsList: ['Автомобиль', 'Автомобиль', 'Автомобиль'],
+      carDefault: 'Автомобиль',
+      dateList:['6 месяцев','12 месяцев','18 месяцев'],
+      dateDefault: '12 месяцев',
     }
   },
   methods: {
