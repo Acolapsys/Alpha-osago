@@ -114,6 +114,7 @@ line-height: 130%;
     display: none !important;
 }
 .baseField {
+    $root: &;
     position: relative;
     &__label {
         font-size: 14px;
@@ -125,6 +126,9 @@ line-height: 130%;
         padding-left: 12px;
         font-size: 12px;
         color: rgba(0, 0, 0, 0.6);
+        &_error {
+            color: #D73E29;
+        }
     }
     &__conditions {
         margin-top: 10px;
@@ -134,9 +138,37 @@ line-height: 130%;
         align-items: center;
         font-size: 14px;
         letter-spacing: -0.01em;
-        color: #27AE60;
-        img {
-            margin-right: 4px;
+        color: #828282;
+        &_success {
+            color: #27AE60;
+            #{$root}__conditionsIcon {
+                &_symbols {
+                    stroke: #27AE60;
+                }
+                &_type {
+                    fill: #27AE60;
+                }
+            }
+        }
+        &_error {
+            color: #D73E29;
+            #{$root}__conditionsIcon {
+                &_symbols {
+                    stroke: #D73E29;
+                }
+                &_type {
+                    fill: #D73E29;
+                }
+            }
+        }
+    }
+    &__conditionsIcon {
+        margin-right: 4px;
+        &_symbols {
+            stroke: #828282;
+        }
+        &_type {
+            fill: #828282;
         }
     }
 }

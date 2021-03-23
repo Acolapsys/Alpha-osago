@@ -84,6 +84,8 @@
         </nuxt-link>
       </div>
     </div>
+
+    <!-- modals start -->
     <BaseModal v-if="modalRemove" class="modal modal_remove" @closeModal="modalRemove = false">
       <h2 class="modal__title">
         Удалить?
@@ -98,11 +100,11 @@
         <span class="color-red">Удаляем данные насовсем.</span><br> Восстановить нельзя, никак. Это последний шанс вернуться.
       </p>
       <div class="baseField">
-        <label for="modal-remove-mail" class="baseField__label">
+        <label for="modal-remove-field" class="baseField__label">
           Может, отправить полис на почту? На всякий случай.
         </label>
         <BaseInput
-          id="modal-remove-mail"
+          id="modal-remove-field"
           placeholder="owner@domain.com"
           class="baseField__input"
         />
@@ -144,11 +146,11 @@
         5558 АВ 63
       </div>
       <div class="baseField">
-        <label for="modal-send-mail" class="baseField__label">
+        <label for="modal-send-field" class="baseField__label">
           На почту
         </label>
         <BaseInput
-          id="modal-send-mail"
+          id="modal-send-field"
           placeholder="owner@domain.com"
           class="baseField__input"
         />
@@ -164,7 +166,7 @@
       <p class="modal__description">
         на owner@domain.com
       </p>
-      <BaseButton id="modal-back" class="modal__back" @click.native="modalSended = false">
+      <BaseButton id="modal-sended-submit" class="modal__submit" @click.native="modalSended = false">
         Закрыть
       </BaseButton>
     </BaseModal>
@@ -176,20 +178,20 @@
         <span class="color-red">Удаляем данные насовсем.</span><br> Восстановить нельзя, никак. Это последний шанс вернуться. При этом полисы останутся у страховых.
       </p>
       <div class="baseField">
-        <label for="modal-remove-account-mail" class="baseField__label">
+        <label for="modal-remove-account-field" class="baseField__label">
           Может, отправить полисы на почту? На всякий случай.
         </label>
         <BaseInput
-          id="modal-remove-account-mail"
+          id="modal-remove-account-field"
           placeholder="owner@domain.com"
           class="baseField__input"
         />
       </div>
       <div class="modal__buttons">
-        <BaseButton id="modal-remove-fast" class="modal__remove" @click.native="modalRemoveAccount = false; modalRemovedAccount = true">
+        <BaseButton id="modal-remove-account-fast" class="modal__remove" @click.native="modalRemoveAccount = false; modalRemovedAccount = true">
           Удалить без отправки
         </BaseButton>
-        <BaseButton id="modal-remove-submit" class="modal__submit" @click.native="modalRemoveAccount = false; modalRemovedAccount = true">
+        <BaseButton id="modal-remove-account-submit" class="modal__submit" @click.native="modalRemoveAccount = false; modalRemovedAccount = true">
           Отправить на почту и удалить
         </BaseButton>
       </div>
@@ -201,10 +203,11 @@
       <p class="modal__description">
         Полисы отправлен на owner@domain.com 
       </p>
-      <BaseButton id="modal-back" class="modal__back" @click.native="modalRemovedAccount = false">
+      <BaseButton id="modal-removed-account-submit" class="modal__submit" @click.native="modalRemovedAccount = false">
         Закрыть
       </BaseButton>
     </BaseModal>
+    <!-- modals end -->
   </main>
 </template>
 <script>

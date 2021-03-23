@@ -59,7 +59,7 @@
               class="profile__inputValue"
               :value="email"
             >
-            <div class="profile__inputEdit">
+            <div class="profile__inputEdit" @click="modalMail = true">
               <img src="~/assets/images/icons/pen-green.svg" alt="edit">
             </div>
           </div>
@@ -75,7 +75,7 @@
               class="profile__inputValue"
               :value="password"
             >
-            <div class="profile__inputEdit">
+            <div class="profile__inputEdit" @click="modalPassword = true">
               <img src="~/assets/images/icons/pen-green.svg" alt="edit">
             </div>
           </div>
@@ -91,7 +91,7 @@
               class="profile__inputValue"
               :value="tel"
             >
-            <div class="profile__inputEdit">
+            <div class="profile__inputEdit" @click="modalTel = true">
               <img src="~/assets/images/icons/pen-green.svg" alt="edit">
             </div>
           </div>
@@ -114,6 +114,127 @@
         Удалить аккаунт...
       </span>
     </div>
+
+    <!-- modals start -->
+    <BaseModal v-if="modalTel" class="modal modal_change" @closeModal="modalTel = false">
+      <h2 class="modal__title">
+        Изменить телефон
+      </h2>
+      <div class="baseField">
+        <label for="modal-tel-field" class="baseField__label">
+          Введите новый телефон, отправим на него смс
+        </label>
+        <BaseInput
+          id="modal-tel-field"
+          placeholder="+7"
+          class="baseField__input"
+        />
+      </div>
+      <BaseButton id="modal-tel-submit" class="modal__submit" @click.native="modalTel = false">
+        Отправить
+      </BaseButton>
+    </BaseModal>
+    <BaseModal v-if="modalMail" class="modal modal_change" @closeModal="modalMail = false">
+      <h2 class="modal__title">
+        Изменить почту
+      </h2>
+      <div class="baseField">
+        <label for="modal-mail-field" class="baseField__label">
+          Введите новый адрес, мы отправим на него письмо с подтверждением. Пройдёте по ссылке из письма — и адрес обновится.
+        </label>
+        <BaseInput
+          id="modal-mail-field"
+          placeholder="owner@domain.com"
+          class="baseField__input"
+        />
+      </div>
+      <BaseButton id="modal-mail-submit" class="modal__submit" @click.native="modalMail = false; modalMailConfirm = true">
+        Отправить
+      </BaseButton>
+    </BaseModal>
+    <BaseModal v-if="modalMailConfirm" class="modal modal_send" @closeModal="modalMailConfirm = false">
+      <h2 class="modal__title">
+        Ссылка отправлена
+      </h2>
+      <p class="modal__description">
+        Ссылка отправлена на <b>owner@domain.com</b><br>Откройте почту и перейдите по ссылке чтобы подтвердить новый имейл
+      </p>
+      <BaseButton id="modal-mail-confirm-submit" class="modal__submit" @click.native="modalMailConfirm = false; modalMailSuccess = true">
+        Закрыть
+      </BaseButton>
+    </BaseModal>
+    <BaseModal v-if="modalMailSuccess" class="modal modal_success" @closeModal="modalMailSuccess = false">
+      <h2 class="modal__title">
+        Почта обновлена
+      </h2>
+      <BaseButton id="modal-mail-success-submit" class="modal__submit" @click.native="modalMailSuccess = false">
+        В личный кабинет
+      </BaseButton>
+    </BaseModal>
+    <BaseModal v-if="modalPassword" class="modal modal_change modal_password" @closeModal="modalPassword = false">
+      <h2 class="modal__title">
+        Изменить пароль
+      </h2>
+      <div class="baseField">
+        <label for="modal-password-old" class="baseField__label">
+          Старый пароль
+        </label>
+        <BaseInput
+          id="modal-password-old"
+          type="password"
+          class="baseField__input"
+        />
+        <div class="baseField__hint baseField__hint_error">Неправильно</div>
+      </div>
+      <div class="modal__link" @click="modalPassword = false; modalPasswordRecovery = true">
+        Отправить ссылку на восстановление пароля
+      </div>
+      <div class="baseField">
+        <label for="modal-password-new" class="baseField__label">
+          Новый пароль
+        </label>
+        <BaseInput
+          id="modal-password-new"
+          type="password"
+          class="baseField__input"
+        />
+        <div class="baseField__conditions">
+            <div class="baseField__conditionsItem baseField__conditionsItem_success">
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="baseField__conditionsIcon baseField__conditionsIcon_symbols">
+                    <path d="M0.902344 3.91671L4.69401 7.70838L10.2357 1.58337" stroke-width="2"/>
+                </svg>
+                8+ символов
+            </div>
+            <div class="baseField__conditionsItem baseField__conditionsItem_error">
+                <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="baseField__conditionsIcon baseField__conditionsIcon_type">
+                    <path d="M3.47769 4.49997L0.472656 7.505L1.46261 8.49495L4.46764 5.48992L7.47268 8.49495L8.46263 7.505L5.45759 4.49997L8.46261 1.49495L7.47266 0.505005L4.46764 3.51002L1.46263 0.505005L0.472676 1.49495L3.47769 4.49997Z" />
+                </svg>
+                Не 123456 и похожий
+            </div>
+        </div>
+      </div>
+      <BaseButton id="modal-password-submit" class="modal__submit" @click.native="modalPassword = false; modalPasswordSuccess = true">
+        Сохранить
+      </BaseButton>
+    </BaseModal>
+    <BaseModal v-if="modalPasswordSuccess" class="modal modal_success" @closeModal="modalPasswordSuccess = false">
+        <h2 class="modal__title">Пароль изменён</h2>
+        <BaseButton id="modal-password-success-submit" class="modal__submit" @click.native="modalPasswordSuccess = false">
+            Закрыть
+        </BaseButton>
+    </BaseModal>
+    <BaseModal v-if="modalPasswordRecovery" class="modal modal_send" @closeModal="modalPasswordRecovery = false">
+      <h2 class="modal__title">
+        Ссылка отправлена
+      </h2>
+      <p class="modal__description">
+        Ссылка на восстановление пароля отправлена на <b>owner@domain.com</b><br>Откройте почту и перейдите по ссылке чтобы подтвердить новый имейл
+      </p>
+      <BaseButton id="modal-password-recovery-submit" class="modal__submit" @click.native="modalPasswordRecovery = false">
+        Закрыть
+      </BaseButton>
+    </BaseModal>
+    <!-- modals end -->
   </main>
 </template>
 
@@ -121,11 +242,13 @@
 import VehicleCard from '~/components/Profile/VehicleCard'
 import PersonCard from '~/components/Profile/PersonCard'
 import BaseButton from '~/components/base/BaseButton'
+import BaseModal from '~/components/base/BaseModal'
 export default {
   components: {
     VehicleCard,
     PersonCard,
-    BaseButton
+    BaseButton,
+    BaseModal
   },
   data () {
     return {
@@ -171,7 +294,14 @@ export default {
       ],
       email: 'registered_email@mail.ru',
       password: '324234532',
-      tel: '+7 999 123 00-00'
+      tel: '+7 999 123 00-00',
+      modalTel: false,
+      modalMail: false,
+      modalMailConfirm: false,
+      modalMailSuccess: false,
+      modalPassword: false,
+      modalPasswordSuccess: false,
+      modalPasswordRecovery: false
     }
   }
 }

@@ -49,6 +49,8 @@
         </div>
       </div>
     </div>
+
+    <!-- modals start -->
     <BaseModal v-if="modalRemove" class="modal modal_remove" @closeModal="modalRemove = false">
       <h2 class="modal__title">
         Удалить?
@@ -79,6 +81,7 @@
         Закрыть
       </BaseButton>
     </BaseModal>
+    <!-- modals end -->
   </main>
 </template>
 <script>

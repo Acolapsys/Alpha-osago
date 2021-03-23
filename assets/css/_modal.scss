@@ -53,7 +53,8 @@
             margin-bottom: 42px;
         }
     }
-    &_send {
+    &_send,
+    &_change {
         .baseField {
             width: 80%;
             &__label {
@@ -70,6 +71,27 @@
         }
         #{$root}__submit {
             margin: 40px 0 0
+        }
+    }
+    &_change {
+        #{$root}__title {
+            margin-bottom: 40px;
+        }
+    }
+    &_password {
+        .baseField {
+            margin-bottom: 20px;
+            &__label {
+                margin-bottom: 2px;
+                font-size: 14px;
+                letter-spacing: -0.02em;
+            }
+        }
+        #{$root}__link {
+            margin-bottom: 16px;
+        }
+        #{$root}__submit {
+            margin-top: 30px;
         }
     }
     &__title {
@@ -113,8 +135,7 @@
         color: #fff;
         background: #D73E29;
     }
-    &__submit,
-    &__back {
+    &__submit {
         margin: 0 auto;
         border: 1px solid #333333;
     }
@@ -135,7 +156,8 @@
                 margin-bottom: 5px;
             }
         }
-        &_send {
+        &_send,
+        &_change {
             .baseField {
                 width: 100%;
                 &__label {
@@ -163,8 +185,7 @@
             margin-top: 24px;
         }
         &__remove,
-        &__submit,
-        &__back {
+        &__submit {
             width: 100% !important;
             height: 40px !important;
             font-size: 14px;

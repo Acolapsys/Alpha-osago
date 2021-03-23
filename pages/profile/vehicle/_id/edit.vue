@@ -16,15 +16,20 @@
         Сохранить
       </BaseButton>
     </div>
+
+    <!-- modals start -->
     <BaseModal v-if="modalSuccess" class="modal modal_success" :short="true" @closeModal="modalSuccess = false">
-      <h2 class="modal__title">Сохранено</h2>
+      <h2 class="modal__title">
+        Сохранено
+      </h2>
       <p class="modal__description">
         В ранее оформленных полисах остались прежние данные.
       </p>
-      <BaseButton id="modal-back" class="modal__back" @click.native="modalSuccess = false">
+      <BaseButton id="modal-success-submit" class="modal__submit" @click.native="modalSuccess = false">
           Закрыть
       </BaseButton>
     </BaseModal>
+    <!-- modals end -->
   </main>
 </template>
 
