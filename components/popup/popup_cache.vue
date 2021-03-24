@@ -2,7 +2,7 @@
   <div class="popup__wrapper">
     <div class="popup__cache">
       <div class="popup__cache__header">
-        <!--        <p>Кэшбек</p>-->
+<!--        <p>Кэшбек</p>-->
         <div
           class="popup__cache__header-button"
           @click="closePopup"
@@ -14,21 +14,15 @@
         <p>Вернем 5% от стоимости оформленного полиса на карту</p>
         <div class="popup__cache__content-lists">
           <div class="list">
-            <div class="line">
-              <img src="../../assets/images/icons/line.png" alt="">
-            </div>
+            <div class="line"><img src="../../assets/images/icons/line.png" alt=""></div>
             <p>Карта должна быть привязана к телефону, указанному в личном кабинете. Если карта не привязана или хотите получить кэшбек на другую карту, напишите в чат</p>
           </div>
           <div class="list">
-            <div class="line">
-              <img src="../../assets/images/icons/line.png" alt="">
-            </div>
+            <div class="line"><img src="../../assets/images/icons/line.png" alt=""></div>
             <p>Только для самостоятельного оформления (для несегмента кэшбек не делаем).</p>
           </div>
           <div class="list">
-            <div class="line">
-              <img src="../../assets/images/icons/line.png" alt="">
-            </div>
+            <div class="line"><img src="../../assets/images/icons/line.png" alt=""></div>
             <p>Возврат в течение шуток</p>
           </div>
         </div>
@@ -42,9 +36,9 @@ export default {
   name: 'PopupCache',
   methods: {
     closePopup () {
-      this.$emit('closePopup')
+      this.$emit("closePopup");
     }
-  }
+  },
 }
 </script>
 
@@ -114,5 +108,6 @@ export default {
     }
   }
 }
+
 
 </style>

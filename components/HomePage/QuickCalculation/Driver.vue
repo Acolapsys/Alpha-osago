@@ -4,11 +4,12 @@
       <div class="title body-big-2">
         Водитель 1
       </div>
-      <span>Удалить водителя</span>
+<!--      <span>Удалить водителя</span>-->
     </div>
     <div class="kbm mt-2 py-14">
-      <base-switch name="know_kbm" class="mr-16" @onSwitch="onSelectKbm" />
-      <label for="know_kbm" class="body-regular">Знаю КБМ</label>
+      <BaseSwitch :id="kbm" id="kbm" name="know_kbm" class="mr-16"/>
+<!--      <base-switch  />-->
+      <label for="kbm" class="body-regular">Знаю КБМ</label>
     </div>
     <div class="grid grid-cols-3 grid-rows-2 gap-25 tablet-max:grid-cols-1 tablet-max:gap-19">
       <div class="col">
@@ -60,3 +61,8 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+.driver{
+  border-radius: 10px;
+}
+</style>

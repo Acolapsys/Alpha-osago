@@ -1,11 +1,11 @@
 <template>
-  <div class="homepage w-full">
+  <div class="homepage w-full overflow-x-hidden">
     <Hero />
     <QuickCalculation />
     <WorkWith />
     <Help />
     <Information />
-    <Examples />
+    <Examples class="examples"/>
     <FAQ />
   </div>
 </template>
@@ -30,3 +30,11 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+@media (max-width: 767px) {
+  .examples{
+    display: none;
+  }
+}
+</style>

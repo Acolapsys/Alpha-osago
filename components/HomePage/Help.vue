@@ -7,7 +7,7 @@
       <p class="subtitle mt-10 text-center">
         Поможем оформить ОСАГО в ситуациях, которые на языке страховых агентов называется “Несегмент”
       </p>
-      <div class="list my-70 body-bold text-grey6">
+      <div class="list classes my-70 body-bold text-grey6">
         <div class="row">
           <div class="name">
             Транспортное средство
@@ -42,31 +42,39 @@
         </div>
       </div>
       <div class="how_works flex flex-col items-center mb-80">
-        <div class="line min-w-34" />
-        <h2>Как это работает</h2>
+        <div class="line howitworks min-w-34" />
+        <h2 class="howitworks">
+          Как это работает
+        </h2>
         <ul class="list">
           <li class="mt-22">
-            <h2 class="num">
-              1
-            </h2>
-            <div class="py-23 border-grey6 border-b-DEFAULT border-opacity-20 flex">
-              <div class="col1 body-bold mr-33">
-                Рассчитайте цену полиса по короткой форме
-              </div>
-              <div class="col2 body-regular">
-                Если хотя бы одна страховая покажет цену - покупайте, наша услуга Вам не нужна.
+            <div class="one py-23 border-grey6 border-b-DEFAULT border-opacity-20 flex items-center">
+              <h2 class="num">
+                1
+              </h2>
+              <div class="first flex">
+                <div class="col1 body-bold mr-33">
+                  Рассчитайте цену полиса по короткой форме
+                </div>
+                <div class="col2 body-regular">
+                  Если хотя бы одна страховая покажет<br>цену - покупайте, наша услуга Вам не нужна.
+                </div>
               </div>
             </div>
           </li>
           <li class="pt-23">
+            <div class="two flex items-center">
             <h2 class="num">
               2
             </h2>
-            <div class="col1 body-bold mr-33">
-              Если все стаховые отказывают, нажмите “Помощь в оформлении”
+            <div class="second flex">
+              <div class="col1 body-bold mr-33">
+                Если все стаховые отказывают, нажмите “Помощь в оформлении”
+              </div>
+              <div class="col2 body-regular">
+                Заново вводить ничего не надо - данные будут переданы специалисту.
+              </div>
             </div>
-            <div class="col2 body-regular">
-              Заново вводить ничего не надо - данные будут переданы специалисту.
             </div>
           </li>
         </ul>
@@ -74,7 +82,7 @@
       <div class="conditions flex flex-col items-center">
         <div class="line min-w-34" />
         <h2>Условия</h2>
-        <div class="grid grid-cols-4-fr gap-40 mt-60 mb-80 w-full lg-max:grid-cols-2-fr lg-max:grid-rows-2">
+        <div class="conditions grid grid-cols-4-fr gap-40 mt-60 mb-80 w-full lg-max:grid-cols-2-fr lg-max:grid-rows-2">
           <div class="condition_col">
             <div class="img_block">
               <img src="~/assets/images/icons/money.png" alt="money icon">
@@ -113,13 +121,23 @@
         </div>
       </div>
       <div class="flex flex-col w-full items-center ">
-        <button type="submit" class="count_button text-center w-265 h-50 text-white bg-brand1 rounded-5 mb-12">
+        <button @click="openAddition" class="count_button text-center w-265 h-50 text-white bg-brand1 rounded-5 mb-12">
           Рассчитать ОСАГО
         </button>
       </div>
     </div>
   </div>
 </template>
+<script>
+export default {
+  name:"Help",
+  methods:{
+    openAddition () {
+      this.$router.push('/osago')
+    },
+  }
+}
+</script>
 <style lang="scss" scoped>
 .row {
   @apply py-29 border-grey6 border-t-DEFAULT border-opacity-20 flex justify-between w-full items-center ;
@@ -173,10 +191,10 @@
 
 }
 .col1 {
-  width: 256px;
+  max-width: 256px;
 }
 .col2 {
-  width: 363px;
+  max-width: 363px;
 
 }
 .condition_col {
@@ -198,6 +216,41 @@ box-shadow: 0px 3px 15px rgba(4, 166, 120, 0.3);
   }
   p{
     margin-top: 7px;
+  }
+}
+@media (max-width: 767px) {
+  .list.classes{
+    display: none;
+  }
+  .line.howitworks{
+    display: none;
+  }
+  .howitworks{
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .conditions{
+    grid-template-columns: repeat(1, minmax(25px, 1fr));
+  }
+  .one{
+    align-items:flex-start;
+  }
+  .two{
+    align-items:flex-start;
+
+  }
+  .first{
+    display: block;
+    .col2{
+      margin-top: 10px;
+    }
+  }
+  .second{
+    display: block;
+    .col2{
+      margin-top: 10px;
+    }
   }
 }
 </style>

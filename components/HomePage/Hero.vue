@@ -2,7 +2,7 @@
   <div class="hero">
     <div class="wrapper">
       <!-- desktop view -->
-      <PopupCache
+      <popup_cache
         v-if="isInfoPopupVisible"
         @closePopup="closeInfoPopup"
       />
@@ -88,12 +88,11 @@
 </template>
 
 <script>
-import PopupCache from '../popup/popup_cache'
 import InfoBlock from '~/components/base/InfoBlock'
 import Popup_cache from "../popup/popup_cache";
 export default {
   components: {
-    PopupCache,
+    Popup_cache,
     InfoBlock
   },
   data () {
@@ -106,11 +105,11 @@ export default {
       this.$router.push('/')
     },
     showPopupInfo () {
-      this.isInfoPopupVisible = true
+      this.isInfoPopupVisible = true;
     },
     closeInfoPopup () {
-      this.isInfoPopupVisible = false
-    }
+      this.isInfoPopupVisible = false;
+    },
   }
 }
 </script>

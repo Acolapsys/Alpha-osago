@@ -1,7 +1,7 @@
 <template>
   <div class="work_with py-120">
-    <div class="wrapper flex flex-col items-center">
-      <h1 class="title mb-7">
+    <div class="wrapper flex flex-col items-center w-full">
+      <h1 class="title mb-7 text-center">
         Компании, с которыми мы сотрудничаем
       </h1>
       <div class="subtitle text-center">
@@ -42,7 +42,7 @@
         </VueSlickCarousel>
 
         <div
-          class="next flex items-center ml-100 cursor-pointer"
+          class="next flex items-center ml-50 cursor-pointer"
           @click="next"
         >
           <img src="../../assets/images/icons/right_row.png" alt="">
@@ -72,25 +72,59 @@ export default {
       // cssEase: "easeOutElastic",
       draggable: false,
       initialSlide: 0,
+      cancelable:false,
       responsive: [
+        {
+          breakpoint: 1280,
+          settings: {
+            slidesToShow: 5,
+            swipeToSlide:true,
+            infinite: false,
+            dots: false,
+            cancelable:false
+          }
+        },
+
         {
           breakpoint: 1024,
           settings: {
             slidesToShow: 4.3,
-            slidesToScroll: 3,
+            swipeToSlide:true,
             infinite: false,
-            dots: false
+            dots: false,
+            cancelable:false
           }
         },
         {
           breakpoint: 767,
           settings: {
             slidesToShow: 3.2,
-            slidesToScroll: 3.6,
+            swipeToSlide:true,
             infinite: false,
-            dots: false
+            dots: false,
+            cancelable:false,
           }
-        }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            swipeToSlide:true,
+            infinite: false,
+            dots: false,
+            cancelable:false
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1.5,
+            swipeToSlide:true,
+            infinite: false,
+            dots: false,
+            cancelable:false
+          }
+        },
       ]
       // speed: 0
     },
@@ -109,7 +143,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 button:active, button:focus {
   outline: none !important;
 }
@@ -136,7 +170,18 @@ button::-moz-focus-inner {
 .slider__logo:last-child{
   margin-right: 0px;
 }
+@media (max-width: 1096px){
+  .prev{
+    display: none;
+  }
+  .next{
+    display: none
+  }
+}
 @media (max-width: 1023px) {
+  .slider{
+    width: 750px;
+  }
   .slick-slider {
     width: 750px;
   }
@@ -148,6 +193,9 @@ button::-moz-focus-inner {
   }
 }
 @media (max-width: 767px) {
+  .slider{
+    width: 494px;
+  }
   .slick-slider {
     width: 494px;
   }
@@ -156,6 +204,14 @@ button::-moz-focus-inner {
   }
   .next{
     display: none;
+  }
+}
+@media (max-width: 480px) {
+  .slider{
+    width: 282px;
+  }
+  .slick-slider {
+    width: 282px;
   }
 }
 </style>

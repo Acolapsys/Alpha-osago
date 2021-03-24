@@ -1,4 +1,4 @@
-<template>
+.<template>
   <section class="osagoForm wrapper">
     <div :id="ancor" class="osagoForm__ancor" />
     <h2 class="osagoForm__title">
