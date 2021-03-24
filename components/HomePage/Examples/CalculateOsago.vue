@@ -11,7 +11,7 @@
         <div class="col">
           <div class="first_row flex">
             <div v-for="(item,index) in tooltipTitles" :key="index" class="part flex items-center">
-              <p>{{item.name}}</p>
+              <p>{{ item.name }}</p>
               <tooltip :item="item" />
             </div>
             <p class="part__price">

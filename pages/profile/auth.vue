@@ -1,49 +1,59 @@
 <template>
   <div class="auth">
-    <div class="auth__wrapper">
-      <h1 class="auth__title">Вход в личный кабинет</h1>
+    <main class="auth__wrapper">
+      <h1 class="auth__title">
+        Вход в личный кабинет
+      </h1>
       <p class="auth__subtitle">
         В личном кабинете можно продлевать полис, не заполняя заново данные об автомобиле или оформлять новый в пару кликов.
       </p>
       <div class="auth__social">
-        <div class="auth__socialTitle">Войти через</div>
+        <div class="auth__socialTitle">
+          Войти через
+        </div>
         <div class="auth__socialInner">
           <img src="~/assets/images/icons/facebook-logo.svg" alt="facebook" class="auth__socialItem">
           <img src="~/assets/images/icons/google-logo.svg" alt="google" class="auth__socialItem">
           <img src="~/assets/images/icons/vk-logo.svg" alt="vk" class="auth__socialItem">
         </div>
       </div>
-      <form class="auth__form">
+      <form class="auth__form" @submit.prevent="$router.push('/profile')">
         <div class="auth__formTitle">
           Или войти, используя учётную запись
         </div>
         <div class="auth__formInner">
           <div class="baseField">
-            <label for="vehicle-passport-issue" class="baseField__label">Электронная почта</label>
+            <label for="email" class="baseField__label">
+              Электронная почта
+            </label>
             <BaseInput
+              id="email"
               type="email"
               placeholder="owner@domain.com"
-              id="auth-email"
               class="baseField__input"
               classes="authInput"
             />
           </div>
           <div class="baseField">
-            <label for="vehicle-passport-issue" class="baseField__label">Пароль</label>
+            <label for="password" class="baseField__label">
+              Пароль
+            </label>
             <BaseInput
+              id="password"
               type="password"
-              id="auth-password"
               class="baseField__input"
               classes="authInput"
             />
           </div>
         </div>
-        <BaseButton class="auth__submit" id="auth-submit">
+        <BaseButton id="submit" class="auth__submit">
           Войти
         </BaseButton>
-        <div class="auth__link">Пришлите мне ссылку на вход</div>
+        <div class="auth__link">
+          Пришлите мне ссылку на вход
+        </div>
       </form>
-    </div>
+    </main>
   </div>
 </template>
 
@@ -60,7 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 .auth {
-  padding: 81px 0 101px;
+  padding: 81px 0;
   background: linear-gradient(180deg, #038661 0%, #FDB215 100%);
   &__wrapper {
     width: 750px;

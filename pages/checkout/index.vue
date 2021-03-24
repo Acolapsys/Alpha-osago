@@ -1,5 +1,5 @@
 <template>
-  <div class="checkoutPage wrapper">
+  <main class="checkoutPage wrapper">
     <h1 class="checkoutPage__title title text-center mb-10">
       Проверка КБМ
     </h1>
@@ -12,38 +12,38 @@
     <form class="checkoutPage__form">
       <div class="checkoutPage__inner">
         <div class="baseField">
-          <label for="checkoutPage-surname" class="baseField__label">Фамилия</label>
+          <label for="surname" class="baseField__label">Фамилия</label>
           <BaseInput
-            id="checkoutPage-surname"
+            id="surname"
             class="baseField__input"
           />
         </div>
         <div class="baseField">
-          <label for="checkoutPage-name" class="baseField__label">Имя</label>
+          <label for="name" class="baseField__label">Имя</label>
           <BaseInput
-            id="checkoutPage-name"
+            id="name"
             class="baseField__input"
           />
         </div>
         <div class="baseField">
-          <label for="checkoutPage-patronymic" class="baseField__label">Отчество</label>
+          <label for="patronymic" class="baseField__label">Отчество</label>
           <BaseInput
-            id="checkoutPage-patronymic"
+            id="patronymic"
             class="baseField__input"
           />
         </div>
       </div>
       <div class="baseField baseField_short">
-        <label for="checkoutPage-birth" class="baseField__label">Дата рождения</label>
+        <label for="birth" class="baseField__label">Дата рождения</label>
         <BaseInput
-          id="checkoutPage-birth"
+          id="birth"
           class="baseField__input"
         />
       </div>
       <div class="baseField">
-        <label for="checkoutPage-number" class="baseField__label">Серия и номер прав</label>
+        <label for="number" class="baseField__label">Серия и номер прав</label>
         <BaseInput
-          id="checkoutPage-number"
+          id="number"
           class="baseField__input"
         />
       </div>
@@ -71,7 +71,7 @@
         Здесь можно узнать о том, что такое КБМ, от чего зависит цена полиса, зачем нужно ТО и какие изменения в законодательстве ждут автомобилистов Здесь можно узнать о том, что такое КБМ, от чего зависит цена полиса, зачем нужно ТО и какие изменения в законодательстве ждут автомобилистов Здесь можно узнать о том, что такое КБМ, от чего зависит цена полиса, зачем нужно ТО и какие изменения в законодательстве ждут автомобилистов Здесь можно узнать о том, что такое КБМ, от чего зависит цена полиса, зачем нужно ТО и какие изменения в законодательстве ждут автомобилистов.
       </p>
     </section>
-  </div>
+  </main>
 </template>
 
 <script>

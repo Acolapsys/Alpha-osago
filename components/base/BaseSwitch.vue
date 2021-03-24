@@ -46,6 +46,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
+  margin-top: 0;
   background-color: #D3D8DF;
   -webkit-transition: 0.4s;
   transition: 0.4s;

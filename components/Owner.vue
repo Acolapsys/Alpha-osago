@@ -1,8 +1,8 @@
 <template>
   <section class="osagoForm wrapper">
-    <div :id="ancor" class="osagoForm__ancor"></div>
+    <div :id="ancor" class="osagoForm__ancor" />
     <h2 class="osagoForm__title">
-      <span>{{ number }}. </span>Владелец
+      <span v-if="number">{{ number }}. </span>Владелец
     </h2>
     <div class="osagoForm__row">
       <ForLogged :list="loggedOwners" />

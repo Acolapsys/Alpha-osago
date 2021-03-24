@@ -17,7 +17,7 @@
               <img src="../../assets/images/icons/arrow_top.png" alt="">
             </div>
           </div>
-          <div class="faq-desc" v-if="desc_info">
+          <div v-if="desc_info" class="faq-desc">
             <p class="body-regular">
               Нет, так страховка не работает. Полис ОСАГО оформляется на
               транспортное средство, а не на водителя.
@@ -36,7 +36,7 @@
               <img src="../../assets/images/icons/arrow_top.png" alt="">
             </div>
           </div>
-          <div class="faq-desc" v-if="desc_info2">
+          <div v-if="desc_info2" class="faq-desc">
             <p class="body-regular">
               Нет, так страховка не работает. Полис ОСАГО оформляется на
               транспортное средство, а не на водителя.
