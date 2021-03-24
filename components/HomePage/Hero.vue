@@ -90,6 +90,7 @@
 <script>
 import PopupCache from '../popup/popup_cache'
 import InfoBlock from '~/components/base/InfoBlock'
+import Popup_cache from "../popup/popup_cache";
 export default {
   components: {
     PopupCache,
