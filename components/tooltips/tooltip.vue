@@ -1,16 +1,17 @@
 <template>
   <div class="tooltip">
-    <div class="logo"><img src="../../assets/images/icons/question.png" alt="">
+    <div class="logo">
+      <img src="../../assets/images/icons/question.png" alt="">
     </div>
-    <span class="tooltiptext"><strong>{{item.title}}</strong><br>
-      {{item.desc}}</span>
+    <span class="tooltiptext"><strong>{{ item.title }}</strong><br>
+      {{ item.desc }}</span>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Tooltip',
-  props:['item']
+  props: ['item']
 }
 </script>
 

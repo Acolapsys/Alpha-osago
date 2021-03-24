@@ -17,7 +17,7 @@
           <VehicleCard
             v-for="item in vehicles"
             :key="item.id"
-            :vehicle-data="item"
+            :vehicleData="item"
           />
         </div>
       </section>
@@ -34,7 +34,7 @@
           <PersonCard
             v-for="item in persons"
             :key="item.id"
-            :person-data="item"
+            :personData="item"
             class="profileCard_short"
           />
         </div>
@@ -52,19 +52,19 @@
           <ProfileInput
             id="email"
             label="email"
-            type-default="email"
-            value-default="registered_email@mail.ru"
+            typeDefault="email"
+            valueDefault="registered_email@mail.ru"
           />
           <ProfileInput
             id="password"
             label="пароль"
-            type-default="password"
-            value-default="12345"
+            typeDefault="password"
+            valueDefault="12345"
           />
           <ProfileInput
             id="tel"
             label="телефон"
-            value-default="+7 999 123 00-00"
+            valueDefault="+7 999 123 00-00"
           />
         </div>
         <h3 class="profile__sectionSubtitle">
@@ -77,10 +77,10 @@
         </div>
       </section>
       <div class="profile__buttons">
-        <BaseButton id="profile-exit" class="profile__exit">
+        <BaseButton class="profile__exit" id="profile-exit">
           Выйти из аккаунта
         </BaseButton>
-        <span id="profile-remove" class="profile__remove">
+        <span class="profile__remove" id="profile-remove">
           Удалить аккаунт...
         </span>
       </div>

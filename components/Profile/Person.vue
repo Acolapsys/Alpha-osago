@@ -1,40 +1,37 @@
-.<template>
+<template>
   <section class="osagoForm wrapper">
     <div :id="ancor" class="osagoForm__ancor" />
     <h2 class="osagoForm__title">
-      <span v-if="number">{{ number }}. </span>Владелец
+      <span v-if="number">{{ number }}. </span>Персона
     </h2>
-    <div class="osagoForm__row">
-      <ForLogged :list="loggedOwners" />
-    </div>
     <div class="osagoForm__wrapper">
       <div class="osagoForm__left">
         <div class="osagoForm__row osagoForm__row_data">
           <div class="baseField">
-            <label for="owner-data-surname" class="baseField__label">Фамилия</label>
+            <label for="person-data-surname" class="baseField__label">Фамилия</label>
             <BaseInput
-              id="owner-data-surname"
+              id="person-data-surname"
               class="baseField__input"
             />
           </div>
           <div class="baseField">
-            <label for="owner-data-name" class="baseField__label">Имя</label>
+            <label for="person-data-name" class="baseField__label">Имя</label>
             <BaseInput
-              id="owner-data-name"
+              id="person-data-name"
               class="baseField__input"
             />
           </div>
           <div class="baseField">
-            <label for="owner-data-patronymic" class="baseField__label">Отчество</label>
+            <label for="person-data-patronymic" class="baseField__label">Отчество</label>
             <BaseInput
-              id="owner-data-patronymic"
+              id="person-data-patronymic"
               class="baseField__input"
             />
           </div>
           <div class="baseField">
-            <label for="owner-data-birth" class="baseField__label">Дата рождения</label>
+            <label for="person-data-birth" class="baseField__label">Дата рождения</label>
             <BaseInput
-              id="owner-data-birth"
+              id="person-data-birth"
               type="date"
               class="baseField__input"
             />
@@ -46,8 +43,8 @@
           </h3>
           <div class="osagoForm__row">
             <BaseRadio
-              id="owner-gender"
-              name="ownerGender"
+              id="person-gender"
+              name="personGender"
               :options="genderType"
             />
           </div>
@@ -60,25 +57,25 @@
           </h3>
           <div class="osagoForm__row osagoForm__row_passportData">
             <div class="baseField">
-              <label for="owner-passport-number" class="baseField__label">Серия и номер</label>
+              <label for="person-passport-number" class="baseField__label">Серия и номер</label>
               <BaseInput
-                id="owner-passport-number"
+                id="person-passport-number"
                 placeholder="10 цифр"
                 class="baseField__input"
               />
             </div>
             <div class="baseField">
-              <label for="owner-passport-date" class="baseField__label">Дата выдачи</label>
+              <label for="person-passport-date" class="baseField__label">Дата выдачи</label>
               <BaseInput
-                id="owner-passport-date"
+                id="person-passport-date"
                 type="date"
                 class="baseField__input"
               />
             </div>
             <div class="baseField">
-              <label for="owner-passport-code" class="baseField__label">Код подразделения</label>
+              <label for="person-passport-code" class="baseField__label">Код подразделения</label>
               <BaseInput
-                id="owner-passport-code"
+                id="person-passport-code"
                 placeholder="6 цифр"
                 class="baseField__input"
               />
@@ -86,9 +83,9 @@
           </div>
           <div class="osagoForm__row osagoForm__row_passportAddress">
             <div class="baseField">
-              <label for="owner-passport-address" class="baseField__label">Адрес регистрации (как в паспорте)</label>
+              <label for="person-passport-address" class="baseField__label">Адрес регистрации (как в паспорте)</label>
               <BaseInput
-                id="owner-passport-address"
+                id="person-passport-address"
                 class="baseField__input"
               />
             </div>
@@ -100,16 +97,16 @@
           </h3>
           <div class="osagoForm__row osagoForm__row_photos">
             <div class="baseField">
-              <label for="owner-photos-front" class="baseField__label">Лицевая сторона</label>
+              <label for="person-photos-front" class="baseField__label">Лицевая сторона</label>
               <BaseFile
-                id="owner-photos-front"
+                id="person-photos-front"
                 class="baseField__input"
               />
             </div>
             <div class="baseField">
-              <label for="owner-photos-back" class="baseField__label">Оборотная сторона</label>
+              <label for="person-photos-back" class="baseField__label">Оборотная сторона</label>
               <BaseFile
-                id="owner-photos-back"
+                id="person-photos-back"
                 class="baseField__input"
               />
             </div>
@@ -124,14 +121,12 @@
 import BaseInput from '~/components/base/BaseInput'
 import BaseRadio from '~/components/base/BaseRadio'
 import BaseFile from '~/components/base/BaseFile'
-import ForLogged from '~/components/ForLogged'
 export default {
-  name: 'Owner',
+  name: 'Person',
   components: {
     BaseInput,
     BaseRadio,
-    BaseFile,
-    ForLogged
+    BaseFile
   },
   props: {
     number: {
@@ -145,17 +140,6 @@ export default {
   },
   data () {
     return {
-      loggedOwners: [
-        {
-          title: 'Новый человек'
-        },
-        {
-          title: 'Селиверстов Иван Петрович'
-        },
-        {
-          title: 'Селиверстова Елена Константиновна'
-        }
-      ],
       genderType: [
         {
           value: 1,

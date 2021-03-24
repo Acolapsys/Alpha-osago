@@ -4,12 +4,12 @@
     <div class="profileInput__field">
       <input
         ref="input"
-        v-model="value"
         :type="type"
+        v-model="value"
         :readonly="readonly"
         class="profileInput__input"
-      >
-      <div ref="edit" class="profileInput__edit" @click="readonly = !readonly">
+      />
+      <div class="profileInput__edit" ref="edit" @click="readonly = !readonly">
         <img src="~/assets/images/icons/pen-green.svg" alt="edit">
         <img src="~/assets/images/icons/check-mark.svg" alt="save">
       </div>
@@ -46,7 +46,7 @@ export default {
     }
   },
   watch: {
-    readonly () {
+    readonly() {
       !this.readonly && this.$refs.input.focus()
       this.$refs.edit.classList.toggle('profileInput__edit_active')
 

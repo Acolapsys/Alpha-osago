@@ -1,5 +1,5 @@
 <template>
-  <div class="faqArticle wrapper">
+  <main class="faqArticle wrapper">
     <div class="breadCrumbs">
       <nuxt-link to="./" class="breadCrumbs__item">
         Полезная информация
@@ -42,7 +42,7 @@
         <ArticlePost v-for="article in articles" :key="article.id" class="faqArticle__alsoArticle" :data="article" />
       </div>
     </section>
-  </div>
+  </main>
 </template>
 
 <script>

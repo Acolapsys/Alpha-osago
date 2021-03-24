@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout">
     <Header />
     <Nuxt />
     <Footer />
@@ -29,6 +29,13 @@ export default {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 </style>

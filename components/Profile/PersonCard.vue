@@ -1,5 +1,8 @@
 <template>
   <div class="profileCard">
+    <nuxt-link :to="personData.link" class="profileCard__link">
+      <img src="~/assets/images/icons/arrow-right-green-big.svg" alt="arrow">
+    </nuxt-link>
     <div class="profileCard__title">
       {{ personData.person }}
     </div>

@@ -23,7 +23,7 @@
           </div>
           <div class="list">
             <div class="line"><img src="../../assets/images/icons/line.png" alt=""></div>
-            <p>Возврат в течение суток</p>
+            <p>Возврат в течение шуток</p>
           </div>
         </div>
       </div>
@@ -53,6 +53,17 @@ export default {
     &__header{
       display: flex;
       justify-content: flex-end;
+      //p{
+      //  padding-left: 18px;
+      //  width: 140px;
+      //  height: 42px;
+      //  font-style: normal;
+      //  font-weight: normal;
+      //  font-size: 36px;
+      //  line-height: 42px;
+      //  letter-spacing: 0.05em;
+      //  color: #000000;
+      //}
       &-button{
         padding-top: 10px;
         max-width: 100px;
