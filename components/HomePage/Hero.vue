@@ -1,10 +1,11 @@
 <template>
   <div class="hero">
-    <div class="wrapper">
+    <div class="wrapper w-full">
       <!-- desktop view -->
       <popup_cache
         v-if="isInfoPopupVisible"
         @closePopup="closeInfoPopup"
+        class="popup-cache"
       />
       <div class="flex lg-max:hidden">
         <div class="content text-white font-bold">
@@ -37,6 +38,11 @@
       </div>
       <!-- //tablet view -->
       <div class="lg:hidden">
+        <popup-cachemini
+          v-if="isInfoPopupVisible2"
+          @closePopup2="closeInfoPopup2"
+          class="popup-cachemini"
+        />
         <div class=" flex justify-between w-full">
           <div class="content text-white font-bold mr-0">
             <h2 class="title mb-23 mt-27 transform -translate-x-14">
@@ -59,7 +65,7 @@
                 <div class="image w-15 h-15 mr-10">
                   <img src="~/assets/images/icons/check.png" alt="check">
                 </div>
-                <p>Кэшбек 5%</p>
+                <p @click="showPopupInfo2" class="cursor-pointer">Кэшбек 5%</p>
               </li>
             </ul>
           </div>
@@ -90,14 +96,17 @@
 <script>
 import InfoBlock from '~/components/base/InfoBlock'
 import Popup_cache from "../popup/popup_cache";
+import PopupCachemini from "../popup/popup_cache_mini";
 export default {
   components: {
+    PopupCachemini,
     Popup_cache,
     InfoBlock
   },
   data () {
     return {
-      isInfoPopupVisible: false
+      isInfoPopupVisible: false,
+      isInfoPopupVisible2: false
     }
   },
   methods: {
@@ -107,8 +116,14 @@ export default {
     showPopupInfo () {
       this.isInfoPopupVisible = true;
     },
+    showPopupInfo2 () {
+      this.isInfoPopupVisible2 = true;
+    },
     closeInfoPopup () {
       this.isInfoPopupVisible = false;
+    },
+    closeInfoPopup2 () {
+      this.isInfoPopupVisible2 = false;
     },
   }
 }
@@ -148,6 +163,16 @@ letter-spacing: -0.03em;
 }
 .border-dashed{
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  .popup-cachemini{
+    display: none;
+  }
+}
+@media (max-width: 1280px) {
+  .popup-cache{
+    display: none;
+  }
 }
 
 </style>

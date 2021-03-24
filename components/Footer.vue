@@ -58,9 +58,9 @@
         </ul>
       </div>
       <div class="calculate lg-max:hidden">
-        <BaseButton class="text-white bg-brand1 shadow">
+        <button @click="openAddition" class="count_button text-center w-265 h-50 text-white bg-brand1 rounded-5 mb-12">
           Рассчитать ОСАГО
-        </BaseButton>
+        </button>
       </div>
     </div>
   </div>
@@ -93,10 +93,18 @@ export default {
 
       ]
     }
+  },
+  methods:{
+    openAddition () {
+      this.$router.push('/osago')
+    },
   }
 }
 </script>
 <style lang="scss" scoped>
+.count_button {
+  box-shadow: 0px 3px 15px rgba(4, 166, 120, 0.3);
+}
 @media (max-width: 767px) {
   .footer {
     @apply py-50;
